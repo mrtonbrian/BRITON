@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chess</title>
+    <link rel="stylesheet" type="text/css" href="static/chessboard-0.3.0.css">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'jquery-1.10.1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'chessboard-0.3.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'chess.js') }}"></script>
+  </head>
+  <body>
+        <div id="board" style="width: 400px"></div>
+        <label>Seconds to Think: </label>
+        <input type="number" id="seconds"><br>
+        <button id="tb">Undo</button>
+        <div id="reset"></div>
+  </body>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'game.min.js') }}"></script>
+  <style type="text/css">
+    .highlight-white {
+      -webkit-box-shadow: inset 0 0 3px 3px yellow;
+      -moz-box-shadow: inset 0 0 3px 3px yellow;
+      box-shadow: inset 0 0 3px 3px yellow;  
+    }
+    .highlight-black {
+      -webkit-box-shadow: inset 0 0 3px 3px blue;
+      -moz-box-shadow: inset 0 0 3px 3px blue;
+      box-shadow: inset 0 0 3px 3px blue;  
+    }
+  </style>
+</html>
