@@ -79,6 +79,7 @@ var onDrop = function (source, target) {
         game.move(data['move'], {
             sloppy: true
         });
+	console.log('EVAL: ' + data['eval']);
         // highlight comp's move
         removeHighlights('white');
         removeHighlights('black');
@@ -174,6 +175,7 @@ var chooseSide = function () {
             game.move(data['move'], {
                 sloppy: true
             });
+	    console.log('EVAL: ' + data['eval']);
             // highlight comp's move
             removeHighlights('white');
             removeHighlights('black');

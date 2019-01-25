@@ -21,7 +21,7 @@ static void checkUp(SEARCHINFO * info) {
 		info->stopped = true;
 	}
 
-	readInput(info);
+	//readInput(info);
 }
 
 static void PickNextMove(int moveNum, MOVES_LIST &list) {
@@ -128,7 +128,7 @@ static int quiescence(int alpha, int beta, BOARD * pos, SEARCHINFO * info, Globa
 		TakeMove(pos, g);
 		
 		if (info->stopped) {
-			return 0;
+			return -INT_MAX;
 		}
 
 		if (score > alpha) {
@@ -204,7 +204,7 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD * pos, SEARCHINFO * i
 		// Undo
 		TakeMove(pos, g);
 		if (info->stopped) {
-			return 0;
+			return -INT_MAX;
 		}
 
 		if (score > alpha) {
@@ -246,6 +246,7 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD * pos, SEARCHINFO * i
 void searchPosition(BOARD * pos, SEARCHINFO * info, Globals g) {
 	int bestMove = 0;
 	int bestScore = -INT_MAX;
+	int prevBest = bestScore;
 
 	int currentDepth = 0;
 	int pvMoves = 0;
@@ -258,6 +259,12 @@ void searchPosition(BOARD * pos, SEARCHINFO * info, Globals g) {
 		}
 		pvMoves = GetPvLine(currentDepth, pos, g);
 		bestMove = pos->PvArray[0];
+		prevBest = bestScore;
 	}
 	std::cout << printMove(bestMove, g) << std::endl;
+	if (pos->sideToMove == BLACK) {
+		std::cout << -prevBest << std::endl;
+	} else {
+		std::cout << prevBest << std::endl;
+	}
 }

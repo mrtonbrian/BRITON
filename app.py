@@ -19,11 +19,13 @@ def move():
     process = subprocess.Popen(['./chess \"' + fen + '\" ' + str(time)], stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                shell=True)
     stdout, stderr = process.communicate()
-    stdout = stdout.strip('\n')
-    from_sq = stdout[0:2]
-    to_sq = stdout[2:4]
+    #print stdout
+    stdout = stdout.split('\n')
+    from_sq = stdout[0][0:2]
+    to_sq = stdout[0][2:4]
+    eval = int(stdout[1])
     # print "END MOVE"
-    return jsonify({'move': stdout, 'from': from_sq, 'to': to_sq})
+    return jsonify({'move': stdout[0], 'from': from_sq, 'to': to_sq, 'eval': eval})
 
 
 if __name__ == '__main__':
