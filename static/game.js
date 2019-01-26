@@ -79,7 +79,7 @@ var onDrop = function (source, target) {
         game.move(data['move'], {
             sloppy: true
         });
-	console.log('EVAL: ' + data['eval']);
+	    console.log('EVAL: ' + data['eval']);
         // highlight comp's move
         removeHighlights('white');
         removeHighlights('black');
@@ -152,10 +152,53 @@ var undo = function () {
     board.position(game.fen());
 }
 
+var bestMove = function() {
+    if (!game.game_over()) {
+        // see if the move is legal
+        var t = JSON.stringify({
+            'time': parseFloat(document.getElementById('seconds').value) * 1000,
+            'fen': game.fen()
+        });
+
+        $.post("/move", t, function (data, status) {
+            game.move(data['move'], {
+                sloppy: true
+            });
+            console.log('EVAL: ' + data['eval']);
+            removeHighlights('white');
+            removeHighlights('black');
+            boardEl.find('.square-' + data['from']).addClass('highlight-white');
+            boardEl.find('.square-' + data['to']).addClass('highlight-white'); // update the board to the new position
+            board.position(game.fen());
+        });
+    }
+
+    if (!game.game_over()) {
+        // Call To POST Request
+        var t = JSON.stringify({
+            'time': parseFloat(document.getElementById('seconds').value) * 1000,
+            'fen': game.fen()
+        });
+
+        $.post("/move", t, function (data, status) {
+            game.move(data['move'], {
+                sloppy: true
+            });
+            console.log('EVAL: ' + data['eval']);
+            // highlight comp's move
+            removeHighlights('white');
+            removeHighlights('black');
+            boardEl.find('.square-' + data['from']).addClass('highlight-black');
+            boardEl.find('.square-' + data['to']).addClass('highlight-black'); // update the board to the new position
+            board.position(game.fen());
+        });
+    }
+}
 
 function setVal() {
     document.getElementById('seconds').value = "0.5";
     document.getElementById('tb').onclick = undo;
+    document.getElementById('bm').onclick = bestMove;
 }
 
 window.onload = setVal();
@@ -175,7 +218,7 @@ var chooseSide = function () {
             game.move(data['move'], {
                 sloppy: true
             });
-	    console.log('EVAL: ' + data['eval']);
+	        console.log('EVAL: ' + data['eval']);
             // highlight comp's move
             removeHighlights('white');
             removeHighlights('black');
