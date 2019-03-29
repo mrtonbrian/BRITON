@@ -3,7 +3,10 @@ var board,
     game = new Chess(),
     squareToHighlight;
 
+var evals = [];
+
 var count = 1;
+var moves = 0;
 
 var removeGreySquares = function () {
     $('#board .square-55d63').css('background', '');
@@ -66,7 +69,7 @@ var onDrop = function (source, target) {
 
     // illegal move
     if (move === null) return 'snapback';
-
+    moves++;
     // highlight white's move
     boardEl.find('.square-' + source).addClass('highlight-white');
     boardEl.find('.square-' + target).addClass('highlight-white');
@@ -79,13 +82,15 @@ var onDrop = function (source, target) {
         game.move(data['move'], {
             sloppy: true
         });
-	    console.log('EVAL: ' + data['eval']);
+        console.log('EVAL: ' + data['eval']);
+        evals.push(data['eval']);
         // highlight comp's move
         removeHighlights('white');
         removeHighlights('black');
         boardEl.find('.square-' + data['from']).addClass('highlight-black');
         boardEl.find('.square-' + data['to']).addClass('highlight-black'); // update the board to the new position
         board.position(game.fen());
+        moves++;
 	// Set Eval P Tag
 	document.getElementById("eval").innerHTML = data['eval'];
     });
@@ -145,14 +150,26 @@ var getPlayerTurn = function () {
 }
 
 var undo = function () {
-    removeHighlights();
-    if (game.turn() === getPlayerTurn()) {
-        game.undo();
-        game.undo();
-    } else {
-        game.undo();
+    if (count > 0) {
+        removeHighlights();
+        if (game.turn() === getPlayerTurn()) {
+            game.undo();
+            game.undo();
+            evals.pop();
+            //evals.pop();
+        } else {
+            game.undo();
+            //evals.pop()
+        }
+        board.position(game.fen());
+        var d = evals.pop()
+        if (d != undefined) {
+            document.getElementById("eval").innerHTML = d;
+        } else {
+            document.getElementById("eval").innerHTML = '0';
+        }
+        moves--;
     }
-    board.position(game.fen());
 }
 
 var bestMove = function() {
@@ -167,6 +184,7 @@ var bestMove = function() {
                 sloppy: true
             });
             console.log('EVAL: ' + data['eval']);
+            document.getElementById("eval").innerHTML = data['eval'];
             removeHighlights('white');
             removeHighlights('black');
             boardEl.find('.square-' + data['from']).addClass('highlight-white');
@@ -186,6 +204,7 @@ var bestMove = function() {
                         sloppy: true
                     });
                     console.log('EVAL: ' + data['eval']);
+                    document.getElementById("eval").innerHTML = data['eval'];
                     // highlight comp's move
                     removeHighlights('white');
                     removeHighlights('black');
