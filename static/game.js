@@ -190,7 +190,7 @@ var bestMove = function() {
             boardEl.find('.square-' + data['from']).addClass('highlight-white');
             boardEl.find('.square-' + data['to']).addClass('highlight-white'); // update the board to the new position
             board.position(game.fen());
-            
+
             // Get Around Async
             if (!game.game_over()) {
                 // Call To POST Request
