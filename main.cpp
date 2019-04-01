@@ -21,6 +21,7 @@
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    cout << "Called C++ File" << endl;
 	Globals g;
 	init(g);
 
