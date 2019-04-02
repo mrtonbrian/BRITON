@@ -26,9 +26,9 @@ static void checkUp(SEARCHINFO * info) {
 
 static void PickNextMove(int moveNum, MOVES_LIST &list) {
 	MOVE temp;
-	int bestScore = 0; 
+	int bestScore = 0;
 	int bestNum = moveNum;
-	
+
 	for (int index = moveNum; index < list.count; ++index) {
 		if (list.moves[index].score > bestScore) {
 			bestScore = list.moves[index].score;
@@ -60,16 +60,16 @@ static void clearForSearch(BOARD * pos, SEARCHINFO * info) {
 			pos->searchHistory[index][index2] = 0;
 		}
 	}
-	
+
 	for(int index = 0; index < 2; ++index) {
 		for(int index2 = 0; index2 < 64; ++index2) {
 			pos->searchKillers[index][index2] = 0;
 		}
-	}	
-	
-	clearPvTable(pos->pvTable);	
+	}
+
+	clearPvTable(pos->pvTable);
 	pos->ply = 0;
-	
+
 	info->starttime = GetTimeMs();
 	info->stopped = 0;
 	info->nodes = 0;
@@ -112,7 +112,7 @@ static int quiescence(int alpha, int beta, BOARD * pos, SEARCHINFO * info, Globa
 	int pvMove = probeTable(pos);
 
 	for (int moveNum = 0; moveNum < list.count; moveNum++) {
-		
+
 		// Optimization
 		PickNextMove(moveNum, list);
 
@@ -126,7 +126,7 @@ static int quiescence(int alpha, int beta, BOARD * pos, SEARCHINFO * info, Globa
 		score = -quiescence(-beta,-alpha, pos, info, g);
 		// Undo
 		TakeMove(pos, g);
-		
+
 		if (info->stopped) {
 			return -INT_MAX;
 		}
@@ -136,7 +136,7 @@ static int quiescence(int alpha, int beta, BOARD * pos, SEARCHINFO * info, Globa
 				if (legalMoves == 1) {
 					info->failHighFirst++;
 				}
-				info->failHigh++;				
+				info->failHigh++;
 				return beta;
 			}
 			alpha = score;
@@ -169,6 +169,12 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD * pos, SEARCHINFO * i
 	// Going Too Deep
 	if (pos->ply > 63) {
 		return evalPosition(pos, g);
+	}
+
+	// In-Check Extension
+	bool inCheck = squareAttacked(pos->king[pos->sideToMove], pos->sideToMove^1, g, pos);
+	if (inCheck) {
+	    depth++;
 	}
 
 	MOVES_LIST list;
@@ -229,7 +235,7 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD * pos, SEARCHINFO * i
 	}
 	if(!legalMoves) {
 														// Inverts Side
-		if (squareAttacked(pos->king[pos->sideToMove], pos->sideToMove^1, g, pos)) {
+		if (inCheck) {
 			return -MATE + pos->ply;
 		} else {
 			return 0;
