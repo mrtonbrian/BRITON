@@ -273,7 +273,7 @@ void generateAllMoves(BOARD * pos, MOVES_LIST &list, Globals g) {
 				
 				// BLACK ^ 1 == WHITE       WHITE ^ 1 == BLACK
 				if (pos->pieces[t_sq] != EMPTY) {
-					if ( g.PieceCol[pos->pieces[t_sq]] == side ^ 1) {
+					if ( g.PieceCol[pos->pieces[t_sq]] == (side ^ 1)) {
 						addCaptureMove(pos, MOVEI(sq, t_sq, pos-> pieces[t_sq], EMPTY, 0), list);
 					}
 					continue;
@@ -300,7 +300,7 @@ void generateAllMoves(BOARD * pos, MOVES_LIST &list, Globals g) {
 				while(!g.isOffBoard(t_sq)) {				
 					// BLACK ^ 1 == WHITE       WHITE ^ 1 == BLACK
 					if (pos->pieces[t_sq] != EMPTY) {
-						if ( g.PieceCol[pos->pieces[t_sq]] == side ^ 1) {
+						if ( g.PieceCol[pos->pieces[t_sq]] == (side ^ 1)) {
 							addCaptureMove(pos, MOVEI(sq, t_sq, pos-> pieces[t_sq], EMPTY, 0), list);
 						}
 						break;
@@ -400,7 +400,7 @@ void generateAllCaps(BOARD * pos, MOVES_LIST &list, Globals g) {
 				}
 				// BLACK ^ 1 == WHITE       WHITE ^ 1 == BLACK
 				if (pos->pieces[t_sq] != EMPTY) {
-					if ( g.PieceCol[pos->pieces[t_sq]] == side ^ 1) {
+					if ( g.PieceCol[pos->pieces[t_sq]] == (side ^ 1)) {
 						addCaptureMove(pos, MOVEI(sq, t_sq, pos-> pieces[t_sq], EMPTY, 0), list);
 					}
 					continue;
@@ -426,7 +426,7 @@ void generateAllCaps(BOARD * pos, MOVES_LIST &list, Globals g) {
 				while(!g.isOffBoard(t_sq)) {				
 					// BLACK ^ 1 == WHITE       WHITE ^ 1 == BLACK
 					if (pos->pieces[t_sq] != EMPTY) {
-						if ( g.PieceCol[pos->pieces[t_sq]] == side ^ 1) {
+						if ( g.PieceCol[pos->pieces[t_sq]] == (side ^ 1)) {
 							addCaptureMove(pos, MOVEI(sq, t_sq, pos-> pieces[t_sq], EMPTY, 0), list);
 						}
 						break;

@@ -8,6 +8,7 @@
 #include "makemove.h"
 #include "pvtable.h"
 #include "misc.h"
+#include "uci.h"
 #include "movegen.h"
 #include "search.h"
 #include "hashkey.h"
@@ -21,16 +22,12 @@
 using namespace std;
 
 int main (int argc, char *argv[]) {
-    cout << "Called C++ File" << endl;
-	Globals g;
-	init(g);
-
+	/*
 	BOARD b[1];
 	initPvTable(b->pvTable);
 	// Note that argv[0] is just filename
 	const char * fen = argv[1];
 	int msAllowed = atoi(argv[2]);
-	//const char * fen = "2B1K3/2p5/4Np2/1Q3P2/2p2r2/1p1bkP2/1p1n4/n7 w - - 0 1";
 	parseFEN(fen, b, g);
 
 	SEARCHINFO info[1];
@@ -39,5 +36,7 @@ int main (int argc, char *argv[]) {
 	info->depth = 64;
 	info->timeset = true;
 	searchPosition(b, info, g);
-	return 0;
+	*/
+
+	uciLoop();
 }
