@@ -36,13 +36,11 @@ void parsePos(string line, BOARD* pos, Globals g) {
     }
 
     index = line.find("moves");
-    cout << line.length() << endl;
     if (index != string::npos) {
         index += 6;
         while (index < line.length()) {
             int move = parseMove(line.substr(index), pos, g);
             if (move == 0) {
-                cout << "MOVE 0" << endl;
                 break;
             }
             pos->ply = 0;
@@ -50,11 +48,10 @@ void parsePos(string line, BOARD* pos, Globals g) {
             while (index != line.length() && line.at(index) != ' ') {
                 index++;
             }
-            cout << "HERE" << endl;
             index++;
         }
     }
-    printBoard(pos);
+    //printBoard(pos);
     //free(pos->pvTable->pTable);
 }
 
@@ -123,17 +120,17 @@ void parseGo(string line, SEARCHINFO* info, BOARD* pos, Globals g) {
         info->depth = MAXDEPTH;
     }
 
-    printf("time:%d start:%d stop:%d depth:%d timeset%d\n", time, info->starttime, info->stoptime, depth, info->timeset);
+    //printf("time:%d start:%d stop:%d depth:%d timeset%d\n", time, info->starttime, info->stoptime, depth, info->timeset);
     searchPosition(pos, info, g);
 }
 
 void uciLoop() {
     string line;
-    
+    /*    
     cout << "id name BRITON" << endl;
     cout << "id author Brian_Ton" << endl;
     cout << "uciok" << endl;
-
+    */
     Globals g;
     init(g);
 
@@ -143,7 +140,6 @@ void uciLoop() {
     while (true) {
         cout.flush();
         getline(cin, line);
-
         if (cin.fail()) {
             cin.clear();
             continue;
