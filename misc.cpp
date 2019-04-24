@@ -4,8 +4,17 @@
 #include <iostream>
 #include <string>
 
+#if defined _WIN32 || defined _WIN64
+#include "windows.h"
+#else
+#include "sys/time.h"
+#include "sys/select.h"
+#include "unistd.h"
+#include "string.h"
+#endif
+
 int GetTimeMs() {
-    #ifdef WIN32
+    #if defined _WIN32 || defined _WIN64
         return GetTickCount();
     #else
         struct timeval t;
@@ -14,7 +23,7 @@ int GetTimeMs() {
     #endif
 }
 int InputWaiting() {
-#ifndef WIN32
+#if!defined _WIN32 && !defined _WIN64
   fd_set readfds;
   struct timeval tv;
   FD_ZERO (&readfds);
@@ -51,10 +60,11 @@ void readInput(SEARCHINFO * info) {
     int bytes;
     std::string s;
 
-    if (InputWaiting()) {    
-		std::getline(std::cin, s);
-        if (s == "quit") {
-            info->quit = true;
-        }
+    if (InputWaiting()) {
+      info->stopped = true;
+		  std::getline(std::cin, s);
+      if (s == "quit") {
+        info->quit = true;
+      }
     }
 }

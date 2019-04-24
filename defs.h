@@ -18,9 +18,11 @@ exit(1);}
 */
 
 #define ASSERT
-// Unsigned 64bit Integer
 
+// Unsigned 64bit Integer
 typedef unsigned long long U64;
+
+#define MAXDEPTH 64
 
 #define SQUARENUM 120
 

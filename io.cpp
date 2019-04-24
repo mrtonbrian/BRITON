@@ -46,23 +46,28 @@ char * printMove(int move, Globals g) {
 }
 
 int parseMove(string inp, BOARD * pos, Globals g) {
+    //cout << "PARSE" << endl;
+    //cout << inp << endl;
     if (inp.at(1) > '8' || inp.at(1) < '1') return 0;
     if (inp.at(3) > '8' || inp.at(3) < '1') return 0;
     if (inp.at(0) > 'h' || inp.at(0) < 'a') return 0;
     if (inp.at(2) > 'h' || inp.at(2) < 'a') return 0;
+    //cout << "PP" << endl;
 
     int from = rowColToSquare(inp.at(1) - '1', inp.at(0) - 'a');
     int to   = rowColToSquare(inp.at(3) - '1', inp.at(2) - 'a');
-
+    //cout << from << " " << to << endl;
+    //cout.flush();
     ASSERT(!g.isOffBoard(from) && !g.isOffBoard(to));
     MOVES_LIST list;
-    generateAllMoves(pos, list, g);      
+    generateAllMoves(pos, list, g);
 	int Move = 0;
 	int PromPce = EMPTY;
 	
 	for(int MoveNum = 0; MoveNum < list.count; ++MoveNum) {	
 		Move = list.moves[MoveNum].move;           
 		if(fromSq(Move)==from && toSq(Move)==to) {
+            //cout << "NOTHERE" << endl;
 			PromPce = promotionPiece(Move);
 			if(PromPce!=EMPTY) {
 				if(g.IsRookQueen(PromPce) && !g.IsBishopQueen(PromPce) && inp.at(4) =='r') {
@@ -79,7 +84,7 @@ int parseMove(string inp, BOARD * pos, Globals g) {
 			return Move;
 		}
     }
-	
+	cout << "NOMOVE" << endl;
     return 0;
 }
 

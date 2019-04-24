@@ -17,11 +17,11 @@
 const int MATE = 29000;
 
 static void checkUp(SEARCHINFO * info) {
-	if (info->timeset==true && GetTimeMs() >= info->stoptime) {
+	if (info->timeset && GetTimeMs() >= info->stoptime) {
 		info->stopped = true;
 	}
 
-	//readInput(info);
+	readInput(info);
 }
 
 static void PickNextMove(int moveNum, MOVES_LIST &list) {
@@ -70,7 +70,7 @@ static void clearForSearch(BOARD * pos, SEARCHINFO * info) {
 	clearPvTable(pos->pvTable);
 	pos->ply = 0;
 
-	info->starttime = GetTimeMs();
+	//info->starttime = GetTimeMs();
 	info->stopped = 0;
 	info->nodes = 0;
 	info->failHigh = 0;
@@ -90,7 +90,7 @@ static int quiescence(int alpha, int beta, BOARD * pos, SEARCHINFO * info, Globa
 	if (isRepetition(pos) || pos->fiftyMove >= 100) {
 		return 0;
 	}
-	if (pos->ply > 63) {
+	if (pos->ply > MAXDEPTH) {
 		return evalPosition(pos, g);
 	}
 
@@ -167,7 +167,7 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD * pos, SEARCHINFO * i
 	}
 
 	// Going Too Deep
-	if (pos->ply > 63) {
+	if (pos->ply > MAXDEPTH) {
 		return evalPosition(pos, g);
 	}
 
@@ -234,7 +234,7 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD * pos, SEARCHINFO * i
 		}
 	}
 	if(!legalMoves) {
-														// Inverts Side
+		// Inverts Side
 		if (inCheck) {
 			return -MATE + pos->ply;
 		} else {
@@ -265,12 +265,22 @@ void searchPosition(BOARD * pos, SEARCHINFO * info, Globals g) {
 		}
 		pvMoves = GetPvLine(currentDepth, pos, g);
 		bestMove = pos->PvArray[0];
+		printf("info score cp %d depth %d nodes %ld time %d ", bestScore, currentDepth, info->nodes, GetTimeMs()-info->starttime);
 		prevBest = bestScore;
+
+		printf("pv");
+		int pvMoves = GetPvLine(currentDepth, pos, g);
+		for (int i = 0; i < pvMoves; i++) {
+			printf(" %s", printMove(pos->PvArray[i], g));
+		}
+		printf("\n");
 	}
-	std::cout << printMove(bestMove, g) << std::endl;
+	std::cout << "bestmove " << printMove(bestMove, g) << std::endl;
+	/*
 	if (pos->sideToMove == BLACK) {
 		std::cout << -prevBest << std::endl;
 	} else {
 		std::cout << prevBest << std::endl;
 	}
+	*/
 }
