@@ -4,7 +4,7 @@ A small chess engine I wrote in C++ and a (very) basic frontend.
 ### **How The Frontend Interfaces With the Backend (Simply)**
 
 First, the user interacts with the [chessboard.js](https://chessboardjs.com) board, which updates the chess.js game representation.
-#### ***TODO: Migrate to Ornicar's [Chessground UI (Which Allows for Mobile)](https://github.com/ornicar/chessground) or add support for Caustique's [Chessboard-JS (Which Allows for Mobile but does not allow for Drag-Drop)](https://github.com/caustique/chessboard-js)
+#### ***TODO: Migrate to Ornicar's [Chessground UI (Which Allows for Mobile)](https://github.com/ornicar/chessground) or add support for Caustique's [Chessboard-JS (Which Allows for Mobile but does not allow for Drag-Drop)](https://github.com/caustique/chessboard-js)***
 
 Then, after the user makes the initial move, the chessboard gets locked, so that the user cannot make moves on the board, and a POST request is sent to the */move* path with the [PGN](https://en.wikipedia.org/wiki/Portable_Game_Notation) of the current game and the time the user requested, which waits until the server returns the best move with the format:
 ```
