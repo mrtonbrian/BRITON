@@ -51,10 +51,9 @@ void parsePos(string line, BOARD* pos, Globals g) {
             index++;
         }
     }
-    //printBoard(pos);
-    //free(pos->pvTable->pTable);
+    printBoard(pos);
 }
-
+//position startpos moves d2d4 d7d5 g1f3 b8c6 c1f4 c8f5 e2e3 e7e6 f1b5 f8d6 f4d6 c7d6 b1c3 a8c8 e1g1 g8f6 f3g5 f6g4 b5c6
 void parseGo(string line, SEARCHINFO* info, BOARD* pos, Globals g) {
     int depth = -1;
     int movesToGo = 30;
@@ -157,6 +156,7 @@ void uciLoop() {
             parsePos("position startpos\n", pos, g);
         } else if (!line.compare(0, 2, "go")) {
             parseGo(line, info, pos, g);
+            return;
         } else if (!line.compare(0, 4, "quit")) {
             info->quit = true;
             break;

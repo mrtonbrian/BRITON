@@ -33,6 +33,9 @@ class Globals {
     int PieceVal[13]= { 0, 100, 325, 325, 550, 1000, 50000, 100, 325, 325, 550, 1000, 50000  };
     int PieceCol[13] = { BOTH, WHITE, WHITE, WHITE, WHITE, WHITE, WHITE, BLACK, BLACK, BLACK, BLACK, BLACK, BLACK };
 
+    // Pawn Bitmasks
+    U64 colBBMask[8];
+    U64 rowBBMask[8];
 
     int SQ64(int x) {
         return SQ120TOSQ64[x];

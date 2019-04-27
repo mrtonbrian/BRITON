@@ -252,7 +252,7 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD * pos, SEARCHINFO * i
 void searchPosition(BOARD * pos, SEARCHINFO * info, Globals g) {
 	int bestMove = 0;
 	int bestScore = -INT_MAX;
-	int prevBest = bestScore;
+	int adjBest = bestScore;
 
 	int currentDepth = 0;
 	int pvMoves = 0;
@@ -263,12 +263,20 @@ void searchPosition(BOARD * pos, SEARCHINFO * info, Globals g) {
 		if (info->stopped) {
 			break;
 		}
+
+		/*
+		Case White Winning, Engine White: +
+		Case White Losing, Engine White: -
+		Case Black Winning, Engine Black: +
+		Case Black Losing, Engine Black: -
+		*/
+		
 		pvMoves = GetPvLine(currentDepth, pos, g);
 		bestMove = pos->PvArray[0];
 		printf("info score cp %d depth %d nodes %ld time %d ", bestScore, currentDepth, info->nodes, GetTimeMs()-info->starttime);
-		prevBest = bestScore;
 
 		printf("pv");
+		std::cout.flush();
 		int pvMoves = GetPvLine(currentDepth, pos, g);
 		for (int i = 0; i < pvMoves; i++) {
 			printf(" %s", printMove(pos->PvArray[i], g));
@@ -276,11 +284,4 @@ void searchPosition(BOARD * pos, SEARCHINFO * info, Globals g) {
 		printf("\n");
 	}
 	std::cout << "bestmove " << printMove(bestMove, g) << std::endl;
-	/*
-	if (pos->sideToMove == BLACK) {
-		std::cout << -prevBest << std::endl;
-	} else {
-		std::cout << prevBest << std::endl;
-	}
-	*/
 }

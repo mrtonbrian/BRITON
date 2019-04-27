@@ -1,2 +1,1 @@
-g++ -O -std=c++11 -o chess -g attack.cpp bitboards.cpp board.cpp evaluate.cpp hashkey.cpp init.cpp io.cpp main.cpp makemove.cpp misc.cpp move.cpp movegen.cpp perft.cpp pvtable.cpp search.cpp validate.cpp uci.cpp
-
+g++ -O3 -std=c++11 -o chess -g attack.cpp bitboards.cpp board.cpp evaluate.cpp hashkey.cpp init.cpp io.cpp main.cpp makemove.cpp misc.cpp move.cpp movegen.cpp perft.cpp pvtable.cpp search.cpp validate.cpp uci.cpp

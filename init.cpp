@@ -3,6 +3,7 @@
 #include "init.h"
 #include "Globals.h"
 #include "movegen.h"
+#include "bitboards.h"
 
 using namespace std;
 
@@ -77,10 +78,25 @@ void initRowColArrays(Globals &g) {
 	}
 }
 
+void initEvalMasks(Globals &a) {
+	for (int sq = 0; sq < 8; sq++) {
+		a.rowBBMask[sq] = 0ULL;
+		a.colBBMask[sq] = 0ULL;
+	}
+
+	for (int row = ROW_1; row <= ROW_8; row++) {
+		for (int col = COL_A; col <= COL_H; col++) {
+			a.rowBBMask[row] |= (1ULL << row*8+col);
+			a.colBBMask[col] |= (1ULL << row*8+col);
+		}
+	}
+}
+
 void init(Globals &a) {
     initSquareArrays(a);
     initMasks(a);
     InitHashKeys(a);
 	initRowColArrays(a);
+	initEvalMasks(a);
 	initMvvLva();
 }

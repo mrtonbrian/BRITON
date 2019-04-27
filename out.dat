@@ -1,0 +1,519 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+ no time accumulated
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00 532420664     0.00     0.00  popBit(unsigned long long*)
+  0.00      0.00     0.00 53916132     0.00     0.00  countBits(unsigned long long)
+  0.00      0.00     0.00 17972045     0.00     0.00  GeneratePosKey(BOARD*, Globals&)
+  0.00      0.00     0.00 17972044     0.00     0.00  checkBoard(BOARD*, Globals)
+  0.00      0.00     0.00 14027574     0.00     0.00  fromSq(int)
+  0.00      0.00     0.00 12811505     0.00     0.00  toSq(int)
+  0.00      0.00     0.00  9700579     0.00     0.00  PieceValid(int)
+  0.00      0.00     0.00  6321237     0.00     0.00  capturePiece(int)
+  0.00      0.00     0.00  5400939     0.00     0.00  SideValid(int)
+  0.00      0.00     0.00  5108011     0.00     0.00  promotionPiece(int)
+  0.00      0.00     0.00  4108008     0.00     0.00  setBit(unsigned long long&, int, Globals)
+  0.00      0.00     0.00  4107976     0.00     0.00  clearBit(unsigned long long&, int, Globals)
+  0.00      0.00     0.00  2848346     0.00     0.00  squareAttacked(int, int, Globals, BOARD*)
+  0.00      0.00     0.00  2552593     0.00     0.00  makeMove(BOARD*, int, Globals)
+  0.00      0.00     0.00  2552591     0.00     0.00  TakeMove(BOARD*, Globals)
+  0.00      0.00     0.00  2407632     0.00     0.00  void std::vector<MOVE, std::allocator<MOVE> >::_M_realloc_insert<MOVE const&>(__gnu_cxx::__normal_iterator<MOVE*, std::vector<MOVE, std::allocator<MOVE> > >, MOVE const&)
+  0.00      0.00     0.00  2203758     0.00     0.00  evalPosition(BOARD*, Globals)
+  0.00      0.00     0.00   780626     0.00     0.00  probeTable(BOARD*)
+  0.00      0.00     0.00   520909     0.00     0.00  generateAllCaps(BOARD*, MOVES_LIST&, Globals)
+  0.00      0.00     0.00   259775     0.00     0.00  generateAllMoves(BOARD*, MOVES_LIST&, Globals)
+  0.00      0.00     0.00   241910     0.00     0.00  isCapture(int)
+  0.00      0.00     0.00   190506     0.00     0.00  PieceValidEmpty(int)
+  0.00      0.00     0.00    30737     0.00     0.00  StorePvMove(BOARD*, int)
+  0.00      0.00     0.00    18380     0.00     0.00  addNonCapture(BOARD*, int, MOVES_LIST&)
+  0.00      0.00     0.00     1192     0.00     0.00  readInput(SEARCHINFO*)
+  0.00      0.00     0.00       68     0.00     0.00  rowColToSquare(int, int)
+  0.00      0.00     0.00       56     0.00     0.00  MoveExists(BOARD*, int, Globals)
+  0.00      0.00     0.00       29     0.00     0.00  isPromotion(int)
+  0.00      0.00     0.00       29     0.00     0.00  printMove(int, Globals)
+  0.00      0.00     0.00       14     0.00     0.00  GetPvLine(int, BOARD*, Globals)
+  0.00      0.00     0.00        8     0.00     0.00  GetTimeMs()
+  0.00      0.00     0.00        7     0.00     0.00  quiescence(int, int, BOARD*, SEARCHINFO*, Globals)
+  0.00      0.00     0.00        2     0.00     0.00  parseMove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals)
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I_PceChar
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I_PieceChar
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z11printSquarei7Globals
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z12clearPvTableP7PVTABLE
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z14GeneratePosKeyP5BOARDR7Globals
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z14rowColToSquareii
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z14searchPositionP5BOARDP10SEARCHINFO7Globals
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z6popBitPy
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z8STARTFENB5cxx11
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z8makeMoveP5BOARDi7Globals
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z9GetTimeMsv
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I_main
+  0.00      0.00     0.00        1     0.00     0.00  initMvvLva()
+  0.00      0.00     0.00        1     0.00     0.00  printBoard(BOARD*)
+  0.00      0.00     0.00        1     0.00     0.00  initPvTable(PVTABLE*)
+  0.00      0.00     0.00        1     0.00     0.00  InitHashKeys(Globals&)
+  0.00      0.00     0.00        1     0.00     0.00  clearPvTable(PVTABLE*)
+  0.00      0.00     0.00        1     0.00     0.00  searchPosition(BOARD*, SEARCHINFO*, Globals)
+  0.00      0.00     0.00        1     0.00     0.00  init(Globals&)
+  0.00      0.00     0.00        1     0.00     0.00  parseGo(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, SEARCHINFO*, BOARD*, Globals)
+  0.00      0.00     0.00        1     0.00     0.00  parseFEN(char const*, BOARD*, Globals)
+  0.00      0.00     0.00        1     0.00     0.00  parsePos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00 532420664/532420664     checkBoard(BOARD*, Globals) [11]
+[8]      0.0    0.00    0.00 532420664         popBit(unsigned long long*) [8]
+-----------------------------------------------
+                0.00    0.00 53916132/53916132     checkBoard(BOARD*, Globals) [11]
+[9]      0.0    0.00    0.00 53916132         countBits(unsigned long long) [9]
+-----------------------------------------------
+                0.00    0.00       1/17972045     parseFEN(char const*, BOARD*, Globals) [61]
+                0.00    0.00 17972044/17972045     checkBoard(BOARD*, Globals) [11]
+[10]     0.0    0.00    0.00 17972045         GeneratePosKey(BOARD*, Globals&) [10]
+-----------------------------------------------
+                0.00    0.00      56/17972044     GetPvLine(int, BOARD*, Globals) [37]
+                0.00    0.00     910/17972044     MoveExists(BOARD*, int, Globals) [34]
+                0.00    0.00  259775/17972044     generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+                0.00    0.00  520909/17972044     generateAllCaps(BOARD*, MOVES_LIST&, Globals) [26]
+                0.00    0.00 2552591/17972044     TakeMove(BOARD*, Globals) [22]
+                0.00    0.00 2848346/17972044     squareAttacked(int, int, Globals, BOARD*) [20]
+                0.00    0.00 5193343/17972044     makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00 6596114/17972044     quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+[11]     0.0    0.00    0.00 17972044         checkBoard(BOARD*, Globals) [11]
+                0.00    0.00 532420664/532420664     popBit(unsigned long long*) [8]
+                0.00    0.00 53916132/53916132     countBits(unsigned long long) [9]
+                0.00    0.00 17972044/17972045     GeneratePosKey(BOARD*, Globals&) [10]
+-----------------------------------------------
+                0.00    0.00      20/14027574     parseMove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [40]
+                0.00    0.00      58/14027574     printMove(int, Globals) [36]
+                0.00    0.00    6851/14027574     quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+                0.00    0.00   20261/14027574     addNonCapture(BOARD*, int, MOVES_LIST&) [31]
+                0.00    0.00  798584/14027574     generateAllCaps(BOARD*, MOVES_LIST&, Globals) [26]
+                0.00    0.00 2552591/14027574     TakeMove(BOARD*, Globals) [22]
+                0.00    0.00 2552593/14027574     makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00 8096616/14027574     generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+[12]     0.0    0.00    0.00 14027574         fromSq(int) [12]
+-----------------------------------------------
+                0.00    0.00       4/12811505     parseMove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [40]
+                0.00    0.00      58/12811505     printMove(int, Globals) [36]
+                0.00    0.00    6851/12811505     quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+                0.00    0.00   17541/12811505     addNonCapture(BOARD*, int, MOVES_LIST&) [31]
+                0.00    0.00 2552591/12811505     TakeMove(BOARD*, Globals) [22]
+                0.00    0.00 2552593/12811505     makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00 7681867/12811505     generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+[13]     0.0    0.00    0.00 12811505         toSq(int) [13]
+-----------------------------------------------
+                0.00    0.00 1298875/9700579     generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+                0.00    0.00 1622283/9700579     TakeMove(BOARD*, Globals) [22]
+                0.00    0.00 2604545/9700579     generateAllCaps(BOARD*, MOVES_LIST&, Globals) [26]
+                0.00    0.00 4174876/9700579     makeMove(BOARD*, int, Globals) [21]
+[14]     0.0    0.00    0.00 9700579         PieceValid(int) [14]
+-----------------------------------------------
+                0.00    0.00    2720/6321237     addNonCapture(BOARD*, int, MOVES_LIST&) [31]
+                0.00    0.00  414749/6321237     generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+                0.00    0.00  798584/6321237     generateAllCaps(BOARD*, MOVES_LIST&, Globals) [26]
+                0.00    0.00 2552591/6321237     TakeMove(BOARD*, Globals) [22]
+                0.00    0.00 2552593/6321237     makeMove(BOARD*, int, Globals) [21]
+[15]     0.0    0.00    0.00 6321237         capturePiece(int) [15]
+-----------------------------------------------
+                0.00    0.00 2552593/5400939     makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00 2848346/5400939     squareAttacked(int, int, Globals, BOARD*) [20]
+[16]     0.0    0.00    0.00 5400939         SideValid(int) [16]
+-----------------------------------------------
+                0.00    0.00       2/5108011     parseMove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [40]
+                0.00    0.00      29/5108011     printMove(int, Globals) [36]
+                0.00    0.00 2552593/5108011     makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00 2555387/5108011     TakeMove(BOARD*, Globals) [22]
+[17]     0.0    0.00    0.00 5108011         promotionPiece(int) [17]
+-----------------------------------------------
+                0.00    0.00      32/4108008     parseFEN(char const*, BOARD*, Globals) [61]
+                0.00    0.00 1650644/4108008     makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00 2457332/4108008     TakeMove(BOARD*, Globals) [22]
+[18]     0.0    0.00    0.00 4108008         setBit(unsigned long long&, int, Globals) [18]
+-----------------------------------------------
+                0.00    0.00 1648776/4107976     TakeMove(BOARD*, Globals) [22]
+                0.00    0.00 2459200/4107976     makeMove(BOARD*, int, Globals) [21]
+[19]     0.0    0.00    0.00 4107976         clearBit(unsigned long long&, int, Globals) [19]
+-----------------------------------------------
+                0.00    0.00   36036/2848346     generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+                0.00    0.00  259717/2848346     quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+                0.00    0.00 2552593/2848346     makeMove(BOARD*, int, Globals) [21]
+[20]     0.0    0.00    0.00 2848346         squareAttacked(int, int, Globals, BOARD*) [20]
+                0.00    0.00 2848346/5400939     SideValid(int) [16]
+                0.00    0.00 2848346/17972044     checkBoard(BOARD*, Globals) [11]
+-----------------------------------------------
+                0.00    0.00       2/2552593     parsePos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [62]
+                0.00    0.00      56/2552593     GetPvLine(int, BOARD*, Globals) [37]
+                0.00    0.00     946/2552593     MoveExists(BOARD*, int, Globals) [34]
+                0.00    0.00 2551589/2552593     quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+[21]     0.0    0.00    0.00 2552593         makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00 5193343/17972044     checkBoard(BOARD*, Globals) [11]
+                0.00    0.00 4174876/9700579     PieceValid(int) [14]
+                0.00    0.00 2552593/14027574     fromSq(int) [12]
+                0.00    0.00 2552593/12811505     toSq(int) [13]
+                0.00    0.00 2552593/5400939     SideValid(int) [16]
+                0.00    0.00 2552593/6321237     capturePiece(int) [15]
+                0.00    0.00 2552593/5108011     promotionPiece(int) [17]
+                0.00    0.00 2552593/2848346     squareAttacked(int, int, Globals, BOARD*) [20]
+                0.00    0.00 2459200/4107976     clearBit(unsigned long long&, int, Globals) [19]
+                0.00    0.00 1650644/4108008     setBit(unsigned long long&, int, Globals) [18]
+                0.00    0.00   88157/2552591     TakeMove(BOARD*, Globals) [22]
+-----------------------------------------------
+                0.00    0.00      56/2552591     GetPvLine(int, BOARD*, Globals) [37]
+                0.00    0.00     910/2552591     MoveExists(BOARD*, int, Globals) [34]
+                0.00    0.00   88157/2552591     makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00 2463468/2552591     quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+[22]     0.0    0.00    0.00 2552591         TakeMove(BOARD*, Globals) [22]
+                0.00    0.00 2555387/5108011     promotionPiece(int) [17]
+                0.00    0.00 2552591/17972044     checkBoard(BOARD*, Globals) [11]
+                0.00    0.00 2552591/14027574     fromSq(int) [12]
+                0.00    0.00 2552591/12811505     toSq(int) [13]
+                0.00    0.00 2552591/6321237     capturePiece(int) [15]
+                0.00    0.00 2457332/4108008     setBit(unsigned long long&, int, Globals) [18]
+                0.00    0.00 1648776/4107976     clearBit(unsigned long long&, int, Globals) [19]
+                0.00    0.00 1622283/9700579     PieceValid(int) [14]
+-----------------------------------------------
+                0.00    0.00    5559/2407632     addNonCapture(BOARD*, int, MOVES_LIST&) [31]
+                0.00    0.00  730214/2407632     generateAllCaps(BOARD*, MOVES_LIST&, Globals) [26]
+                0.00    0.00 1671859/2407632     generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+[23]     0.0    0.00    0.00 2407632         void std::vector<MOVE, std::allocator<MOVE> >::_M_realloc_insert<MOVE const&>(__gnu_cxx::__normal_iterator<MOVE*, std::vector<MOVE, std::allocator<MOVE> > >, MOVE const&) [23]
+-----------------------------------------------
+                0.00    0.00 2203758/2203758     quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+[24]     0.0    0.00    0.00 2203758         evalPosition(BOARD*, Globals) [24]
+-----------------------------------------------
+                0.00    0.00  780626/780626      quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+[25]     0.0    0.00    0.00  780626         probeTable(BOARD*) [25]
+-----------------------------------------------
+                0.00    0.00  520909/520909      quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+[26]     0.0    0.00    0.00  520909         generateAllCaps(BOARD*, MOVES_LIST&, Globals) [26]
+                0.00    0.00 2604545/9700579     PieceValid(int) [14]
+                0.00    0.00  798584/6321237     capturePiece(int) [15]
+                0.00    0.00  798584/14027574     fromSq(int) [12]
+                0.00    0.00  730214/2407632     void std::vector<MOVE, std::allocator<MOVE> >::_M_realloc_insert<MOVE const&>(__gnu_cxx::__normal_iterator<MOVE*, std::vector<MOVE, std::allocator<MOVE> > >, MOVE const&) [23]
+                0.00    0.00  520909/17972044     checkBoard(BOARD*, Globals) [11]
+                0.00    0.00  132145/190506      PieceValidEmpty(int) [29]
+                0.00    0.00     614/18380       addNonCapture(BOARD*, int, MOVES_LIST&) [31]
+-----------------------------------------------
+                0.00    0.00       2/259775      parseMove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [40]
+                0.00    0.00      56/259775      MoveExists(BOARD*, int, Globals) [34]
+                0.00    0.00  259717/259775      quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+[27]     0.0    0.00    0.00  259775         generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+                0.00    0.00 8096616/14027574     fromSq(int) [12]
+                0.00    0.00 7681867/12811505     toSq(int) [13]
+                0.00    0.00 1671859/2407632     void std::vector<MOVE, std::allocator<MOVE> >::_M_realloc_insert<MOVE const&>(__gnu_cxx::__normal_iterator<MOVE*, std::vector<MOVE, std::allocator<MOVE> > >, MOVE const&) [23]
+                0.00    0.00 1298875/9700579     PieceValid(int) [14]
+                0.00    0.00  414749/6321237     capturePiece(int) [15]
+                0.00    0.00  259775/17972044     checkBoard(BOARD*, Globals) [11]
+                0.00    0.00   58361/190506      PieceValidEmpty(int) [29]
+                0.00    0.00   36036/2848346     squareAttacked(int, int, Globals, BOARD*) [20]
+                0.00    0.00   17766/18380       addNonCapture(BOARD*, int, MOVES_LIST&) [31]
+-----------------------------------------------
+                0.00    0.00  241910/241910      quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+[28]     0.0    0.00    0.00  241910         isCapture(int) [28]
+-----------------------------------------------
+                0.00    0.00   58361/190506      generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+                0.00    0.00  132145/190506      generateAllCaps(BOARD*, MOVES_LIST&, Globals) [26]
+[29]     0.0    0.00    0.00  190506         PieceValidEmpty(int) [29]
+-----------------------------------------------
+                0.00    0.00   30737/30737       quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+[30]     0.0    0.00    0.00   30737         StorePvMove(BOARD*, int) [30]
+-----------------------------------------------
+                0.00    0.00     614/18380       generateAllCaps(BOARD*, MOVES_LIST&, Globals) [26]
+                0.00    0.00   17766/18380       generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+[31]     0.0    0.00    0.00   18380         addNonCapture(BOARD*, int, MOVES_LIST&) [31]
+                0.00    0.00   20261/14027574     fromSq(int) [12]
+                0.00    0.00   17541/12811505     toSq(int) [13]
+                0.00    0.00    5559/2407632     void std::vector<MOVE, std::allocator<MOVE> >::_M_realloc_insert<MOVE const&>(__gnu_cxx::__normal_iterator<MOVE*, std::vector<MOVE, std::allocator<MOVE> > >, MOVE const&) [23]
+                0.00    0.00    2720/6321237     capturePiece(int) [15]
+-----------------------------------------------
+                0.00    0.00    1192/1192        quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+[32]     0.0    0.00    0.00    1192         readInput(SEARCHINFO*) [32]
+-----------------------------------------------
+                0.00    0.00       4/68          parseMove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [40]
+                0.00    0.00      64/68          printBoard(BOARD*) [54]
+[33]     0.0    0.00    0.00      68         rowColToSquare(int, int) [33]
+-----------------------------------------------
+                0.00    0.00      56/56          GetPvLine(int, BOARD*, Globals) [37]
+[34]     0.0    0.00    0.00      56         MoveExists(BOARD*, int, Globals) [34]
+                0.00    0.00     946/2552593     makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00     910/17972044     checkBoard(BOARD*, Globals) [11]
+                0.00    0.00     910/2552591     TakeMove(BOARD*, Globals) [22]
+                0.00    0.00      56/259775      generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+-----------------------------------------------
+                0.00    0.00      29/29          printMove(int, Globals) [36]
+[35]     0.0    0.00    0.00      29         isPromotion(int) [35]
+-----------------------------------------------
+                0.00    0.00      29/29          searchPosition(BOARD*, SEARCHINFO*, Globals) [58]
+[36]     0.0    0.00    0.00      29         printMove(int, Globals) [36]
+                0.00    0.00      58/14027574     fromSq(int) [12]
+                0.00    0.00      58/12811505     toSq(int) [13]
+                0.00    0.00      29/5108011     promotionPiece(int) [17]
+                0.00    0.00      29/29          isPromotion(int) [35]
+-----------------------------------------------
+                0.00    0.00      14/14          searchPosition(BOARD*, SEARCHINFO*, Globals) [58]
+[37]     0.0    0.00    0.00      14         GetPvLine(int, BOARD*, Globals) [37]
+                0.00    0.00      56/17972044     checkBoard(BOARD*, Globals) [11]
+                0.00    0.00      56/2552591     TakeMove(BOARD*, Globals) [22]
+                0.00    0.00      56/2552593     makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00      56/56          MoveExists(BOARD*, int, Globals) [34]
+-----------------------------------------------
+                0.00    0.00       1/8           parseGo(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, SEARCHINFO*, BOARD*, Globals) [60]
+                0.00    0.00       7/8           searchPosition(BOARD*, SEARCHINFO*, Globals) [58]
+[38]     0.0    0.00    0.00       8         GetTimeMs() [38]
+-----------------------------------------------
+                             4132639             quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+                0.00    0.00       7/7           searchPosition(BOARD*, SEARCHINFO*, Globals) [58]
+[39]     0.0    0.00    0.00       7+4132639 quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+                0.00    0.00 6596114/17972044     checkBoard(BOARD*, Globals) [11]
+                0.00    0.00 2551589/2552593     makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00 2463468/2552591     TakeMove(BOARD*, Globals) [22]
+                0.00    0.00 2203758/2203758     evalPosition(BOARD*, Globals) [24]
+                0.00    0.00  780626/780626      probeTable(BOARD*) [25]
+                0.00    0.00  520909/520909      generateAllCaps(BOARD*, MOVES_LIST&, Globals) [26]
+                0.00    0.00  259717/2848346     squareAttacked(int, int, Globals, BOARD*) [20]
+                0.00    0.00  259717/259775      generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+                0.00    0.00  241910/241910      isCapture(int) [28]
+                0.00    0.00   30737/30737       StorePvMove(BOARD*, int) [30]
+                0.00    0.00    6851/14027574     fromSq(int) [12]
+                0.00    0.00    6851/12811505     toSq(int) [13]
+                0.00    0.00    1192/1192        readInput(SEARCHINFO*) [32]
+                             4132639             quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+-----------------------------------------------
+                0.00    0.00       2/2           parsePos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [62]
+[40]     0.0    0.00    0.00       2         parseMove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [40]
+                0.00    0.00      20/14027574     fromSq(int) [12]
+                0.00    0.00       4/68          rowColToSquare(int, int) [33]
+                0.00    0.00       4/12811505     toSq(int) [13]
+                0.00    0.00       2/259775      generateAllMoves(BOARD*, MOVES_LIST&, Globals) [27]
+                0.00    0.00       2/5108011     promotionPiece(int) [17]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[41]     0.0    0.00    0.00       1         _GLOBAL__sub_I_PceChar [41]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[42]     0.0    0.00    0.00       1         _GLOBAL__sub_I_PieceChar [42]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[43]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z11printSquarei7Globals [43]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[44]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z12clearPvTableP7PVTABLE [44]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[45]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z14GeneratePosKeyP5BOARDR7Globals [45]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[46]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z14rowColToSquareii [46]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[47]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z14searchPositionP5BOARDP10SEARCHINFO7Globals [47]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[48]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z6popBitPy [48]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[49]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z8STARTFENB5cxx11 [49]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[50]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z8makeMoveP5BOARDi7Globals [50]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[51]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z9GetTimeMsv [51]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [86]
+[52]     0.0    0.00    0.00       1         _GLOBAL__sub_I_main [52]
+-----------------------------------------------
+                0.00    0.00       1/1           uciLoop() [75]
+[53]     0.0    0.00    0.00       1         initMvvLva() [53]
+-----------------------------------------------
+                0.00    0.00       1/1           parsePos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [62]
+[54]     0.0    0.00    0.00       1         printBoard(BOARD*) [54]
+                0.00    0.00      64/68          rowColToSquare(int, int) [33]
+-----------------------------------------------
+                0.00    0.00       1/1           uciLoop() [75]
+[55]     0.0    0.00    0.00       1         initPvTable(PVTABLE*) [55]
+-----------------------------------------------
+                0.00    0.00       1/1           init(Globals&) [59]
+[56]     0.0    0.00    0.00       1         InitHashKeys(Globals&) [56]
+-----------------------------------------------
+                0.00    0.00       1/1           searchPosition(BOARD*, SEARCHINFO*, Globals) [58]
+[57]     0.0    0.00    0.00       1         clearPvTable(PVTABLE*) [57]
+-----------------------------------------------
+                0.00    0.00       1/1           parseGo(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, SEARCHINFO*, BOARD*, Globals) [60]
+[58]     0.0    0.00    0.00       1         searchPosition(BOARD*, SEARCHINFO*, Globals) [58]
+                0.00    0.00      29/29          printMove(int, Globals) [36]
+                0.00    0.00      14/14          GetPvLine(int, BOARD*, Globals) [37]
+                0.00    0.00       7/7           quiescence(int, int, BOARD*, SEARCHINFO*, Globals) [39]
+                0.00    0.00       7/8           GetTimeMs() [38]
+                0.00    0.00       1/1           clearPvTable(PVTABLE*) [57]
+-----------------------------------------------
+                0.00    0.00       1/1           uciLoop() [75]
+[59]     0.0    0.00    0.00       1         init(Globals&) [59]
+                0.00    0.00       1/1           InitHashKeys(Globals&) [56]
+-----------------------------------------------
+                0.00    0.00       1/1           uciLoop() [75]
+[60]     0.0    0.00    0.00       1         parseGo(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, SEARCHINFO*, BOARD*, Globals) [60]
+                0.00    0.00       1/1           searchPosition(BOARD*, SEARCHINFO*, Globals) [58]
+                0.00    0.00       1/8           GetTimeMs() [38]
+-----------------------------------------------
+                0.00    0.00       1/1           parsePos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [62]
+[61]     0.0    0.00    0.00       1         parseFEN(char const*, BOARD*, Globals) [61]
+                0.00    0.00      32/4108008     setBit(unsigned long long&, int, Globals) [18]
+                0.00    0.00       1/17972045     GeneratePosKey(BOARD*, Globals&) [10]
+-----------------------------------------------
+                0.00    0.00       1/1           uciLoop() [75]
+[62]     0.0    0.00    0.00       1         parsePos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [62]
+                0.00    0.00       2/2           parseMove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals) [40]
+                0.00    0.00       2/2552593     makeMove(BOARD*, int, Globals) [21]
+                0.00    0.00       1/1           parseFEN(char const*, BOARD*, Globals) [61]
+                0.00    0.00       1/1           printBoard(BOARD*) [54]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [41] _GLOBAL__sub_I_PceChar (board.cpp) [55] initPvTable(PVTABLE*) [60] parseGo(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, SEARCHINFO*, BOARD*, Globals)
+  [42] _GLOBAL__sub_I_PieceChar (movegen.cpp) [35] isPromotion(int) [22] TakeMove(BOARD*, Globals)
+  [43] _GLOBAL__sub_I__Z11printSquarei7Globals (io.cpp) [56] InitHashKeys(Globals&) [19] clearBit(unsigned long long&, int, Globals)
+  [44] _GLOBAL__sub_I__Z12clearPvTableP7PVTABLE (pvtable.cpp) [15] capturePiece(int) [21] makeMove(BOARD*, int, Globals)
+  [45] _GLOBAL__sub_I__Z14GeneratePosKeyP5BOARDR7Globals (hashkey.cpp) [57] clearPvTable(PVTABLE*) [61] parseFEN(char const*, BOARD*, Globals)
+  [46] _GLOBAL__sub_I__Z14rowColToSquareii (init.cpp) [24] evalPosition(BOARD*, Globals) [62] parsePos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals)
+  [47] _GLOBAL__sub_I__Z14searchPositionP5BOARDP10SEARCHINFO7Globals (search.cpp) [10] GeneratePosKey(BOARD*, Globals&) [37] GetPvLine(int, BOARD*, Globals)
+  [48] _GLOBAL__sub_I__Z6popBitPy (bitboards.cpp) [17] promotionPiece(int) [38] GetTimeMs()
+  [49] _GLOBAL__sub_I__Z8STARTFENB5cxx11 (uci.cpp) [33] rowColToSquare(int, int) [16] SideValid(int)
+  [50] _GLOBAL__sub_I__Z8makeMoveP5BOARDi7Globals (makemove.cpp) [58] searchPosition(BOARD*, SEARCHINFO*, Globals) [9] countBits(unsigned long long)
+  [51] _GLOBAL__sub_I__Z9GetTimeMsv (misc.cpp) [20] squareAttacked(int, int, Globals, BOARD*) [28] isCapture(int)
+  [52] _GLOBAL__sub_I_main (main.cpp) [29] PieceValidEmpty(int) [40] parseMove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, BOARD*, Globals)
+  [34] MoveExists(BOARD*, int, Globals) [26] generateAllCaps(BOARD*, MOVES_LIST&, Globals) [36] printMove(int, Globals)
+  [14] PieceValid(int)        [27] generateAllMoves(BOARD*, MOVES_LIST&, Globals) [32] readInput(SEARCHINFO*)
+  [11] checkBoard(BOARD*, Globals) [59] init(Globals&)    [39] quiescence(int, int, BOARD*, SEARCHINFO*, Globals) (search.cpp)
+  [53] initMvvLva()           [13] toSq(int)              [31] addNonCapture(BOARD*, int, MOVES_LIST&) (movegen.cpp)
+  [54] printBoard(BOARD*)     [12] fromSq(int)            [23] void std::vector<MOVE, std::allocator<MOVE> >::_M_realloc_insert<MOVE const&>(__gnu_cxx::__normal_iterator<MOVE*, std::vector<MOVE, std::allocator<MOVE> > >, MOVE const&)
+  [25] probeTable(BOARD*)      [8] popBit(unsigned long long*)
+  [30] StorePvMove(BOARD*, int) [18] setBit(unsigned long long&, int, Globals)
