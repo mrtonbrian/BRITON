@@ -3,5 +3,5 @@
 
 #ifndef EVALUATE
 #define EVALUATE
-int evalPosition(BOARD * pos, Globals g);
+int evalPosition(BOARD *pos, Globals g);
 #endif
