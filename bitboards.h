@@ -11,6 +11,6 @@ const int BitTable[64] = {
     58, 20, 37, 17, 36, 8};
 int popBit(U64 *);
 int countBits(U64 b);
-void clearBit(U64 &b, int sq, Globals g);
-void setBit(U64 &b, int sq, Globals g);
+void clearBit(U64 &b, int sq, Globals& g);
+void setBit(U64 &b, int sq, Globals& g);
 #endif

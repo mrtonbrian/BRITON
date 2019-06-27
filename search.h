@@ -3,5 +3,5 @@
 
 #ifndef SEARCH_H
 #define SEARCH_H
-void searchPosition(BOARD *pos, SEARCHINFO *info, Globals g);
+void searchPosition(BOARD *pos, SEARCHINFO *info, Globals& g);
 #endif

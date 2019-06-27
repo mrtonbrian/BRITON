@@ -5,8 +5,8 @@
 
 #ifndef IO
 #define IO
-char *printSquare(int square, Globals g);
-char *printMove(int square, Globals g);
-int parseMove(std::string inp, BOARD *pos, Globals g);
-void printMoveList(MOVES_LIST &list, Globals g);
+char *printSquare(int square, Globals& g);
+char *printMove(int square, Globals& g);
+int parseMove(std::string inp, BOARD *pos, Globals& g);
+void printMoveList(MOVES_LIST &list, Globals& g);
 #endif

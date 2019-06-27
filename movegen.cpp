@@ -108,7 +108,7 @@ static void addEnPassMove(BOARD *pos, int m, MOVES_LIST &list)
 	list.count++;
 }
 
-static void AddWhitePawnMove(BOARD *pos, int from, int to, MOVES_LIST &list, Globals g)
+static void AddWhitePawnMove(BOARD *pos, int from, int to, MOVES_LIST &list, Globals& g)
 {
 	ASSERT(!g.isOffBoard(from));
 	ASSERT(!g.isOffBoard(to));
@@ -125,7 +125,7 @@ static void AddWhitePawnMove(BOARD *pos, int from, int to, MOVES_LIST &list, Glo
 	}
 }
 
-static void AddWhitePawnCapMove(BOARD *pos, const int from, const int to, const int cap, MOVES_LIST &list, Globals g)
+static void AddWhitePawnCapMove(BOARD *pos, const int from, const int to, const int cap, MOVES_LIST &list, Globals& g)
 {
 	ASSERT(PieceValidEmpty(cap));
 	ASSERT(!g.isOffBoard(from));
@@ -143,7 +143,7 @@ static void AddWhitePawnCapMove(BOARD *pos, const int from, const int to, const 
 	}
 }
 
-static void AddBlackPawnCapMove(BOARD *pos, const int from, const int to, const int cap, MOVES_LIST &list, Globals g)
+static void AddBlackPawnCapMove(BOARD *pos, const int from, const int to, const int cap, MOVES_LIST &list, Globals& g)
 {
 	ASSERT(PieceValidEmpty(cap));
 	ASSERT(!g.isOffBoard(from));
@@ -161,7 +161,7 @@ static void AddBlackPawnCapMove(BOARD *pos, const int from, const int to, const 
 	}
 }
 
-static void AddBlackPawnMove(BOARD *pos, int from, int to, MOVES_LIST &list, Globals g)
+static void AddBlackPawnMove(BOARD *pos, int from, int to, MOVES_LIST &list, Globals& g)
 {
 	ASSERT(!g.isOffBoard(from));
 	ASSERT(!g.isOffBoard(to));
@@ -178,7 +178,7 @@ static void AddBlackPawnMove(BOARD *pos, int from, int to, MOVES_LIST &list, Glo
 	}
 }
 
-void generateAllMoves(BOARD *pos, MOVES_LIST &list, Globals g)
+void generateAllMoves(BOARD *pos, MOVES_LIST &list, Globals& g)
 {
 	ASSERT(checkBoard(pos, g));
 	list.count = 0;
@@ -381,7 +381,7 @@ void generateAllMoves(BOARD *pos, MOVES_LIST &list, Globals g)
 	}
 }
 
-bool MoveExists(BOARD *pos, int move, Globals g)
+bool MoveExists(BOARD *pos, int move, Globals& g)
 {
 	MOVES_LIST list;
 	generateAllMoves(pos, list, g);
@@ -400,7 +400,7 @@ bool MoveExists(BOARD *pos, int move, Globals g)
 	return false;
 }
 
-void generateAllCaps(BOARD *pos, MOVES_LIST &list, Globals g)
+void generateAllCaps(BOARD *pos, MOVES_LIST &list, Globals& g)
 {
 	ASSERT(checkBoard(pos, g));
 	list.count = 0;

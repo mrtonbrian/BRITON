@@ -26,7 +26,7 @@ int PieceValid(const int pce)
 	return (pce >= wP && pce <= bK) ? 1 : 0;
 }
 
-void MirrorTest(std::string filename, BOARD *pos, Globals g)
+void MirrorTest(std::string filename, BOARD *pos, Globals& g)
 {
 	std::ifstream epdFile(filename);
 	std::string line;

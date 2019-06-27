@@ -29,7 +29,7 @@ const int CastlePerm[120] = {
 #define HASH_SIDE (pos->position ^= (g.SideKey))
 #define HASH_EP (pos->position ^= (g.PieceKeys[EMPTY][(pos->enPass)]))
 
-static void ClearPiece(const int sq, BOARD *pos, Globals g)
+static void ClearPiece(const int sq, BOARD *pos, Globals& g)
 {
 
     ASSERT(!g.isOffBoard(sq));
@@ -81,7 +81,7 @@ static void ClearPiece(const int sq, BOARD *pos, Globals g)
     pos->pList[pce][t_pieceNum] = pos->pList[pce][pos->pieceNum[pce]];
 }
 
-static void AddPiece(const int sq, BOARD *pos, const int pce, Globals g)
+static void AddPiece(const int sq, BOARD *pos, const int pce, Globals& g)
 {
 
     ASSERT(PieceValid(pce));
@@ -115,7 +115,7 @@ static void AddPiece(const int sq, BOARD *pos, const int pce, Globals g)
     pos->pList[pce][pos->pieceNum[pce]++] = sq;
 }
 
-static void MovePiece(const int from, const int to, BOARD *pos, Globals g)
+static void MovePiece(const int from, const int to, BOARD *pos, Globals& g)
 {
 
     ASSERT(!g.isOffBoard(from));
@@ -153,7 +153,7 @@ static void MovePiece(const int from, const int to, BOARD *pos, Globals g)
     ASSERT(t_PieceNum);
 }
 
-bool makeMove(BOARD *pos, int move, Globals g)
+bool makeMove(BOARD *pos, int move, Globals& g)
 {
 
     ASSERT(checkBoard(pos, g));
@@ -278,7 +278,7 @@ bool makeMove(BOARD *pos, int move, Globals g)
     return true;
 }
 
-void TakeMove(BOARD *pos, Globals g)
+void TakeMove(BOARD *pos, Globals& g)
 {
 
     ASSERT(checkBoard(pos, g));

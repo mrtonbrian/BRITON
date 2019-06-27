@@ -9,7 +9,7 @@
 
 using namespace std;
 
-char *printSquare(int square, Globals g)
+char *printSquare(int square, Globals& g)
 {
     static char SqString[6];
 
@@ -21,7 +21,7 @@ char *printSquare(int square, Globals g)
     return SqString;
 }
 
-char *printMove(int move, Globals g)
+char *printMove(int move, Globals& g)
 {
     static char MvString[6];
     int _fRow = g.RowBoard[fromSq(move)];
@@ -55,7 +55,7 @@ char *printMove(int move, Globals g)
     return MvString;
 }
 
-int parseMove(string inp, BOARD *pos, Globals g)
+int parseMove(string inp, BOARD *pos, Globals& g)
 {
     //cout << "PARSE" << endl;
     //cout << inp << endl;
@@ -113,7 +113,7 @@ int parseMove(string inp, BOARD *pos, Globals g)
     return 0;
 }
 
-void printMoveList(MOVES_LIST &list, Globals g)
+void printMoveList(MOVES_LIST &list, Globals& g)
 {
     printf("MOVELIST: \n");
     for (int i = 0; i < list.count; i++)

@@ -5,6 +5,10 @@
 #ifndef GLOBALS
 #define GLOBALS
 
+/*
+    68 ms pass by value
+*/
+
 class Globals
 {
 public:

@@ -52,7 +52,7 @@ int probeTable(BOARD *pos)
     return 0;
 }
 
-int GetPvLine(int depth, BOARD *pos, Globals g)
+int GetPvLine(int depth, BOARD *pos, Globals& g)
 {
 
     ASSERT(depth < 64);

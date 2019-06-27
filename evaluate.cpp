@@ -43,7 +43,7 @@ const int RookTable[64] = {
 	25, 25, 25, 25, 25, 25, 25, 25,
 	0, 0, 5, 10, 10, 5, 0, 0};
 
-int evalPosition(BOARD *pos, Globals g)
+int evalPosition(BOARD *pos, Globals& g)
 {
 	int pce;
 	int sq;

@@ -12,5 +12,5 @@ int PieceValidEmpty(const int pce);
 
 int PieceValid(const int pce);
 
-void MirrorTest(std::string filename, BOARD *pos, Globals g);
+void MirrorTest(std::string filename, BOARD *pos, Globals& g);
 #endif

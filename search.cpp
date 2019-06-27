@@ -88,7 +88,7 @@ static void clearForSearch(BOARD *pos, SEARCHINFO *info)
 }
 
 // https://www.chessprogramming.org/Quiescence_Search
-static int quiescence(int alpha, int beta, BOARD *pos, SEARCHINFO *info, Globals g)
+static int quiescence(int alpha, int beta, BOARD *pos, SEARCHINFO *info, Globals& g)
 {
 	ASSERT(checkBoard(pos, g));
 
@@ -172,7 +172,7 @@ static int quiescence(int alpha, int beta, BOARD *pos, SEARCHINFO *info, Globals
 	return alpha;
 }
 
-static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *info, int doNull, Globals g)
+static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *info, int doNull, Globals& g)
 {
 	ASSERT(checkBoard(pos, g));
 	if (depth == 0)
@@ -294,7 +294,7 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *inf
 	return alpha;
 }
 
-void searchPosition(BOARD *pos, SEARCHINFO *info, Globals g)
+void searchPosition(BOARD *pos, SEARCHINFO *info, Globals& g)
 {
 	int bestMove = 0;
 	int bestScore = -INT_MAX;

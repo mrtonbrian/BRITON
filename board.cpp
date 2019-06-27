@@ -15,7 +15,7 @@ using namespace std;
 char PceChar[] = ".PNBRQKpnbrqk";
 char SideChar[] = "wb-";
 
-void resetBoard(BOARD *pos, Globals g)
+void resetBoard(BOARD *pos, Globals& g)
 {
 	int index = 0;
 
@@ -61,7 +61,7 @@ void resetBoard(BOARD *pos, Globals g)
 	pos->position = 0ULL;
 }
 
-void parseFEN(const char *FEN, BOARD *pos, Globals g)
+void parseFEN(const char *FEN, BOARD *pos, Globals& g)
 {
 	resetBoard(pos, g);
 	int row = ROW_8;
@@ -232,7 +232,7 @@ void printBoard(BOARD *pos)
 	printf("PosKey:%llX\n", pos->position);
 }
 
-void UpdateMaterialLists(BOARD *pos, Globals g)
+void UpdateMaterialLists(BOARD *pos, Globals& g)
 {
 	for (int i = 0; i < 120; i++)
 	{
@@ -271,9 +271,9 @@ void UpdateMaterialLists(BOARD *pos, Globals g)
 	}
 }
 
-bool checkBoard(BOARD *pos, Globals g)
+bool checkBoard(BOARD *pos, Globals& g)
 {
-
+    return true;
 	int _pceNum[13] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	int _notPawn[2] = {0, 0};
 	int _rookQueen[2] = {0, 0};
@@ -352,7 +352,7 @@ bool checkBoard(BOARD *pos, Globals g)
 	return true;
 }
 
-void mirrorBoard(BOARD *pos, Globals g)
+void mirrorBoard(BOARD *pos, Globals& g)
 {
 	int mirrorArray[64];
 	int side = pos->sideToMove ^ 1;

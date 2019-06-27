@@ -39,15 +39,16 @@ int main(int argc, char *argv[])
     searchPosition(b, info, g);
     */
 
-    //uciLoop();
+    uciLoop();
 
+    /*
     BOARD b[1];
     Globals g;
     initPvTable(b->pvTable);
     init(g);
     parseFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", b, g);
-    PerftTest(5, b, g);
-    //free(b->pvTable);
+    PerftTest(6, b, g);
+    */
 
     return 0;
 }

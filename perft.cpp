@@ -10,7 +10,7 @@
 
 long leafNodes;
 
-void Perft(int depth, BOARD *pos, Globals g)
+void Perft(int depth, BOARD *pos, Globals& g)
 {
     if (depth == 0)
     {
@@ -36,7 +36,7 @@ void Perft(int depth, BOARD *pos, Globals g)
     return;
 }
 
-void PerftTest(int depth, BOARD *pos, Globals g)
+void PerftTest(int depth, BOARD *pos, Globals& g)
 {
     printBoard(pos);
     printf("\nStarting Test To Depth:%d\n", depth);

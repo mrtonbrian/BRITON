@@ -51,11 +51,11 @@ void printBB(U64 bb, Globals &a)
 }
 
 // Speed Optimization
-void clearBit(U64 &b, int sq, Globals g)
+void clearBit(U64 &b, int sq, Globals& g)
 {
     b &= g.CLEARMASK[sq];
 }
-void setBit(U64 &b, int sq, Globals g)
+void setBit(U64 &b, int sq, Globals& g)
 {
     b |= g.SETMASK[sq];
 }

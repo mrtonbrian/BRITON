@@ -23,7 +23,7 @@ using namespace std;
 
 string STARTFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
-void parsePos(string line, BOARD *pos, Globals g)
+void parsePos(string line, BOARD *pos, Globals& g)
 {
     int index = 0;
     index += 9;
@@ -67,7 +67,7 @@ void parsePos(string line, BOARD *pos, Globals g)
     //printBoard(pos);
 }
 //position startpos moves d2d4 d7d5 g1f3 b8c6 c1f4 c8f5 e2e3 e7e6 f1b5 f8d6 f4d6 c7d6 b1c3 a8c8 e1g1 g8f6 f3g5 f6g4 b5c6
-void parseGo(string line, SEARCHINFO *info, BOARD *pos, Globals g)
+void parseGo(string line, SEARCHINFO *info, BOARD *pos, Globals& g)
 {
     int depth = -1;
     int movesToGo = 30;
@@ -151,17 +151,18 @@ void parseGo(string line, SEARCHINFO *info, BOARD *pos, Globals g)
 void uciLoop()
 {
     string line;
-    /*    
-    cout << "id name BRITON" << endl;
-    cout << "id author Brian_Ton" << endl;
-    cout << "uciok" << endl;
-    */
+
     Globals g;
     init(g);
 
     BOARD pos[1];
     SEARCHINFO info[1];
     initPvTable(pos->pvTable);
+
+    //parsePos("position startpos\n", pos, g);
+    //parseGo("go depth 7", info, pos, g);
+    //return;
+
     while (true)
     {
         cout.flush();
@@ -192,7 +193,6 @@ void uciLoop()
         else if (!line.compare(0, 2, "go"))
         {
             parseGo(line, info, pos, g);
-            //return;
         }
         else if (!line.compare(0, 4, "quit"))
         {
