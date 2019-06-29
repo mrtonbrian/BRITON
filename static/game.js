@@ -92,8 +92,8 @@ var onDrop = function (source, target) {
         boardEl.find('.square-' + data['to']).addClass('highlight-black'); // update the board to the new position
         board.position(game.fen());
         moves++;
-	// Set Eval P Tag
-    document.getElementById("eval").innerHTML = data['eval'];
+        // Set Eval P Tag
+        document.getElementById("eval").innerHTML = data['eval'];
         board.draggable = true;
     });
 };
@@ -174,7 +174,7 @@ var undo = function () {
     }
 }
 
-var bestMove = function() {
+var bestMove = function () {
     if (!game.game_over()) {
         var t = JSON.stringify({
             'time': parseFloat(document.getElementById('seconds').value),
@@ -200,7 +200,7 @@ var bestMove = function() {
                     'time': parseFloat(document.getElementById('seconds').value),
                     'pgn': game.pgn()
                 });
-            
+
                 $.post("/move", t, function (data, status) {
                     game.move(data['move'], {
                         sloppy: true
@@ -244,7 +244,7 @@ var chooseSide = function () {
             game.move(data['move'], {
                 sloppy: true
             });
-	        console.log('EVAL: ' + data['eval']);
+            console.log('EVAL: ' + data['eval']);
             // highlight comp's move
             removeHighlights('white');
             removeHighlights('black');

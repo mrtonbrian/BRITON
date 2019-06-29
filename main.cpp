@@ -21,22 +21,34 @@
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-	/*
-	BOARD b[1];
-	initPvTable(b->pvTable);
-	// Note that argv[0] is just filename
-	const char * fen = argv[1];
-	int msAllowed = atoi(argv[2]);
-	parseFEN(fen, b, g);
+int main(int argc, char *argv[])
+{
+    /*
+    BOARD b[1];
+    initPvTable(b->pvTable);
+    // Note that argv[0] is just filename
+    const char * fen = argv[1];
+    int msAllowed = atoi(argv[2]);
+    parseFEN(fen, b, g);
 
-	SEARCHINFO info[1];
-	info->starttime = GetTimeMs();
-	info->stoptime  = GetTimeMs() + msAllowed;
-	info->depth = 64;
-	info->timeset = true;
-	searchPosition(b, info, g);
-	*/
+    SEARCHINFO info[1];
+    info->starttime = GetTimeMs();
+    info->stoptime  = GetTimeMs() + msAllowed;
+    info->depth = 64;
+    info->timeset = true;
+    searchPosition(b, info, g);
+    */
 
-	uciLoop();
+    uciLoop();
+
+    /*
+    BOARD b[1];
+    Globals g;
+    initPvTable(b->pvTable);
+    init(g);
+    parseFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", b, g);
+    PerftTest(6, b, g);
+    */
+
+    return 0;
 }

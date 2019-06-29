@@ -9,6 +9,6 @@
 #ifndef MISC_H
 #define MISC_H
 int GetTimeMs();
-void readInput(SEARCHINFO * info);
+void readInput(SEARCHINFO *info);
 int InputWaiting();
 #endif

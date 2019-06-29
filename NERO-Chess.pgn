@@ -1,0 +1,32 @@
+[Event "Nero Vs. Chess"]
+[Site "DESKTOP-4KL00BD"]
+[Date "2019.04.25"]
+[Round "3"]
+[White "Nero_61"]
+[Black "Chess"]
+[Result "1-0"]
+[BlackElo "1800"]
+[ECO "D02"]
+[Opening "Queen's Pawn"]
+[Time "23:52:25"]
+[Variation "2.Nf3 Nc6 3.Bf4"]
+[WhiteElo "1447"]
+[TimeControl "360"]
+[Termination "rules infraction"]
+[PlyCount "19"]
+[WhiteType "program"]
+[BlackType "program"]
+
+1. d4 d5 {(d7-d5 Bc1-e3 Bc8-e6 Nb1-c3 Nb8-c6 Ng1-f3 Ng8-f6) 0.00/7 11} 2.
+Nf3 Nc6 {(Nb8-c6 Nb1-c3 Ng8-f6 e2-e3 Bc8-e6 Bf1-d3) +0.15/6 11} 3. Bf4
+{(c1f4 c8g4 b1d2) +0.29/7 11} Bf5 {(Bc8-f5 e2-e3 e7-e6 Nb1-c3 Bf8-b4
+Bf1-d3) +0.15/6 11} 4. e3 {(e2e3 c6b4 b1a3) +0.48/7 11} e6 {(e7-e6 Bf1-b5
+Bf8-d6 Bf4xd6 c7xd6 Nb1-c3) +0.10/6 10} 5. Bb5 {(f1b5 f8d6 f4d6) +0.34/7
+10} Bd6 {(Bf8-d6 c2-c4 Bd6xf4 e3xf4 Ng8-f6 Nb1-c3) +0.10/6 10} 6. Bxd6
+{(f4d6 c7d6 b1c3) +0.28/7 10} cxd6 {(c7xd6 c2-c4 d5xc4 Bb5xc4 d6-d5 Bc4-d3)
+0.00/6 10} 7. Nc3 {(b1c3 g8f6 b5d3) +0.28/7 10} Rc8 {(Ra8-c8 Qd1-e2 Ng8-f6
+O-O-O Nf6-e4 Rh1-e1) -0.05/6 9} 8. O-O {(e1g1 g8f6 f3h4) +0.30/7 9} Nf6
+{(Ng8-f6 Ra1-c1 O-O Bb5xc6 Rc8xc6 Rf1-e1) -0.05/6 9} 9. Ng5 {(f3g5 h7h6
+g5f3) +0.26/7 9} Ng4 {(Nf6-g4 Ng5-f3 Rh8-f8 Bb5xc6+ Rc8xc6) -0.10/5 9} 10.
+Bxc6 {(b5c6 b7c6 g5f3) +0.11/7 9  Arena Adjudication. Illegal move!} 1-0
+
