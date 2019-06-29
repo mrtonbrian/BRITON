@@ -88,7 +88,7 @@ static void clearForSearch(BOARD *pos, SEARCHINFO *info)
 }
 
 // https://www.chessprogramming.org/Quiescence_Search
-static int quiescence(int alpha, int beta, BOARD *pos, SEARCHINFO *info, Globals& g)
+static int quiescence(int alpha, int beta, BOARD *pos, SEARCHINFO *info, Globals &g)
 {
 	ASSERT(checkBoard(pos, g));
 
@@ -99,11 +99,11 @@ static int quiescence(int alpha, int beta, BOARD *pos, SEARCHINFO *info, Globals
 	}
 	info->nodes++;
 
-	if (isRepetition(pos) || pos->fiftyMove >= 100)
+	if (isRepetition(pos) || pos->fiftyMove >= 100 && pos->ply)
 	{
 		return 0;
 	}
-	if (pos->ply > MAXDEPTH)
+	if (pos->ply > MAXDEPTH - 1)
 	{
 		return evalPosition(pos, g);
 	}
@@ -126,6 +126,18 @@ static int quiescence(int alpha, int beta, BOARD *pos, SEARCHINFO *info, Globals
 	int bestMove = 0;
 	score = INT_MIN;
 	int pvMove = probeTable(pos);
+
+	if (pvMove != 0)
+	{
+		for (int moveNum = 0; moveNum < list.count; ++moveNum)
+		{
+			if (list.moves[moveNum].move == pvMove)
+			{
+				list.moves[moveNum].score = 2000000;
+				break;
+			}
+		}
+	}
 
 	for (int moveNum = 0; moveNum < list.count; moveNum++)
 	{
@@ -172,7 +184,7 @@ static int quiescence(int alpha, int beta, BOARD *pos, SEARCHINFO *info, Globals
 	return alpha;
 }
 
-static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *info, int doNull, Globals& g)
+static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *info, int doNull, Globals &g)
 {
 	ASSERT(checkBoard(pos, g));
 	if (depth == 0)
@@ -194,7 +206,7 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *inf
 	}
 
 	// Going Too Deep
-	if (pos->ply > MAXDEPTH)
+	if (pos->ply > MAXDEPTH - 1)
 	{
 		return evalPosition(pos, g);
 	}
@@ -294,7 +306,7 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *inf
 	return alpha;
 }
 
-void searchPosition(BOARD *pos, SEARCHINFO *info, Globals& g)
+void searchPosition(BOARD *pos, SEARCHINFO *info, Globals &g)
 {
 	int bestMove = 0;
 	int bestScore = -INT_MAX;
