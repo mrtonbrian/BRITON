@@ -11,26 +11,25 @@
 
 using namespace std;
 const int CastlePerm[120] = {
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
-    15, 13, 15, 15, 15, 12, 15, 15, 14, 15,
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
-    15, 7, 15, 15, 15, 3, 15, 15, 11, 15,
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 15};
+        15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
+        15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
+        15, 13, 15, 15, 15, 12, 15, 15, 14, 15,
+        15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
+        15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
+        15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
+        15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
+        15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
+        15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
+        15, 7, 15, 15, 15, 3, 15, 15, 11, 15,
+        15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
+        15, 15, 15, 15, 15, 15, 15, 15, 15, 15};
 
 #define HASH_PCE(pce, sq) (pos->position ^= (g.PieceKeys[(pce)][(sq)]))
 #define HASH_CA (pos->position ^= (g.CastleKeys[(pos->castlePerm)]))
 #define HASH_SIDE (pos->position ^= (g.SideKey))
 #define HASH_EP (pos->position ^= (g.PieceKeys[EMPTY][(pos->enPass)]))
 
-static void ClearPiece(const int sq, BOARD *pos, Globals& g)
-{
+static void ClearPiece(const int sq, BOARD *pos, Globals &g) {
 
     ASSERT(!g.isOffBoard(sq));
 
@@ -47,28 +46,20 @@ static void ClearPiece(const int sq, BOARD *pos, Globals& g)
     pos->pieces[sq] = EMPTY;
     pos->material[col] -= g.PieceVal[pce];
 
-    if (g.NonPawn[pce])
-    {
+    if (g.NonPawn[pce]) {
         pos->nonPawn[col]--;
-        if (g.RookQueen[pce])
-        {
+        if (g.RookQueen[pce]) {
             pos->RQ[col]--;
-        }
-        else
-        {
+        } else {
             pos->KB[col]--;
         }
-    }
-    else
-    {
+    } else {
         clearBit(pos->pawns[col], g.SQ64(sq), g);
         clearBit(pos->pawns[BOTH], g.SQ64(sq), g);
     }
 
-    for (index = 0; index < pos->pieceNum[pce]; ++index)
-    {
-        if (pos->pList[pce][index] == sq)
-        {
+    for (index = 0; index < pos->pieceNum[pce]; ++index) {
+        if (pos->pList[pce][index] == sq) {
             t_pieceNum = index;
             break;
         }
@@ -81,8 +72,7 @@ static void ClearPiece(const int sq, BOARD *pos, Globals& g)
     pos->pList[pce][t_pieceNum] = pos->pList[pce][pos->pieceNum[pce]];
 }
 
-static void AddPiece(const int sq, BOARD *pos, const int pce, Globals& g)
-{
+static void AddPiece(const int sq, BOARD *pos, const int pce, Globals &g) {
 
     ASSERT(PieceValid(pce));
     ASSERT(!g.isOffBoard(sq));
@@ -93,20 +83,14 @@ static void AddPiece(const int sq, BOARD *pos, const int pce, Globals& g)
 
     pos->pieces[sq] = pce;
 
-    if (g.NonPawn[pce])
-    {
+    if (g.NonPawn[pce]) {
         pos->nonPawn[col]++;
-        if (g.RookQueen[pce])
-        {
+        if (g.RookQueen[pce]) {
             pos->RQ[col]++;
-        }
-        else
-        {
+        } else {
             pos->KB[col]++;
         }
-    }
-    else
-    {
+    } else {
         setBit(pos->pawns[col], g.SQ64(sq), g);
         setBit(pos->pawns[BOTH], g.SQ64(sq), g);
     }
@@ -115,8 +99,7 @@ static void AddPiece(const int sq, BOARD *pos, const int pce, Globals& g)
     pos->pList[pce][pos->pieceNum[pce]++] = sq;
 }
 
-static void MovePiece(const int from, const int to, BOARD *pos, Globals& g)
-{
+static void MovePiece(const int from, const int to, BOARD *pos, Globals &g) {
 
     ASSERT(!g.isOffBoard(from));
     ASSERT(!g.isOffBoard(to));
@@ -133,18 +116,15 @@ static void MovePiece(const int from, const int to, BOARD *pos, Globals& g)
     HASH_PCE(pce, to);
     pos->pieces[to] = pce;
 
-    if (!g.NonPawn[pce])
-    {
+    if (!g.NonPawn[pce]) {
         clearBit(pos->pawns[col], g.SQ64(from), g);
         clearBit(pos->pawns[BOTH], g.SQ64(from), g);
         setBit(pos->pawns[col], g.SQ64(to), g);
         setBit(pos->pawns[BOTH], g.SQ64(to), g);
     }
 
-    for (index = 0; index < pos->pieceNum[pce]; ++index)
-    {
-        if (pos->pList[pce][index] == from)
-        {
+    for (index = 0; index < pos->pieceNum[pce]; ++index) {
+        if (pos->pList[pce][index] == from) {
             pos->pList[pce][index] = to;
             t_PieceNum = true;
             break;
@@ -153,8 +133,7 @@ static void MovePiece(const int from, const int to, BOARD *pos, Globals& g)
     ASSERT(t_PieceNum);
 }
 
-bool makeMove(BOARD *pos, int move, Globals& g)
-{
+bool makeMove(BOARD *pos, int move, Globals &g) {
 
     ASSERT(checkBoard(pos, g));
 
@@ -169,36 +148,29 @@ bool makeMove(BOARD *pos, int move, Globals& g)
 
     pos->history[pos->hisPly].posKey = pos->position;
 
-    if (move & 0x40000)
-    {
-        if (sideToMove == WHITE)
-        {
+    if (move & 0x40000) {
+        if (sideToMove == WHITE) {
             ClearPiece(to - 10, pos, g);
-        }
-        else
-        {
+        } else {
             ClearPiece(to + 10, pos, g);
         }
-    }
-    else if (move & 0x1000000)
-    {
-        switch (to)
-        {
-        case C1:
-            MovePiece(A1, D1, pos, g);
-            break;
-        case C8:
-            MovePiece(A8, D8, pos, g);
-            break;
-        case G1:
-            MovePiece(H1, F1, pos, g);
-            break;
-        case G8:
-            MovePiece(H8, F8, pos, g);
-            break;
-        default:
-            ASSERT(false);
-            break;
+    } else if (move & 0x1000000) {
+        switch (to) {
+            case C1:
+                MovePiece(A1, D1, pos, g);
+                break;
+            case C8:
+                MovePiece(A8, D8, pos, g);
+                break;
+            case G1:
+                MovePiece(H1, F1, pos, g);
+                break;
+            case G8:
+                MovePiece(H8, F8, pos, g);
+                break;
+            default:
+                ASSERT(false);
+                break;
         }
     }
 
@@ -220,8 +192,7 @@ bool makeMove(BOARD *pos, int move, Globals& g)
     int captured = capturePiece(move);
     pos->fiftyMove++;
 
-    if (captured != EMPTY)
-    {
+    if (captured != EMPTY) {
         ASSERT(PieceValid(captured));
         ClearPiece(to, pos, g);
         pos->fiftyMove = 0;
@@ -230,18 +201,13 @@ bool makeMove(BOARD *pos, int move, Globals& g)
     pos->hisPly++;
     pos->ply++;
 
-    if (!g.NonPawn[pos->pieces[from]])
-    {
+    if (!g.NonPawn[pos->pieces[from]]) {
         pos->fiftyMove = 0;
-        if (move & 0x80000)
-        {
-            if (sideToMove == WHITE)
-            {
+        if (move & 0x80000) {
+            if (sideToMove == WHITE) {
                 pos->enPass = from + 10;
                 ASSERT(g.RowBoard[pos->enPass] == ROW_3);
-            }
-            else
-            {
+            } else {
                 pos->enPass = from - 10;
                 ASSERT(g.RowBoard[pos->enPass] == ROW_6);
             }
@@ -252,15 +218,13 @@ bool makeMove(BOARD *pos, int move, Globals& g)
     MovePiece(from, to, pos, g);
 
     int prPce = promotionPiece(move);
-    if (prPce != EMPTY)
-    {
+    if (prPce != EMPTY) {
         ASSERT(PieceValid(prPce) && g.NonPawn[prPce]);
         ClearPiece(to, pos, g);
         AddPiece(to, pos, prPce, g);
     }
 
-    if (g.isKing[pos->pieces[to]])
-    {
+    if (g.isKing[pos->pieces[to]]) {
         pos->king[pos->sideToMove] = to;
     }
 
@@ -269,8 +233,7 @@ bool makeMove(BOARD *pos, int move, Globals& g)
 
     ASSERT(checkBoard(pos, g));
 
-    if (squareAttacked(pos->king[sideToMove], pos->sideToMove, g, pos))
-    {
+    if (squareAttacked(pos->king[sideToMove], pos->sideToMove, g, pos)) {
         TakeMove(pos, g);
         return false;
     }
@@ -278,8 +241,7 @@ bool makeMove(BOARD *pos, int move, Globals& g)
     return true;
 }
 
-void TakeMove(BOARD *pos, Globals& g)
-{
+void TakeMove(BOARD *pos, Globals &g) {
 
     ASSERT(checkBoard(pos, g));
 
@@ -308,55 +270,45 @@ void TakeMove(BOARD *pos, Globals& g)
     pos->sideToMove ^= 1;
     HASH_SIDE;
 
-    if (0x40000 & move)
-    {
-        if (pos->sideToMove == WHITE)
-        {
+    if (0x40000 & move) {
+        if (pos->sideToMove == WHITE) {
             AddPiece(to - 10, pos, bP, g);
-        }
-        else
-        {
+        } else {
             AddPiece(to + 10, pos, wP, g);
         }
-    }
-    else if (0x1000000 & move)
-    {
-        switch (to)
-        {
-        case C1:
-            MovePiece(D1, A1, pos, g);
-            break;
-        case C8:
-            MovePiece(D8, A8, pos, g);
-            break;
-        case G1:
-            MovePiece(F1, H1, pos, g);
-            break;
-        case G8:
-            MovePiece(F8, H8, pos, g);
-            break;
-        default:
-            ASSERT(false);
-            break;
+    } else if (0x1000000 & move) {
+        switch (to) {
+            case C1:
+                MovePiece(D1, A1, pos, g);
+                break;
+            case C8:
+                MovePiece(D8, A8, pos, g);
+                break;
+            case G1:
+                MovePiece(F1, H1, pos, g);
+                break;
+            case G8:
+                MovePiece(F8, H8, pos, g);
+                break;
+            default:
+                ASSERT(false);
+                break;
         }
     }
 
     MovePiece(to, from, pos, g);
 
-    if (g.isKing[pos->pieces[from]])
-    {
+    if (g.isKing[pos->pieces[from]]) {
         pos->king[pos->sideToMove] = from;
     }
 
     int captured = capturePiece(move);
-    if (captured != EMPTY)
-    {
+    if (captured != EMPTY) {
         ASSERT(PieceValid(captured));
         AddPiece(to, pos, captured, g);
     }
 
-    if (promotionPiece(move) != EMPTY)
-    {
+    if (promotionPiece(move) != EMPTY) {
         ASSERT(PieceValid(promotionPiece(move)) && g.NonPawn[promotionPiece(move)]);
         ClearPiece(from, pos, g);
         AddPiece(from, pos, (g.PieceCol[promotionPiece(move)] == WHITE ? wP : bP), g);

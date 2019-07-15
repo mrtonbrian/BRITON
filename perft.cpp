@@ -10,10 +10,8 @@
 
 long leafNodes;
 
-void Perft(int depth, BOARD *pos, Globals& g)
-{
-    if (depth == 0)
-    {
+void Perft(int depth, BOARD *pos, Globals &g) {
+    if (depth == 0) {
         leafNodes++;
         return;
     }
@@ -22,11 +20,9 @@ void Perft(int depth, BOARD *pos, Globals& g)
     generateAllMoves(pos, list, g);
 
     int MoveNum = 0;
-    for (MoveNum = 0; MoveNum < list.count; ++MoveNum)
-    {
+    for (MoveNum = 0; MoveNum < list.count; ++MoveNum) {
 
-        if (!makeMove(pos, list.moves[MoveNum].move, g))
-        {
+        if (!makeMove(pos, list.moves[MoveNum].move, g)) {
             continue;
         }
         Perft(depth - 1, pos, g);
@@ -36,8 +32,7 @@ void Perft(int depth, BOARD *pos, Globals& g)
     return;
 }
 
-void PerftTest(int depth, BOARD *pos, Globals& g)
-{
+void PerftTest(int depth, BOARD *pos, Globals &g) {
     printBoard(pos);
     printf("\nStarting Test To Depth:%d\n", depth);
     leafNodes = 0;
@@ -48,11 +43,9 @@ void PerftTest(int depth, BOARD *pos, Globals& g)
 
     int move;
     int MoveNum = 0;
-    for (MoveNum = 0; MoveNum < list.count; ++MoveNum)
-    {
+    for (MoveNum = 0; MoveNum < list.count; ++MoveNum) {
         move = list.moves[MoveNum].move;
-        if (!makeMove(pos, move, g))
-        {
+        if (!makeMove(pos, move, g)) {
             continue;
         }
         long cumnodes = leafNodes;

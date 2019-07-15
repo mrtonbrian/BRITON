@@ -9,8 +9,7 @@
 
 using namespace std;
 
-char *printSquare(int square, Globals& g)
-{
+char *printSquare(int square, Globals &g) {
     static char SqString[6];
 
     int col = g.ColumnBoard[square];
@@ -21,8 +20,7 @@ char *printSquare(int square, Globals& g)
     return SqString;
 }
 
-char *printMove(int move, Globals& g)
-{
+char *printMove(int move, Globals &g) {
     static char MvString[6];
     int _fRow = g.RowBoard[fromSq(move)];
     int _fCol = g.ColumnBoard[fromSq(move)];
@@ -31,32 +29,23 @@ char *printMove(int move, Globals& g)
 
     int promoted = promotionPiece(move);
 
-    if (isPromotion(move))
-    {
+    if (isPromotion(move)) {
         char piecechar = 'q';
-        if (g.IsKnight(promoted))
-        {
+        if (g.IsKnight(promoted)) {
             piecechar = 'n';
-        }
-        else if (g.IsRookQueen(promoted) && !g.IsBishopQueen(promoted))
-        {
+        } else if (g.IsRookQueen(promoted) && !g.IsBishopQueen(promoted)) {
             piecechar = 'r';
-        }
-        else if (!g.IsRookQueen(promoted) && g.IsBishopQueen(promoted))
-        {
+        } else if (!g.IsRookQueen(promoted) && g.IsBishopQueen(promoted)) {
             piecechar = 'b';
         }
         sprintf(MvString, "%c%c%c%c%c", ('a' + _fCol), ('1' + _fRow), ('a' + tCol), ('1' + tRow), piecechar);
-    }
-    else
-    {
+    } else {
         sprintf(MvString, "%c%c%c%c", ('a' + _fCol), ('1' + _fRow), ('a' + tCol), ('1' + tRow));
     }
     return MvString;
 }
 
-int parseMove(string inp, BOARD *pos, Globals& g)
-{
+int parseMove(string inp, BOARD *pos, Globals &g) {
     //cout << "PARSE" << endl;
     //cout << inp << endl;
     if (inp.at(1) > '8' || inp.at(1) < '1')
@@ -79,29 +68,19 @@ int parseMove(string inp, BOARD *pos, Globals& g)
     int Move = 0;
     int PromPce = EMPTY;
 
-    for (int MoveNum = 0; MoveNum < list.count; ++MoveNum)
-    {
+    for (int MoveNum = 0; MoveNum < list.count; ++MoveNum) {
         Move = list.moves[MoveNum].move;
-        if (fromSq(Move) == from && toSq(Move) == to)
-        {
+        if (fromSq(Move) == from && toSq(Move) == to) {
             //cout << "NOTHERE" << endl;
             PromPce = promotionPiece(Move);
-            if (PromPce != EMPTY)
-            {
-                if (g.IsRookQueen(PromPce) && !g.IsBishopQueen(PromPce) && inp.at(4) == 'r')
-                {
+            if (PromPce != EMPTY) {
+                if (g.IsRookQueen(PromPce) && !g.IsBishopQueen(PromPce) && inp.at(4) == 'r') {
                     return Move;
-                }
-                else if (!g.IsRookQueen(PromPce) && g.IsBishopQueen(PromPce) && inp.at(4) == 'b')
-                {
+                } else if (!g.IsRookQueen(PromPce) && g.IsBishopQueen(PromPce) && inp.at(4) == 'b') {
                     return Move;
-                }
-                else if (g.IsRookQueen(PromPce) && g.IsBishopQueen(PromPce) && inp.at(4) == 'q')
-                {
+                } else if (g.IsRookQueen(PromPce) && g.IsBishopQueen(PromPce) && inp.at(4) == 'q') {
                     return Move;
-                }
-                else if (g.IsKnight(PromPce) && inp.at(4) == 'n')
-                {
+                } else if (g.IsKnight(PromPce) && inp.at(4) == 'n') {
                     return Move;
                 }
                 continue;
@@ -113,11 +92,9 @@ int parseMove(string inp, BOARD *pos, Globals& g)
     return 0;
 }
 
-void printMoveList(MOVES_LIST &list, Globals& g)
-{
+void printMoveList(MOVES_LIST &list, Globals &g) {
     printf("MOVELIST: \n");
-    for (int i = 0; i < list.count; i++)
-    {
+    for (int i = 0; i < list.count; i++) {
         printf("MOVE:%d > %s (Score: %d)\n", i + 1, printMove(list.moves[i].move, g), list.moves[i].score);
     }
 

@@ -36,8 +36,7 @@ typedef unsigned long long U64;
                  ((U64)rand() & 0xf) << 60)
 
 // Sets Values To These (EMPTY = 0, White Pawn = 1, White Knight = 2, etc.)
-enum
-{
+enum {
     EMPTY,
     wP,
     wN,
@@ -53,8 +52,7 @@ enum
     bK
 };
 
-enum
-{
+enum {
     COL_A,
     COL_B,
     COL_C,
@@ -65,8 +63,7 @@ enum
     COL_H,
     COL_NONE
 };
-enum
-{
+enum {
     ROW_1,
     ROW_2,
     ROW_3,
@@ -78,8 +75,7 @@ enum
     ROW_NONE
 };
 
-enum
-{
+enum {
     A1 = 21,
     B1,
     C1,
@@ -148,42 +144,36 @@ enum
     OFFBOARD
 };
 
-enum
-{
+enum {
     WHITE,
     BLACK,
     BOTH
 };
 
 // Castling White Kingside, White Queenside, etc.
-enum
-{
+enum {
     WHITE_K_K = 1,
     WHITE_K_Q = 2,
     BLACK_K_K = 4,
     BLACK_K_Q = 8
 };
 
-typedef struct
-{
+typedef struct {
     U64 position;
     int move;
 } PVENTRY;
 
-typedef struct
-{
+typedef struct {
     PVENTRY *pTable;
     int numEntries;
 } PVTABLE;
 
-typedef struct
-{
+typedef struct {
     int move;
     int score;
 } MOVE;
 
-typedef struct
-{
+typedef struct {
     int move;
     int castle;
     int enPass;
@@ -191,8 +181,7 @@ typedef struct
     U64 posKey;
 } UNDO;
 
-typedef struct
-{
+typedef struct {
     int pieces[SQUARENUM];
     // BitBoards
     U64 pawns[3];
@@ -234,14 +223,12 @@ typedef struct
     int searchKillers[2][64];
 } BOARD;
 
-typedef struct
-{
+typedef struct {
     std::vector<MOVE> moves;
     int count;
 } MOVES_LIST;
 
-typedef struct
-{
+typedef struct {
     int starttime;
     int stoptime;
     int depth;

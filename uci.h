@@ -3,5 +3,7 @@
 
 #ifndef UCI
 #define UCI
+
 void uciLoop();
+
 #endif

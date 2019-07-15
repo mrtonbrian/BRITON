@@ -5,6 +5,6 @@
 #ifndef ATTACK
 #define ATTACK
 
-bool squareAttacked(int sq, int side, Globals& g, BOARD *pos);
+bool squareAttacked(int sq, int side, Globals &g, BOARD *pos);
 
 #endif

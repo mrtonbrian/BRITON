@@ -1,18 +1,21 @@
 import random
- 
+
 AMOUNT = 5000
 
 piece_list = ["R", "N", "B", "Q", "P"]
- 
- 
+
+
 def place_kings(brd):
     while True:
-        rank_white, file_white, rank_black, file_black = random.randint(0,7), random.randint(0,7), random.randint(0,7), random.randint(0,7)
-        diff_list = [abs(rank_white - rank_black),  abs(file_white - file_black)]
+        rank_white, file_white, rank_black, file_black = random.randint(0, 7), random.randint(0, 7), random.randint(0,
+                                                                                                                    7), random.randint(
+            0, 7)
+        diff_list = [abs(rank_white - rank_black), abs(file_white - file_black)]
         if sum(diff_list) > 2 or set(diff_list) == set([0, 2]):
             brd[rank_white][file_white], brd[rank_black][file_black] = "K", "k"
             break
- 
+
+
 def populate_board(brd, wp, bp):
     for x in range(2):
         if x == 0:
@@ -27,7 +30,8 @@ def populate_board(brd, wp, bp):
             if brd[piece_rank][piece_file] == " " and pawn_on_promotion_square(piece, piece_rank) == False:
                 brd[piece_rank][piece_file] = piece
                 piece_amount -= 1
- 
+
+
 def fen_from_board(brd):
     fen = ""
     for x in brd:
@@ -45,15 +49,16 @@ def fen_from_board(brd):
         fen += "/" if fen.count("/") < 7 else ""
     fen += " w - - 0 1\n"
     return fen
- 
+
+
 def pawn_on_promotion_square(pc, pr):
     if pc == "P" and pr == 0:
         return True
     elif pc == "p" and pr == 7:
         return True
     return False
- 
- 
+
+
 def start():
     with open("mirrorTest.txt", "a") as f:
         for i in range(0, AMOUNT):
@@ -62,7 +67,9 @@ def start():
             place_kings(board)
             populate_board(board, piece_amount_white, piece_amount_black)
             f.write(fen_from_board(board))
-            if i % int(AMOUNT/10) == 0 and i != 0:
-                print("Done", i/(int(AMOUNT/10))*100, "%")
-#entry point
+            if i % int(AMOUNT / 10) == 0 and i != 0:
+                print("Done", i / (int(AMOUNT / 10)) * 100, "%")
+
+
+# entry point
 start()
