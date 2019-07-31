@@ -18,7 +18,7 @@ const int KnightTable[64] = {
         0, -10, 0, 0, 0, 0, -10, 0,
         0, 0, 0, 5, 5, 0, 0, 0,
         0, 0, 10, 10, 10, 10, 0, 0,
-        0, 0, 10, 20, 20, 10, 0, 0,
+        0, 0, 10, 20, 20, 10, 5, 0,
         5, 10, 15, 20, 20, 15, 10, 5,
         5, 10, 10, 20, 20, 10, 10, 5,
         0, 0, 5, 10, 10, 5, 0, 0,
@@ -43,14 +43,13 @@ const int RookTable[64] = {
         0, 0, 5, 10, 10, 5, 0, 0,
         25, 25, 25, 25, 25, 25, 25, 25,
         0, 0, 5, 10, 10, 5, 0, 0};
-
 const int KingE[64] = {
         -50, -10, 0, 0, 0, 0, -10, -50,
         -10, 0, 10, 10, 10, 10, 0, -10,
-        0, 10, 15, 15, 15, 15, 10, 0,
-        0, 10, 15, 20, 20, 15, 10, 0,
-        0, 10, 15, 20, 20, 15, 10, 0,
-        0, 10, 15, 15, 15, 15, 10, 0,
+        0, 10, 20, 20, 20, 20, 10, 0,
+        0, 10, 20, 40, 40, 20, 10, 0,
+        0, 10, 20, 40, 40, 20, 10, 0,
+        0, 10, 20, 20, 20, 20, 10, 0,
         -10, 0, 10, 10, 10, 10, 0, -10,
         -50, -10, 0, 0, 0, 0, -10, -50
 };
@@ -72,9 +71,10 @@ const int rookOpenCol = 10;
 const int rookSemiOpenCol = 5;
 const int queenOpenCol = 5;
 const int queenSemiOpenCol = 3;
-const int rookBehindPassedPawn = 15;
+const int bishopPair = 30;
 
-const int endgameMaterialMax = 3915;
+int PieceVal[13] = {0, 100, 325, 325, 550, 1000, 50000, 100, 325, 325, 550, 1000, 50000};
+const int endgameMaterialMax = (1 * PieceVal[wR] + 2 * PieceVal[wN] + 2 * PieceVal[wP]);
 
 // https://en.wikipedia.org/wiki/Draw_(chess)
 /*
@@ -86,9 +86,9 @@ king and bishop versus king and bishop with the bishops on the same color.
 */
 
 bool materialDraw(const BOARD *pos) {
-    if(!pos->pieceNum[wR] && !pos->pieceNum[bR] && !pos->pieceNum[wQ] && !pos->pieceNum[bQ]) {
-        if(!pos->pieceNum[bB] && !pos->pieceNum[wB]) {
-            if(pos->pieceNum[wN] < 3 && pos->pieceNum[bN] < 3)
+    if (!pos->pieceNum[wR] && !pos->pieceNum[bR] && !pos->pieceNum[wQ] && !pos->pieceNum[bQ]) {
+        if (!pos->pieceNum[bB] && !pos->pieceNum[wB]) {
+            if (pos->pieceNum[wN] < 3 && pos->pieceNum[bN] < 3)
                 return true;
         } else if (!pos->pieceNum[wN] && !pos->pieceNum[bN]) {
             if (abs(pos->pieceNum[wB] - pos->pieceNum[bB]) < 2)
@@ -102,10 +102,12 @@ bool materialDraw(const BOARD *pos) {
             if ((pos->pieceNum[wN] + pos->pieceNum[wB]) < 2 && (pos->pieceNum[bN] + pos->pieceNum[bB]) < 2)
                 return true;
         } else if (pos->pieceNum[wR] == 1 && !pos->pieceNum[bR]) {
-            if ((pos->pieceNum[wN] + pos->pieceNum[wB] == 0) && (((pos->pieceNum[bN] + pos->pieceNum[bB]) == 1) || ((pos->pieceNum[bN] + pos->pieceNum[bB]) == 2)))
+            if ((pos->pieceNum[wN] + pos->pieceNum[wB] == 0) &&
+                (((pos->pieceNum[bN] + pos->pieceNum[bB]) == 1) || ((pos->pieceNum[bN] + pos->pieceNum[bB]) == 2)))
                 return true;
         } else if (pos->pieceNum[bR] == 1 && !pos->pieceNum[wR]) {
-            if ((pos->pieceNum[bN] + pos->pieceNum[bB] == 0) && (((pos->pieceNum[wN] + pos->pieceNum[wB]) == 1) || ((pos->pieceNum[wN] + pos->pieceNum[wB]) == 2)))
+            if ((pos->pieceNum[bN] + pos->pieceNum[bB] == 0) &&
+                (((pos->pieceNum[wN] + pos->pieceNum[wB]) == 1) || ((pos->pieceNum[wN] + pos->pieceNum[wB]) == 2)))
                 return true;
         }
     }
@@ -120,7 +122,7 @@ int evalPosition(BOARD *pos, Globals &g) {
     // Material Score
     int score = pos->material[WHITE] - pos->material[BLACK];
 
-    if (materialDraw(pos) && !pos->pieceNum[wP] && !pos->pieceNum[bP]) {
+    if (!pos->pieceNum[wP] && !pos->pieceNum[bP] && materialDraw(pos)) {
         return 0;
     }
 
@@ -136,16 +138,6 @@ int evalPosition(BOARD *pos, Globals &g) {
 
         if ((g.whitePassedMask[g.SQ64(sq)] & pos->pawns[BLACK]) == 0) {
             score += pawnPassed[g.RowBoard[sq]];
-
-            int t_sq = sq - 10;
-            for (int row = g.RowBoard[sq] - 1; row >= ROW_1; row--) {
-                // Tarrasch Rule
-                if (pos->pieces[t_sq] == wR) {
-                    score += rookBehindPassedPawn;
-                    break;
-                }
-                t_sq -= 10;
-            }
         }
     }
 
@@ -155,23 +147,12 @@ int evalPosition(BOARD *pos, Globals &g) {
         ASSERT(!g.isOffBoard(sq));
         score -= PawnTable[g.MIRROR(g.SQ64(sq))];
 
-
         if ((g.isolatedMask[g.SQ64(sq)] & pos->pawns[BLACK]) == 0) {
             score -= isolatedPawn;
         }
 
         if ((g.blackPassedMask[g.SQ64(sq)] & pos->pawns[WHITE]) == 0) {
             score -= pawnPassed[7 - g.RowBoard[sq]];
-
-            int t_sq = sq + 10;
-            for (int row = g.RowBoard[sq] + 1; row <= ROW_8; row++) {
-                if (pos->pieces[t_sq] == bR) {
-                    score -= rookBehindPassedPawn;
-                    break;
-                }
-
-                t_sq += 10;
-            }
         }
     }
 
@@ -270,7 +251,10 @@ int evalPosition(BOARD *pos, Globals &g) {
         score -= KingO[g.MIRROR(g.SQ64(sq))];
     }
 
-     // Note that in calculation, white has a positive score, black, has negative score
+    if (pos->pieceNum[wB] >= 2) score += bishopPair;
+    if (pos->pieceNum[bB] >= 2) score -= bishopPair;
+
+    // Note that in calculation, white has a positive score, black, has negative score
     if (pos->sideToMove == WHITE) {
         return score;
     } else {

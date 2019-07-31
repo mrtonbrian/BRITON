@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/73/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/81/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/73/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/81/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/73/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/81/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/73/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/81/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named chess
+# Target rules for targets named BRITON
 
 # Build rule for target.
-chess: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 chess
-.PHONY : chess
+BRITON: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BRITON
+.PHONY : BRITON
 
 # fast build rule for target.
-chess/fast:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/build
-.PHONY : chess/fast
+BRITON/fast:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/build
+.PHONY : BRITON/fast
 
 attack.o: attack.cpp.o
 
@@ -129,7 +129,7 @@ attack.o: attack.cpp.o
 
 # target to build an object file
 attack.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/attack.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/attack.cpp.o
 .PHONY : attack.cpp.o
 
 attack.i: attack.cpp.i
@@ -138,7 +138,7 @@ attack.i: attack.cpp.i
 
 # target to preprocess a source file
 attack.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/attack.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/attack.cpp.i
 .PHONY : attack.cpp.i
 
 attack.s: attack.cpp.s
@@ -147,7 +147,7 @@ attack.s: attack.cpp.s
 
 # target to generate assembly for a file
 attack.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/attack.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/attack.cpp.s
 .PHONY : attack.cpp.s
 
 bitboards.o: bitboards.cpp.o
@@ -156,7 +156,7 @@ bitboards.o: bitboards.cpp.o
 
 # target to build an object file
 bitboards.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/bitboards.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/bitboards.cpp.o
 .PHONY : bitboards.cpp.o
 
 bitboards.i: bitboards.cpp.i
@@ -165,7 +165,7 @@ bitboards.i: bitboards.cpp.i
 
 # target to preprocess a source file
 bitboards.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/bitboards.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/bitboards.cpp.i
 .PHONY : bitboards.cpp.i
 
 bitboards.s: bitboards.cpp.s
@@ -174,7 +174,7 @@ bitboards.s: bitboards.cpp.s
 
 # target to generate assembly for a file
 bitboards.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/bitboards.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/bitboards.cpp.s
 .PHONY : bitboards.cpp.s
 
 board.o: board.cpp.o
@@ -183,7 +183,7 @@ board.o: board.cpp.o
 
 # target to build an object file
 board.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/board.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/board.cpp.o
 .PHONY : board.cpp.o
 
 board.i: board.cpp.i
@@ -192,7 +192,7 @@ board.i: board.cpp.i
 
 # target to preprocess a source file
 board.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/board.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/board.cpp.i
 .PHONY : board.cpp.i
 
 board.s: board.cpp.s
@@ -201,7 +201,7 @@ board.s: board.cpp.s
 
 # target to generate assembly for a file
 board.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/board.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/board.cpp.s
 .PHONY : board.cpp.s
 
 evaluate.o: evaluate.cpp.o
@@ -210,7 +210,7 @@ evaluate.o: evaluate.cpp.o
 
 # target to build an object file
 evaluate.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/evaluate.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/evaluate.cpp.o
 .PHONY : evaluate.cpp.o
 
 evaluate.i: evaluate.cpp.i
@@ -219,7 +219,7 @@ evaluate.i: evaluate.cpp.i
 
 # target to preprocess a source file
 evaluate.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/evaluate.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/evaluate.cpp.i
 .PHONY : evaluate.cpp.i
 
 evaluate.s: evaluate.cpp.s
@@ -228,7 +228,7 @@ evaluate.s: evaluate.cpp.s
 
 # target to generate assembly for a file
 evaluate.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/evaluate.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/evaluate.cpp.s
 .PHONY : evaluate.cpp.s
 
 hashkey.o: hashkey.cpp.o
@@ -237,7 +237,7 @@ hashkey.o: hashkey.cpp.o
 
 # target to build an object file
 hashkey.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/hashkey.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/hashkey.cpp.o
 .PHONY : hashkey.cpp.o
 
 hashkey.i: hashkey.cpp.i
@@ -246,7 +246,7 @@ hashkey.i: hashkey.cpp.i
 
 # target to preprocess a source file
 hashkey.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/hashkey.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/hashkey.cpp.i
 .PHONY : hashkey.cpp.i
 
 hashkey.s: hashkey.cpp.s
@@ -255,7 +255,7 @@ hashkey.s: hashkey.cpp.s
 
 # target to generate assembly for a file
 hashkey.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/hashkey.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/hashkey.cpp.s
 .PHONY : hashkey.cpp.s
 
 init.o: init.cpp.o
@@ -264,7 +264,7 @@ init.o: init.cpp.o
 
 # target to build an object file
 init.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/init.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/init.cpp.o
 .PHONY : init.cpp.o
 
 init.i: init.cpp.i
@@ -273,7 +273,7 @@ init.i: init.cpp.i
 
 # target to preprocess a source file
 init.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/init.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/init.cpp.i
 .PHONY : init.cpp.i
 
 init.s: init.cpp.s
@@ -282,7 +282,7 @@ init.s: init.cpp.s
 
 # target to generate assembly for a file
 init.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/init.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/init.cpp.s
 .PHONY : init.cpp.s
 
 io.o: io.cpp.o
@@ -291,7 +291,7 @@ io.o: io.cpp.o
 
 # target to build an object file
 io.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/io.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/io.cpp.o
 .PHONY : io.cpp.o
 
 io.i: io.cpp.i
@@ -300,7 +300,7 @@ io.i: io.cpp.i
 
 # target to preprocess a source file
 io.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/io.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/io.cpp.i
 .PHONY : io.cpp.i
 
 io.s: io.cpp.s
@@ -309,7 +309,7 @@ io.s: io.cpp.s
 
 # target to generate assembly for a file
 io.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/io.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/io.cpp.s
 .PHONY : io.cpp.s
 
 main.o: main.cpp.o
@@ -318,7 +318,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -327,7 +327,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -336,7 +336,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 makemove.o: makemove.cpp.o
@@ -345,7 +345,7 @@ makemove.o: makemove.cpp.o
 
 # target to build an object file
 makemove.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/makemove.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/makemove.cpp.o
 .PHONY : makemove.cpp.o
 
 makemove.i: makemove.cpp.i
@@ -354,7 +354,7 @@ makemove.i: makemove.cpp.i
 
 # target to preprocess a source file
 makemove.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/makemove.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/makemove.cpp.i
 .PHONY : makemove.cpp.i
 
 makemove.s: makemove.cpp.s
@@ -363,7 +363,7 @@ makemove.s: makemove.cpp.s
 
 # target to generate assembly for a file
 makemove.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/makemove.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/makemove.cpp.s
 .PHONY : makemove.cpp.s
 
 misc.o: misc.cpp.o
@@ -372,7 +372,7 @@ misc.o: misc.cpp.o
 
 # target to build an object file
 misc.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/misc.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/misc.cpp.o
 .PHONY : misc.cpp.o
 
 misc.i: misc.cpp.i
@@ -381,7 +381,7 @@ misc.i: misc.cpp.i
 
 # target to preprocess a source file
 misc.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/misc.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/misc.cpp.i
 .PHONY : misc.cpp.i
 
 misc.s: misc.cpp.s
@@ -390,7 +390,7 @@ misc.s: misc.cpp.s
 
 # target to generate assembly for a file
 misc.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/misc.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/misc.cpp.s
 .PHONY : misc.cpp.s
 
 move.o: move.cpp.o
@@ -399,7 +399,7 @@ move.o: move.cpp.o
 
 # target to build an object file
 move.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/move.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/move.cpp.o
 .PHONY : move.cpp.o
 
 move.i: move.cpp.i
@@ -408,7 +408,7 @@ move.i: move.cpp.i
 
 # target to preprocess a source file
 move.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/move.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/move.cpp.i
 .PHONY : move.cpp.i
 
 move.s: move.cpp.s
@@ -417,7 +417,7 @@ move.s: move.cpp.s
 
 # target to generate assembly for a file
 move.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/move.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/move.cpp.s
 .PHONY : move.cpp.s
 
 movegen.o: movegen.cpp.o
@@ -426,7 +426,7 @@ movegen.o: movegen.cpp.o
 
 # target to build an object file
 movegen.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/movegen.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/movegen.cpp.o
 .PHONY : movegen.cpp.o
 
 movegen.i: movegen.cpp.i
@@ -435,7 +435,7 @@ movegen.i: movegen.cpp.i
 
 # target to preprocess a source file
 movegen.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/movegen.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/movegen.cpp.i
 .PHONY : movegen.cpp.i
 
 movegen.s: movegen.cpp.s
@@ -444,7 +444,7 @@ movegen.s: movegen.cpp.s
 
 # target to generate assembly for a file
 movegen.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/movegen.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/movegen.cpp.s
 .PHONY : movegen.cpp.s
 
 perft.o: perft.cpp.o
@@ -453,7 +453,7 @@ perft.o: perft.cpp.o
 
 # target to build an object file
 perft.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/perft.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/perft.cpp.o
 .PHONY : perft.cpp.o
 
 perft.i: perft.cpp.i
@@ -462,7 +462,7 @@ perft.i: perft.cpp.i
 
 # target to preprocess a source file
 perft.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/perft.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/perft.cpp.i
 .PHONY : perft.cpp.i
 
 perft.s: perft.cpp.s
@@ -471,7 +471,7 @@ perft.s: perft.cpp.s
 
 # target to generate assembly for a file
 perft.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/perft.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/perft.cpp.s
 .PHONY : perft.cpp.s
 
 pvtable.o: pvtable.cpp.o
@@ -480,7 +480,7 @@ pvtable.o: pvtable.cpp.o
 
 # target to build an object file
 pvtable.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/pvtable.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/pvtable.cpp.o
 .PHONY : pvtable.cpp.o
 
 pvtable.i: pvtable.cpp.i
@@ -489,7 +489,7 @@ pvtable.i: pvtable.cpp.i
 
 # target to preprocess a source file
 pvtable.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/pvtable.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/pvtable.cpp.i
 .PHONY : pvtable.cpp.i
 
 pvtable.s: pvtable.cpp.s
@@ -498,7 +498,7 @@ pvtable.s: pvtable.cpp.s
 
 # target to generate assembly for a file
 pvtable.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/pvtable.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/pvtable.cpp.s
 .PHONY : pvtable.cpp.s
 
 search.o: search.cpp.o
@@ -507,7 +507,7 @@ search.o: search.cpp.o
 
 # target to build an object file
 search.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/search.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/search.cpp.o
 .PHONY : search.cpp.o
 
 search.i: search.cpp.i
@@ -516,7 +516,7 @@ search.i: search.cpp.i
 
 # target to preprocess a source file
 search.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/search.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/search.cpp.i
 .PHONY : search.cpp.i
 
 search.s: search.cpp.s
@@ -525,7 +525,7 @@ search.s: search.cpp.s
 
 # target to generate assembly for a file
 search.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/search.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/search.cpp.s
 .PHONY : search.cpp.s
 
 uci.o: uci.cpp.o
@@ -534,7 +534,7 @@ uci.o: uci.cpp.o
 
 # target to build an object file
 uci.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/uci.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/uci.cpp.o
 .PHONY : uci.cpp.o
 
 uci.i: uci.cpp.i
@@ -543,7 +543,7 @@ uci.i: uci.cpp.i
 
 # target to preprocess a source file
 uci.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/uci.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/uci.cpp.i
 .PHONY : uci.cpp.i
 
 uci.s: uci.cpp.s
@@ -552,7 +552,7 @@ uci.s: uci.cpp.s
 
 # target to generate assembly for a file
 uci.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/uci.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/uci.cpp.s
 .PHONY : uci.cpp.s
 
 validate.o: validate.cpp.o
@@ -561,7 +561,7 @@ validate.o: validate.cpp.o
 
 # target to build an object file
 validate.cpp.o:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/validate.cpp.o
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/validate.cpp.o
 .PHONY : validate.cpp.o
 
 validate.i: validate.cpp.i
@@ -570,7 +570,7 @@ validate.i: validate.cpp.i
 
 # target to preprocess a source file
 validate.cpp.i:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/validate.cpp.i
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/validate.cpp.i
 .PHONY : validate.cpp.i
 
 validate.s: validate.cpp.s
@@ -579,7 +579,7 @@ validate.s: validate.cpp.s
 
 # target to generate assembly for a file
 validate.cpp.s:
-	$(MAKE) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/validate.cpp.s
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/validate.cpp.s
 .PHONY : validate.cpp.s
 
 # Help Target
@@ -589,7 +589,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... chess"
+	@echo "... BRITON"
 	@echo "... edit_cache"
 	@echo "... attack.o"
 	@echo "... attack.i"
