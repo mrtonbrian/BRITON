@@ -155,7 +155,7 @@ static int quiescence(int alpha, int beta, BOARD *pos, SEARCHINFO *info, Globals
     return alpha;
 }
 
-static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *info, int doNull, Globals &g) {
+static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *info, bool doNull, Globals &g) {
     ASSERT(checkBoard(pos, g));
     if (depth == 0) {
         info->nodes++;
@@ -183,13 +183,28 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *inf
         depth++;
     }
 
+    int score = INT_MIN;
+    if (doNull && !inCheck && pos->ply && (pos->RQ[pos->sideToMove] > 0) && depth >= 4) {
+        makeNullMove(pos, g);
+        score = -alphaBeta(-beta, -beta + 1, depth - 4, pos, info, false, g);
+        takeNullMove(pos, g);
+
+        if (info->stopped) {
+            return 0;
+        }
+
+        if (score >= beta) {
+            return beta;
+        }
+    }
+
     MOVES_LIST list;
     generateAllMoves(pos, list, g);
 
     int legalMoves = 0;
     int oldAlpha = alpha;
     int bestMove = 0;
-    int score = INT_MIN;
+    score = INT_MIN;
     int pvMove = probeTable(pos);
 
     if (pvMove != 0) {
