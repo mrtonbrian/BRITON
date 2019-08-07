@@ -34,6 +34,7 @@ typedef unsigned long long U64;
                  (U64)rand() << 30 | \
                  (U64)rand() << 45 | \
                  ((U64)rand() & 0xf) << 60)
+#define NULL_MOVE_ENABLED true
 
 // Sets Values To These (EMPTY = 0, White Pawn = 1, White Knight = 2, etc.)
 enum {

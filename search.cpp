@@ -184,7 +184,7 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *inf
     }
 
     int score = INT_MIN;
-    if (doNull && !inCheck && pos->ply && (pos->RQ[pos->sideToMove] > 0) && depth >= 4) {
+    if (NULL_MOVE_ENABLED && doNull && !inCheck && pos->ply && (pos->RQ[pos->sideToMove] > 0) && depth >= 4) {
         makeNullMove(pos, g);
         score = -alphaBeta(-beta, -beta + 1, depth - 4, pos, info, false, g);
         takeNullMove(pos, g);
