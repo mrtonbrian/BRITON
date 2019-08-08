@@ -75,7 +75,7 @@ const int queenSemiOpenCol = 3;
 const int bishopPair = 30;
 
 int PieceVal[13] = {0, 100, 325, 325, 550, 1000, 50000, 100, 325, 325, 550, 1000, 50000};
-const int endgameMaterialMax = (1 * PieceVal[wR] + 2 * PieceVal[wN] + 2 * PieceVal[wP]);
+const int endgameMaterialMax = (1 * PieceVal[wR] + 2 * PieceVal[wN] + 2 * PieceVal[wP] + PieceVal[wK]);
 
 // https://en.wikipedia.org/wiki/Draw_(chess)
 /*
@@ -236,8 +236,8 @@ int evalPosition(BOARD *pos, Globals &g) {
     }
 
     pce = wK;
-    sq = pos->pList[pce][WHITE];
-    if (pos->material[BLACK] <= endgameMaterialMax) {
+    sq = pos->pList[pce][0];
+    if ((pos->material[BLACK] <= endgameMaterialMax)) {
         score += KingE[g.SQ64(sq)];
     } else {
         score += KingO[g.SQ64(sq)];
@@ -246,7 +246,7 @@ int evalPosition(BOARD *pos, Globals &g) {
 
     pce = bK;
     sq = pos->pList[pce][0];
-    if (pos->material[WHITE] <= endgameMaterialMax) {
+    if ((pos->material[WHITE] <= endgameMaterialMax)) {
         score -= KingE[g.MIRROR(g.SQ64(sq))];
     } else {
         score -= KingO[g.MIRROR(g.SQ64(sq))];
