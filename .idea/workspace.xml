@@ -13,20 +13,28 @@
   <component name="ChangeListManager">
     <list default="true" id="06577646-c850-4ffe-bfee-dd0d500d391a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/evaluate.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/evaluate.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Chess-Engine-Cpp.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Chess-Engine-Cpp.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/chess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/evaluate.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/callgrind.out.1965" beforeDir="false" afterPath="$PROJECT_DIR$/callgrind.out.1965" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BRITON" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BRITON" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/attack.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/attack.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/board.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/board.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/evaluate.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/evaluate.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/hashkey.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/hashkey.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/io.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/io.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/makemove.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/makemove.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/misc.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/misc.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/movegen.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/movegen.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/perft.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/perft.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/pvtable.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/pvtable.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/search.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/search.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/uci.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/uci.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/validate.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/validate.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/defs.h" beforeDir="false" afterPath="$PROJECT_DIR$/defs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pvtable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/pvtable.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pvtable.h" beforeDir="false" afterPath="$PROJECT_DIR$/pvtable.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/search.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uci.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/uci.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,44 +164,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>resetBo</find>
-      <find>onDragSt</find>
-      <find>onMove</find>
-      <find>parseFen</find>
-      <find>resetB</find>
-      <find>resetBoard</find>
-      <find>side</find>
-      <find>move</find>
-      <find>function</find>
-      <find>in_check</find>
-      <find>turn</find>
-      <find>setVa</find>
-      <find>&quot;POST&quot;</find>
-      <find>wait</find>
-      <find>delay</find>
-      <find>onSnapEnd</find>
-      <find>post</find>
-      <find>playIt</find>
-      <find>undo</find>
-      <find>bestM</find>
-      <find>var</find>
-      <find>pcoun</find>
-      <find>unsigned</find>
-      <find>mask</find>
-      <find>colBBMask</find>
-      <find>gener</find>
-      <find>MIRROR</find>
-      <find>wQ</find>
-      <find>pceNum</find>
-      <find>TRUE</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>pieceNum</replace>
-      <replace>true</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -207,8 +177,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
@@ -288,17 +261,16 @@
       <workItem from="1563210059383" duration="191000" />
       <workItem from="1563210695273" duration="4000" />
       <workItem from="1564531528482" duration="157000" />
+      <workItem from="1564543476125" duration="345000" />
+      <workItem from="1564684174821" duration="1974000" />
+      <workItem from="1564710024298" duration="448000" />
+      <workItem from="1564718240406" duration="255000" />
+      <workItem from="1565210212266" duration="1578000" />
+      <workItem from="1565226741561" duration="603000" />
+      <workItem from="1565231439986" duration="588000" />
+      <workItem from="1566017274721" duration="3896000" />
     </task>
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />

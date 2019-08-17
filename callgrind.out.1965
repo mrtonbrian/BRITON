@@ -248,7 +248,7 @@ calls=1 +21
 * 476393
 +4 4
 cfi=(143) /home/brianton/Desktop/Chess-Engine-Cpp/pvtable.cpp
-cfn=(1314) initPvTable(PVTABLE*)
+cfn=(1314) initPvTable(hashTable*)
 calls=1 20 
 * 10486113
 fi=(128)
@@ -1406,7 +1406,7 @@ fn=(1488)
 -1 126
 +5 2
 cfi=(143)
-cfn=(1490) clearPvTable(PVTABLE*)
+cfn=(1490) clearPvTable(hashTable*)
 calls=1 -53 
 * 10485758
 266 1

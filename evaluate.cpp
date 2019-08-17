@@ -18,7 +18,7 @@ const int KnightTable[64] = {
         0, -10, 0, 0, 0, 0, -10, 0,
         0, 0, 0, 5, 5, 0, 0, 0,
         0, 0, 10, 10, 10, 10, 0, 0,
-        0, 0, 10, 20, 20, 10, 5, 0,
+        0, 0, 10, 20, 20, 10, 0, 0,
         5, 10, 15, 20, 20, 15, 10, 5,
         5, 10, 10, 20, 20, 10, 10, 5,
         0, 0, 5, 10, 10, 5, 0, 0,
@@ -42,7 +42,9 @@ const int RookTable[64] = {
         0, 0, 5, 10, 10, 5, 0, 0,
         0, 0, 5, 10, 10, 5, 0, 0,
         25, 25, 25, 25, 25, 25, 25, 25,
-        0, 0, 5, 10, 10, 5, 0, 0};
+        0, 0, 5, 10, 10, 5, 0, 0
+};
+
 const int KingE[64] = {
         -50, -10, 0, 0, 0, 0, -10, -50,
         -10, 0, 10, 10, 10, 10, 0, -10,
@@ -64,17 +66,16 @@ const int KingO[64] = {
         -70, -70, -70, -70, -70, -70, -70, -70,
         -70, -70, -70, -70, -70, -70, -70, -70
 };
-
-const int pawnPassed[8] = {0, 5, 10, 20, 35, 60, 100, 200};
-const int isolatedPawn = -10;
-const int rookOpenCol = 10;
-const int rookSemiOpenCol = 5;
+const int pawnPassed[8] = {0, 5, 10, 20, 40, 80, 160, 200};
+const int isolatedPawn = -20;
+const int rookOpenCol = 30;
+const int rookSemiOpenCol = 10;
 const int queenOpenCol = 5;
 const int queenSemiOpenCol = 3;
 const int bishopPair = 30;
 
 int PieceVal[13] = {0, 100, 325, 325, 550, 1000, 50000, 100, 325, 325, 550, 1000, 50000};
-const int endgameMaterialMax = (1 * PieceVal[wR] + 2 * PieceVal[wN] + 2 * PieceVal[wP]);
+const int endgameMaterialMax = (1 * PieceVal[wR] + 2 * PieceVal[wN] + 2 * PieceVal[wP] + PieceVal[wK]);
 
 // https://en.wikipedia.org/wiki/Draw_(chess)
 /*
@@ -235,8 +236,8 @@ int evalPosition(BOARD *pos, Globals &g) {
     }
 
     pce = wK;
-    sq = pos->pList[pce][WHITE];
-    if (pos->material[BLACK] <= endgameMaterialMax) {
+    sq = pos->pList[pce][0];
+    if ((pos->material[BLACK] <= endgameMaterialMax)) {
         score += KingE[g.SQ64(sq)];
     } else {
         score += KingO[g.SQ64(sq)];
@@ -245,11 +246,12 @@ int evalPosition(BOARD *pos, Globals &g) {
 
     pce = bK;
     sq = pos->pList[pce][0];
-    if (pos->material[WHITE] <= endgameMaterialMax) {
+    if ((pos->material[WHITE] <= endgameMaterialMax)) {
         score -= KingE[g.MIRROR(g.SQ64(sq))];
     } else {
         score -= KingO[g.MIRROR(g.SQ64(sq))];
     }
+
 
     if (pos->pieceNum[wB] >= 2) score += bishopPair;
     if (pos->pieceNum[bB] >= 2) score -= bishopPair;

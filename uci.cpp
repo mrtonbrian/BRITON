@@ -134,7 +134,7 @@ void uciLoop() {
 
     BOARD pos[1];
     SEARCHINFO info[1];
-    initPvTable(pos->pvTable);
+    initPvTable(pos->pvTable, 64);
 
     //parsePos("position startpos\n", pos, g);
     //parseGo("go depth 7", info, pos, g);
