@@ -52,9 +52,9 @@ Each sample counts as 0.01 seconds.
   0.00      0.00     0.00        1     0.00     0.00  initMvvLva()
   0.00      0.00     0.00        1     0.00     0.00  printBoard(BOARD*)
   0.00      0.00     0.00        1     0.00     0.00  resetBoard(BOARD*, Globals)
-  0.00      0.00     0.00        1     0.00     0.00  initPvTable(PVTABLE*)
+  0.00      0.00     0.00        1     0.00     0.00  initPvTable(hashTable*)
   0.00      0.00     0.00        1     0.00     0.00  InitHashKeys(Globals&)
-  0.00      0.00     0.00        1     0.00     0.00  clearPvTable(PVTABLE*)
+  0.00      0.00     0.00        1     0.00     0.00  clearPvTable(hashTable*)
   0.00      0.00     0.00        1     0.00     0.00  initEvalMasks(Globals&)
   0.00      0.00     0.00        1     0.00     0.00  initRowColArrays(Globals&)
   0.00      0.00     0.00        1     0.00     0.00  initSquareArrays(Globals&)
@@ -338,14 +338,14 @@ index % time    self  children    called     name
 [54]     0.0    0.00    0.00       1         resetBoard(BOARD*, Globals) [54]
 -----------------------------------------------
                 0.00    0.00       1/1           main [6]
-[55]     0.0    0.00    0.00       1         initPvTable(PVTABLE*) [55]
-                0.00    0.00       1/1           clearPvTable(PVTABLE*) [57]
+[55]     0.0    0.00    0.00       1         initPvTable(hashTable*) [55]
+                0.00    0.00       1/1           clearPvTable(hashTable*) [57]
 -----------------------------------------------
                 0.00    0.00       1/1           init(Globals&) [62]
 [56]     0.0    0.00    0.00       1         InitHashKeys(Globals&) [56]
 -----------------------------------------------
-                0.00    0.00       1/1           initPvTable(PVTABLE*) [55]
-[57]     0.0    0.00    0.00       1         clearPvTable(PVTABLE*) [57]
+                0.00    0.00       1/1           initPvTable(hashTable*) [55]
+[57]     0.0    0.00    0.00       1         clearPvTable(hashTable*) [57]
 -----------------------------------------------
                 0.00    0.00       1/1           init(Globals&) [62]
 [58]     0.0    0.00    0.00       1         initEvalMasks(Globals&) [58]
@@ -484,7 +484,7 @@ Index by function name
 
   [39] _GLOBAL__sub_I_PceChar (board.cpp) [56] InitHashKeys(Globals&) [15] clearBit(unsigned long long&, int, Globals)
   [40] _GLOBAL__sub_I_PieceChar (movegen.cpp) [16] capturePiece(int) [23] makeMove(BOARD*, int, Globals)
-  [41] _GLOBAL__sub_I__Z11printSquarei7Globals (io.cpp) [57] clearPvTable(PVTABLE*) [63] parseFEN(char const*, BOARD*, Globals)
+  [41] _GLOBAL__sub_I__Z11printSquarei7Globals (io.cpp) [57] clearPvTable(hashTable*) [63] parseFEN(char const*, BOARD*, Globals)
   [42] _GLOBAL__sub_I__Z12clearPvTableP7PVTABLE (pvtable.cpp) [58] initEvalMasks(Globals&) [38] GetTimeMs()
   [43] _GLOBAL__sub_I__Z14GeneratePosKeyP5BOARDR7Globals (hashkey.cpp) [10] GeneratePosKey(BOARD*, Globals&) [64] PerftTest(int, BOARD*, Globals)
   [44] _GLOBAL__sub_I__Z14rowColToSquareii (init.cpp) [17] promotionPiece(int) [18] SideValid(int)
@@ -500,5 +500,5 @@ Index by function name
   [52] initMvvLva()           [36] Perft(int, BOARD*, Globals) [28] AddPiece(int, BOARD*, int, Globals) (makemove.cpp)
   [53] printBoard(BOARD*)     [12] fromSq(int)            [19] MovePiece(int, int, BOARD*, Globals) (makemove.cpp)
   [54] resetBoard(BOARD*, Globals) [8] popBit(unsigned long long*) [25] void std::vector<MOVE, std::allocator<MOVE> >::_M_realloc_insert<MOVE const&>(__gnu_cxx::__normal_iterator<MOVE*, std::vector<MOVE, std::allocator<MOVE> > >, MOVE const&)
-  [55] initPvTable(PVTABLE*)  [14] setBit(unsigned long long&, int, Globals) [66] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+  [55] initPvTable(hashTable*)  [14] setBit(unsigned long long&, int, Globals) [66] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
   [35] isPromotion(int)       [22] TakeMove(BOARD*, Globals)

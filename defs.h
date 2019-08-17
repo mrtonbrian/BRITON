@@ -159,15 +159,29 @@ enum {
     BLACK_K_Q = 8
 };
 
+enum {
+    NONE,
+    ALPHA,
+    BETA,
+    EXACT
+};
+
 typedef struct {
     U64 position;
     int move;
-} PVENTRY;
+    int score;
+    int depth;
+    int flags;
+} hashEntry;
 
 typedef struct {
-    PVENTRY *pTable;
+    hashEntry *pTable;
     int numEntries;
-} PVTABLE;
+    int newWrite;
+    int overWrite;
+    int hit;
+    int cut;
+} hashTable;
 
 typedef struct {
     int move;
@@ -215,7 +229,7 @@ typedef struct {
     // NOTE WE USE 10 BC MAX OF 10 PIECE OF SAME TYPE (2 WHITE ROOKS + 8 WHITE PAWNS = 10 POSSIBLE WHITE ROOKS)
     int pList[13][10];
 
-    PVTABLE pvTable[1];
+    hashTable pvTable[1];
     // 64 as MaxDepth
     int PvArray[64];
 

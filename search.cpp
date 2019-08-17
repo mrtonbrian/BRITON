@@ -64,7 +64,9 @@ static void clearForSearch(BOARD *pos, SEARCHINFO *info) {
         }
     }
 
-    clearPvTable(pos->pvTable);
+    pos->pvTable->overWrite=0;
+    pos->pvTable->hit=0;
+    pos->pvTable->cut=0;
     pos->ply = 0;
 
     //info->starttime = GetTimeMs();
@@ -106,16 +108,6 @@ static int quiescence(int alpha, int beta, BOARD *pos, SEARCHINFO *info, Globals
     int oldAlpha = alpha;
     int bestMove = 0;
     score = INT_MIN;
-    int pvMove = probeTable(pos);
-
-    if (pvMove != 0) {
-        for (int moveNum = 0; moveNum < list.count; ++moveNum) {
-            if (list.moves[moveNum].move == pvMove) {
-                list.moves[moveNum].score = 2000000;
-                break;
-            }
-        }
-    }
 
     for (int moveNum = 0; moveNum < list.count; moveNum++) {
 
@@ -150,7 +142,7 @@ static int quiescence(int alpha, int beta, BOARD *pos, SEARCHINFO *info, Globals
         }
     }
     if (alpha != oldAlpha) {
-        StorePvMove(pos, bestMove);
+        StorePvMove(pos, bestMove, 0, 0, 0);
     }
     return alpha;
 }
@@ -184,6 +176,13 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *inf
     }
 
     int score = INT_MIN;
+    int pvMove = 0;
+
+    if (ProbeHashEntry(pos, &pvMove, &score, alpha, beta, depth)) {
+        pos->pvTable->cut++;
+        return score;
+    }
+
     if (NULL_MOVE_ENABLED && doNull && !inCheck && pos->ply && (pos->RQ[pos->sideToMove] > 0) && depth >= 4) {
         makeNullMove(pos, g);
         score = -alphaBeta(-beta, -beta + 1, depth - 4, pos, info, false, g);
@@ -205,7 +204,7 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *inf
     int oldAlpha = alpha;
     int bestMove = 0;
     score = INT_MIN;
-    int pvMove = probeTable(pos);
+    int bestScore = INT_MIN;
 
     if (pvMove != 0) {
         for (int m = 0; m < list.count; m++) {
@@ -234,23 +233,29 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *inf
             return -INT_MAX;
         }
 
-        if (score > alpha) {
-            if (score >= beta) {
-                if (legalMoves == 1) {
-                    info->failHighFirst++;
-                }
-                info->failHigh++;
-                if (!(isCapture(list.moves[moveNum].move))) {
-                    // Shuffle
-                    pos->searchKillers[1][pos->ply] = pos->searchKillers[0][pos->ply];
-                    pos->searchKillers[0][pos->ply] = list.moves[moveNum].move;
-                }
-                return beta;
-            }
-            alpha = score;
+        if (score > bestScore) {
+            bestScore = score;
             bestMove = list.moves[moveNum].move;
-            if (!isCapture(list.moves[moveNum].move)) {
-                pos->searchHistory[pos->pieces[fromSq(bestMove)]][toSq(bestMove)] += depth;
+            if (score > alpha) {
+                if (score >= beta) {
+                    if (legalMoves == 1) {
+                        info->failHighFirst++;
+                    }
+                    info->failHigh++;
+                    if (!(isCapture(list.moves[moveNum].move))) {
+                        // Shuffle
+                        pos->searchKillers[1][pos->ply] = pos->searchKillers[0][pos->ply];
+                        pos->searchKillers[0][pos->ply] = list.moves[moveNum].move;
+                    }
+
+                    StorePvMove(pos, bestMove, beta, BETA, depth);
+
+                    return beta;
+                }
+                alpha = score;
+                if (!isCapture(list.moves[moveNum].move)) {
+                    pos->searchHistory[pos->pieces[fromSq(bestMove)]][toSq(bestMove)] += depth;
+                }
             }
         }
     }
@@ -265,7 +270,9 @@ static int alphaBeta(int alpha, int beta, int depth, BOARD *pos, SEARCHINFO *inf
 
     // If New Best Score
     if (alpha != oldAlpha) {
-        StorePvMove(pos, bestMove);
+        StorePvMove(pos, bestMove, bestScore, EXACT, depth);
+    } else {
+        StorePvMove(pos, bestMove, alpha, ALPHA, depth);
     }
     return alpha;
 }
@@ -291,7 +298,7 @@ void searchPosition(BOARD *pos, SEARCHINFO *info, Globals &g) {
         Case Black Losing, Engine Black: -
         */
 
-        //pvMoves = GetPvLine(currentDepth, pos, g);
+        pvMoves = GetPvLine(currentDepth, pos, g);
         bestMove = pos->PvArray[0];
         printf("info score cp %d depth %d nodes %ld time %d ", bestScore, currentDepth, info->nodes,
                GetTimeMs() - info->starttime);
