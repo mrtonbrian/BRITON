@@ -1,4 +1,6 @@
-/snap/clion/81/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/brianton/Desktop/Chess-Engine-Cpp
+/snap/clion/83/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/brianton/Desktop/Chess-Engine-Cpp
 -- Configuring done
+CMake Error: Cannot determine link language for target "BRITON".
+CMake Error: CMake can not determine linker language for target: BRITON
 -- Generating done
 -- Build files have been written to: /home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug

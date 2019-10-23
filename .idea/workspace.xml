@@ -12,29 +12,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06577646-c850-4ffe-bfee-dd0d500d391a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Types.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/callgrind.out.1965" beforeDir="false" afterPath="$PROJECT_DIR$/callgrind.out.1965" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BRITON" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BRITON" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/attack.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/attack.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/board.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/board.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/evaluate.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/evaluate.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/hashkey.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/hashkey.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/io.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/io.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/makemove.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/makemove.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/misc.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/misc.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/movegen.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/movegen.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/perft.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/perft.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/pvtable.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/pvtable.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/search.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/search.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/uci.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/uci.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/validate.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/validate.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/defs.h" beforeDir="false" afterPath="$PROJECT_DIR$/defs.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pvtable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/pvtable.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pvtable.h" beforeDir="false" afterPath="$PROJECT_DIR$/pvtable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/search.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uci.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/uci.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Globals.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NERO-Chess.pgn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attack.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/attack.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitboards.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitboards.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/board.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/board.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/callgrind.out.1965" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chessProfile.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Chess-Engine-Cpp.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Chess-Engine-Cpp.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/defs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluate.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmon.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hashkey.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hashkey.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makemove.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makemove.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/move.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/move.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movegen.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movegen.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perft.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perft.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pvtable.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pvtable.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uci.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uci.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate.h" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,15 +201,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/validate.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/init.cpp" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1Okpc7DkgHAXoNbgf4h4cSAeSSu" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -183,7 +214,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -269,6 +300,13 @@
       <workItem from="1565226741561" duration="603000" />
       <workItem from="1565231439986" duration="588000" />
       <workItem from="1566017274721" duration="3896000" />
+      <workItem from="1567221651464" duration="216000" />
+      <workItem from="1567221892901" duration="756000" />
+      <workItem from="1567222754481" duration="189000" />
+      <workItem from="1567222972962" duration="15000" />
+      <workItem from="1567223005403" duration="536000" />
+      <workItem from="1571359352116" duration="140000" />
+      <workItem from="1571848886925" duration="1290000" />
     </task>
     <servers />
   </component>
