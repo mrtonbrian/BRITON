@@ -4,6 +4,8 @@
 #define TYPES
 typedef uint64_t Bitboard;
 
+constexpr int SQUARE_NUM = 64;
+
 enum File {
     FILE_A, FILE_B, FILE_C, FILE_D, FILE_E, FILE_F, FILE_G, FILE_H, FILE_NONE
 };
@@ -22,12 +24,11 @@ enum Square {
     SQ_A7, SQ_B7, SQ_C7, SQ_D7, SQ_E7, SQ_F7, SQ_G7, SQ_H7,
     SQ_A8, SQ_B8, SQ_C8, SQ_D8, SQ_E8, SQ_F8, SQ_G8, SQ_H8,
     SQ_NONE,
-
-    SQUARE_NONE = 64
 };
 
 enum Color {
-    WHITE, BLACK, BOTH, NONE
+    COLOR_WHITE, COLOR_BLACK, COLOR_BOTH,
+    COLOR_NB = 3
 };
 
 constexpr int MAX_DEPTH = 64;
@@ -38,21 +39,32 @@ constexpr int MAX_DEPTH = 64;
  */
 
 enum EvalValues {
-    PawnValueMg   = 128,   PawnValueEg   = 213,
-    KnightValueMg = 782,   KnightValueEg = 865,
-    BishopValueMg = 830,   BishopValueEg = 918,
-    RookValueMg   = 1289,  RookValueEg   = 1378,
-    QueenValueMg  = 2529,  QueenValueEg  = 2687,
+    PawnValueMg = 128, PawnValueEg = 213,
+    KnightValueMg = 782, KnightValueEg = 865,
+    BishopValueMg = 830, BishopValueEg = 918,
+    RookValueMg = 1289, RookValueEg = 1378,
+    QueenValueMg = 2529, QueenValueEg = 2687,
 
-    MidgameLimit  = 15258, EndgameLimit  = 3915
+    MidgameLimit = 15258, EndgameLimit = 3915
 };
 
 // Castling White Kingside, White Queenside, etc.
-enum CastlingPerms{
+enum CastlingPerms {
     WHITE_K_K = 1,
     WHITE_K_Q = 2,
     BLACK_K_K = 4,
     BLACK_K_Q = 8
 };
 
+enum Piece {
+    PIECE_NONE,
+    W_PAWN = 1, W_KNIGHT, W_BISHOP, W_ROOK, W_QUEEN, W_KING,
+    B_PAWN = 9, B_KNIGHT, B_BISHOP, B_ROOK, B_QUEEN, B_KING,
+    PIECE_NB = 16
+};
+
+enum PieceType {
+    PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING, NO_PIECE_TYPE, ALL_PIECE_TYPES,
+    PIECE_TYPE_NB = 8
+};
 #endif

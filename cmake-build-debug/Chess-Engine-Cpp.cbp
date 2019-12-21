@@ -84,7 +84,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src">
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/Bitboard.cpp">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/Bitboard.h">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/Position.cpp">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/Position.h">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/main.cpp">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/misc.cpp">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/misc.h">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/movegen.h">
 			<Option target="BRITON"/>
 		</Unit>
 		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/CMakeLists.txt">
