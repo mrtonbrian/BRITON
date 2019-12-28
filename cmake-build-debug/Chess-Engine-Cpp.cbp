@@ -96,6 +96,18 @@
 		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/Position.h">
 			<Option target="BRITON"/>
 		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/bitops.cpp">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/bitops.h">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/init.cpp">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/init.h">
+			<Option target="BRITON"/>
+		</Unit>
 		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/main.cpp">
 			<Option target="BRITON"/>
 		</Unit>
@@ -103,6 +115,9 @@
 			<Option target="BRITON"/>
 		</Unit>
 		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/misc.h">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/movegen.cpp">
 			<Option target="BRITON"/>
 		</Unit>
 		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/movegen.h">

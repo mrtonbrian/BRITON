@@ -6,8 +6,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/brianton/Desktop/Chess-Engine-Cpp/src/Bitboard.cpp" "/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir/src/Bitboard.cpp.o"
   "/home/brianton/Desktop/Chess-Engine-Cpp/src/Position.cpp" "/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir/src/Position.cpp.o"
+  "/home/brianton/Desktop/Chess-Engine-Cpp/src/bitops.cpp" "/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir/src/bitops.cpp.o"
+  "/home/brianton/Desktop/Chess-Engine-Cpp/src/init.cpp" "/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir/src/init.cpp.o"
   "/home/brianton/Desktop/Chess-Engine-Cpp/src/main.cpp" "/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir/src/main.cpp.o"
   "/home/brianton/Desktop/Chess-Engine-Cpp/src/misc.cpp" "/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir/src/misc.cpp.o"
+  "/home/brianton/Desktop/Chess-Engine-Cpp/src/movegen.cpp" "/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir/src/movegen.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

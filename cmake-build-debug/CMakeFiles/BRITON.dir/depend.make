@@ -12,13 +12,33 @@ CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/Position.h
 CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/Types.h
 CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/misc.h
 
+CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/Bitboard.h
+CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/Types.h
+CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/bitops.cpp
+CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/bitops.h
+CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/misc.h
+
+CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/Bitboard.h
+CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/Types.h
+CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/init.cpp
+CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/misc.h
+
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/Bitboard.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/Position.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/Types.h
+CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/init.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/misc.h
+CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/movegen.h
 
 CMakeFiles/BRITON.dir/src/misc.cpp.o: ../src/Types.h
 CMakeFiles/BRITON.dir/src/misc.cpp.o: ../src/misc.cpp
 CMakeFiles/BRITON.dir/src/misc.cpp.o: ../src/misc.h
+
+CMakeFiles/BRITON.dir/src/movegen.cpp.o: ../src/Bitboard.h
+CMakeFiles/BRITON.dir/src/movegen.cpp.o: ../src/Types.h
+CMakeFiles/BRITON.dir/src/movegen.cpp.o: ../src/bitops.h
+CMakeFiles/BRITON.dir/src/movegen.cpp.o: ../src/misc.h
+CMakeFiles/BRITON.dir/src/movegen.cpp.o: ../src/movegen.cpp
+CMakeFiles/BRITON.dir/src/movegen.cpp.o: ../src/movegen.h
 

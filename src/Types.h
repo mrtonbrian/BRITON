@@ -27,8 +27,8 @@ enum Square {
 };
 
 enum Color {
-    COLOR_WHITE, COLOR_BLACK, COLOR_BOTH,
-    COLOR_NB = 3
+    COLOR_WHITE, COLOR_BLACK,
+    COLOR_NB = 2
 };
 
 constexpr int MAX_DEPTH = 64;
@@ -67,4 +67,17 @@ enum PieceType {
     PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING, NO_PIECE_TYPE, ALL_PIECE_TYPES,
     PIECE_TYPE_NB = 8
 };
+
+struct SMasks {
+    Bitboard lower;
+    Bitboard upper;
+    Bitboard line; // Lower | Upper
+};
+
+extern SMasks masks[SQUARE_NUM][4];
+
+extern Bitboard KNIGHT_ATTACKS[SQUARE_NUM];
+
+extern Bitboard KING_ATTACKS[SQUARE_NUM];
+
 #endif

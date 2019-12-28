@@ -109,12 +109,54 @@ CMakeFiles/BRITON.dir/src/Bitboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BRITON.dir/src/Bitboard.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brianton/Desktop/Chess-Engine-Cpp/src/Bitboard.cpp -o CMakeFiles/BRITON.dir/src/Bitboard.cpp.s
 
+CMakeFiles/BRITON.dir/src/init.cpp.o: CMakeFiles/BRITON.dir/flags.make
+CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/init.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/BRITON.dir/src/init.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BRITON.dir/src/init.cpp.o -c /home/brianton/Desktop/Chess-Engine-Cpp/src/init.cpp
+
+CMakeFiles/BRITON.dir/src/init.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BRITON.dir/src/init.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/brianton/Desktop/Chess-Engine-Cpp/src/init.cpp > CMakeFiles/BRITON.dir/src/init.cpp.i
+
+CMakeFiles/BRITON.dir/src/init.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BRITON.dir/src/init.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brianton/Desktop/Chess-Engine-Cpp/src/init.cpp -o CMakeFiles/BRITON.dir/src/init.cpp.s
+
+CMakeFiles/BRITON.dir/src/movegen.cpp.o: CMakeFiles/BRITON.dir/flags.make
+CMakeFiles/BRITON.dir/src/movegen.cpp.o: ../src/movegen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/BRITON.dir/src/movegen.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BRITON.dir/src/movegen.cpp.o -c /home/brianton/Desktop/Chess-Engine-Cpp/src/movegen.cpp
+
+CMakeFiles/BRITON.dir/src/movegen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BRITON.dir/src/movegen.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/brianton/Desktop/Chess-Engine-Cpp/src/movegen.cpp > CMakeFiles/BRITON.dir/src/movegen.cpp.i
+
+CMakeFiles/BRITON.dir/src/movegen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BRITON.dir/src/movegen.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brianton/Desktop/Chess-Engine-Cpp/src/movegen.cpp -o CMakeFiles/BRITON.dir/src/movegen.cpp.s
+
+CMakeFiles/BRITON.dir/src/bitops.cpp.o: CMakeFiles/BRITON.dir/flags.make
+CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/bitops.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/BRITON.dir/src/bitops.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/BRITON.dir/src/bitops.cpp.o -c /home/brianton/Desktop/Chess-Engine-Cpp/src/bitops.cpp
+
+CMakeFiles/BRITON.dir/src/bitops.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BRITON.dir/src/bitops.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/brianton/Desktop/Chess-Engine-Cpp/src/bitops.cpp > CMakeFiles/BRITON.dir/src/bitops.cpp.i
+
+CMakeFiles/BRITON.dir/src/bitops.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BRITON.dir/src/bitops.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brianton/Desktop/Chess-Engine-Cpp/src/bitops.cpp -o CMakeFiles/BRITON.dir/src/bitops.cpp.s
+
 # Object files for target BRITON
 BRITON_OBJECTS = \
 "CMakeFiles/BRITON.dir/src/main.cpp.o" \
 "CMakeFiles/BRITON.dir/src/Position.cpp.o" \
 "CMakeFiles/BRITON.dir/src/misc.cpp.o" \
-"CMakeFiles/BRITON.dir/src/Bitboard.cpp.o"
+"CMakeFiles/BRITON.dir/src/Bitboard.cpp.o" \
+"CMakeFiles/BRITON.dir/src/init.cpp.o" \
+"CMakeFiles/BRITON.dir/src/movegen.cpp.o" \
+"CMakeFiles/BRITON.dir/src/bitops.cpp.o"
 
 # External object files for target BRITON
 BRITON_EXTERNAL_OBJECTS =
@@ -123,9 +165,12 @@ BRITON: CMakeFiles/BRITON.dir/src/main.cpp.o
 BRITON: CMakeFiles/BRITON.dir/src/Position.cpp.o
 BRITON: CMakeFiles/BRITON.dir/src/misc.cpp.o
 BRITON: CMakeFiles/BRITON.dir/src/Bitboard.cpp.o
+BRITON: CMakeFiles/BRITON.dir/src/init.cpp.o
+BRITON: CMakeFiles/BRITON.dir/src/movegen.cpp.o
+BRITON: CMakeFiles/BRITON.dir/src/bitops.cpp.o
 BRITON: CMakeFiles/BRITON.dir/build.make
 BRITON: CMakeFiles/BRITON.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable BRITON"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable BRITON"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BRITON.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

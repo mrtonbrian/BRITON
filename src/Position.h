@@ -1,9 +1,18 @@
 #include "misc.h"
 #include "Types.h"
 #include <string>
+#include <vector>
 
 #ifndef CHESS_ENGINE_CPP_POSITION_H
 #define CHESS_ENGINE_CPP_POSITION_H
+
+struct PrevBoard {
+    int move;
+    int castlePerms;
+    int enPassSquare;
+    int fiftyMove;
+    uint64_t positionKey;
+};
 
 class Position {
 public:
@@ -22,10 +31,14 @@ public:
     Color turn;
     int castlePerms;
     int enPassSquare;
+    int fiftyMove;
+    int searchPly;
+    int hisPly;
 
     uint64_t pieceKeys[15][SQUARE_NUM];
     uint64_t sideKey;
     uint64_t castleKeys[16];
+    std::vector<PrevBoard> prevBoards;
 };
 
 #endif //CHESS_ENGINE_CPP_POSITION_H

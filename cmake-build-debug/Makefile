@@ -177,6 +177,60 @@ src/Position.cpp.s:
 	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/Position.cpp.s
 .PHONY : src/Position.cpp.s
 
+src/bitops.o: src/bitops.cpp.o
+
+.PHONY : src/bitops.o
+
+# target to build an object file
+src/bitops.cpp.o:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/bitops.cpp.o
+.PHONY : src/bitops.cpp.o
+
+src/bitops.i: src/bitops.cpp.i
+
+.PHONY : src/bitops.i
+
+# target to preprocess a source file
+src/bitops.cpp.i:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/bitops.cpp.i
+.PHONY : src/bitops.cpp.i
+
+src/bitops.s: src/bitops.cpp.s
+
+.PHONY : src/bitops.s
+
+# target to generate assembly for a file
+src/bitops.cpp.s:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/bitops.cpp.s
+.PHONY : src/bitops.cpp.s
+
+src/init.o: src/init.cpp.o
+
+.PHONY : src/init.o
+
+# target to build an object file
+src/init.cpp.o:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/init.cpp.o
+.PHONY : src/init.cpp.o
+
+src/init.i: src/init.cpp.i
+
+.PHONY : src/init.i
+
+# target to preprocess a source file
+src/init.cpp.i:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/init.cpp.i
+.PHONY : src/init.cpp.i
+
+src/init.s: src/init.cpp.s
+
+.PHONY : src/init.s
+
+# target to generate assembly for a file
+src/init.cpp.s:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/init.cpp.s
+.PHONY : src/init.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -231,6 +285,33 @@ src/misc.cpp.s:
 	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/misc.cpp.s
 .PHONY : src/misc.cpp.s
 
+src/movegen.o: src/movegen.cpp.o
+
+.PHONY : src/movegen.o
+
+# target to build an object file
+src/movegen.cpp.o:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/movegen.cpp.o
+.PHONY : src/movegen.cpp.o
+
+src/movegen.i: src/movegen.cpp.i
+
+.PHONY : src/movegen.i
+
+# target to preprocess a source file
+src/movegen.cpp.i:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/movegen.cpp.i
+.PHONY : src/movegen.cpp.i
+
+src/movegen.s: src/movegen.cpp.s
+
+.PHONY : src/movegen.s
+
+# target to generate assembly for a file
+src/movegen.cpp.s:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/movegen.cpp.s
+.PHONY : src/movegen.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -246,12 +327,21 @@ help:
 	@echo "... src/Position.o"
 	@echo "... src/Position.i"
 	@echo "... src/Position.s"
+	@echo "... src/bitops.o"
+	@echo "... src/bitops.i"
+	@echo "... src/bitops.s"
+	@echo "... src/init.o"
+	@echo "... src/init.i"
+	@echo "... src/init.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/misc.o"
 	@echo "... src/misc.i"
 	@echo "... src/misc.s"
+	@echo "... src/movegen.o"
+	@echo "... src/movegen.i"
+	@echo "... src/movegen.s"
 .PHONY : help
 
 

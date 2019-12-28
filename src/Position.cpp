@@ -60,8 +60,8 @@ void Position::resetPosition() {
         byType[i] = 0ULL;
     }
 
-    byColor[0] = 0ULL;
-    byColor[1] = 0ULL;
+    byColor[COLOR_WHITE] = 0ULL;
+    byColor[COLOR_BLACK] = 0ULL;
 
     for (int i = 0; i < PIECE_NB; i++) {
         pieceCount[i] = 0;
@@ -70,6 +70,10 @@ void Position::resetPosition() {
     zobristHash = 0ULL;
     turn = COLOR_WHITE;
     enPassSquare = PIECE_NONE;
+    fiftyMove = 0;
+    searchPly = 0;
+    castlePerms = 0;
+    hisPly = 0;
 }
 
 bool Position::setFromFEN(std::string fen) {
@@ -153,6 +157,7 @@ bool Position::setFromFEN(std::string fen) {
                 board[square] = piece;
                 byType[getTypeFromPiece(piece)] |= (1ULL << square);
                 byColor[getColorFromPiece(piece)] |= (1ULL << square);
+                pieceCount[piece]++;
             }
             col++;
         }

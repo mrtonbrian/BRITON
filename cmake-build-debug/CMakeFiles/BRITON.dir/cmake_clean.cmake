@@ -3,8 +3,11 @@ file(REMOVE_RECURSE
   "BRITON.pdb"
   "CMakeFiles/BRITON.dir/src/Bitboard.cpp.o"
   "CMakeFiles/BRITON.dir/src/Position.cpp.o"
+  "CMakeFiles/BRITON.dir/src/bitops.cpp.o"
+  "CMakeFiles/BRITON.dir/src/init.cpp.o"
   "CMakeFiles/BRITON.dir/src/main.cpp.o"
   "CMakeFiles/BRITON.dir/src/misc.cpp.o"
+  "CMakeFiles/BRITON.dir/src/movegen.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.
