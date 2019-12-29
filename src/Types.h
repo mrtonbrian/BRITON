@@ -80,4 +80,8 @@ extern Bitboard KNIGHT_ATTACKS[SQUARE_NUM];
 
 extern Bitboard KING_ATTACKS[SQUARE_NUM];
 
+extern Bitboard PAWN_SINGLE_MOVES[COLOR_NB][SQUARE_NUM];
+extern Bitboard PAWN_DOUBLE_MOVES[COLOR_NB][SQUARE_NUM];
+extern Bitboard PAWN_ATTACKS[COLOR_NB][SQUARE_NUM];
+
 #endif

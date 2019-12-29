@@ -11,6 +11,10 @@ Bitboard KNIGHT_ATTACKS[SQUARE_NUM];
 
 Bitboard KING_ATTACKS[SQUARE_NUM];
 
+Bitboard PAWN_SINGLE_MOVES[COLOR_NB][SQUARE_NUM];
+Bitboard PAWN_DOUBLE_MOVES[COLOR_NB][SQUARE_NUM];
+Bitboard PAWN_ATTACKS[COLOR_NB][SQUARE_NUM];
+
 using namespace std;
 
 static void initODMasks() {
@@ -84,7 +88,7 @@ static void initODMasks() {
             testSq -= 7;
             setBit(leftDiagonalMaskLower, testSq);
         }
-        // TopLeft -> BottomRight Mask
+
         Bitboard leftDiagonalMaskUpper = 0ULL;
         testSq = sq;
         while (getFile(Square(testSq)) <= getFile(Square(sq)) && getFile(Square(testSq)) > FILE_A &&
@@ -100,7 +104,7 @@ static void initODMasks() {
     }
 }
 
-void initNonSlidingMasks() {
+static void initNonSlidingMasks() {
     //Knight attacks
     for (int sq = SQ_A1; sq <= SQ_H8; sq++) {
         File file = getFile(static_cast<Square>(sq));
@@ -108,49 +112,49 @@ void initNonSlidingMasks() {
 
         int testFile = file + 2;
         int testRank = rank + 1;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KNIGHT_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file + 2;
         testRank = rank - 1;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KNIGHT_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file - 2;
         testRank = rank + 1;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KNIGHT_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file - 2;
         testRank = rank - 1;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KNIGHT_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file + 1;
         testRank = rank + 2;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KNIGHT_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file + 1;
         testRank = rank - 2;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KNIGHT_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file - 1;
         testRank = rank + 2;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KNIGHT_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file - 1;
         testRank = rank - 2;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KNIGHT_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
     }
@@ -162,55 +166,127 @@ void initNonSlidingMasks() {
 
         int testFile = file;
         int testRank = rank + 1;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KING_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file;
         testRank = rank - 1;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KING_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file + 1;
         testRank = rank;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KING_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file - 1;
         testRank = rank;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KING_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file + 1;
         testRank = rank + 1;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KING_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file + 1;
         testRank = rank - 1;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KING_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file - 1;
         testRank = rank + 1;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KING_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
         testFile = file - 1;
         testRank = rank - 1;
-        if(fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
             KING_ATTACKS[sq] |= (1ULL << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
+    }
+}
+
+static void initPawnMoveMasks() {
+    //White pawn moves
+    for (int sq = SQ_A1; sq <= SQ_H8; sq++) {
+        int file = getFile(static_cast<Square>(sq));
+        int rank = getRank(static_cast<Square>(sq));
+
+        int testFile = file;
+        int testRank = rank + 1;
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+            PAWN_SINGLE_MOVES[COLOR_WHITE][sq] |= (1ULL
+                    << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
+        }
+
+        if (rank == RANK_2) {
+            testFile = file;
+            testRank = rank + 2;
+            if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+                PAWN_DOUBLE_MOVES[COLOR_WHITE][sq] |= (1ULL
+                        << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
+            }
+        }
+
+        testFile = file - 1;
+        testRank = rank + 1;
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+            PAWN_ATTACKS[COLOR_WHITE][sq] |= (1ULL
+                    << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
+        }
+
+        testFile = file + 1;
+        testRank = rank + 1;
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+            PAWN_ATTACKS[COLOR_WHITE][sq] |= (1ULL
+                    << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
+        }
+
+        testFile = file;
+        testRank = rank - 1;
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+            PAWN_SINGLE_MOVES[COLOR_BLACK][sq] |= (1ULL
+                    << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
+        }
+
+        if (rank == 7) {
+            testFile = file;
+            testRank = rank - 2;
+            if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+                PAWN_DOUBLE_MOVES[COLOR_BLACK][sq] |= (1ULL
+                        << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
+            }
+        }
+
+        testFile = file - 1;
+        testRank = rank - 1;
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+            PAWN_ATTACKS[COLOR_BLACK][sq] |= (1ULL
+                    << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
+        }
+
+        testFile = file + 1;
+        testRank = rank - 1;
+        if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {
+            PAWN_ATTACKS[COLOR_BLACK][sq] |= (1ULL
+                    << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
+        }
+
+        printBitboard(PAWN_SINGLE_MOVES[COLOR_BLACK][sq]);
+        cout << endl;
     }
 }
 
 void initAll() {
     initODMasks();
     initNonSlidingMasks();
+    initPawnMoveMasks();
 }

@@ -1,1 +1,0 @@
-g++ -g -std=c++11 -O2 -o chess.exe attack.cpp bitboards.cpp board.cpp evaluate.cpp hashkey.cpp init.cpp io.cpp main.cpp makemove.cpp misc.cpp move.cpp movegen.cpp perft.cpp pvtable.cpp search.cpp validate.cpp uci.cpp 
