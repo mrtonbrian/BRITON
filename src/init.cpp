@@ -279,9 +279,6 @@ static void initPawnMoveMasks() {
             PAWN_ATTACKS[COLOR_BLACK][sq] |= (1ULL
                     << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
-
-        printBitboard(PAWN_SINGLE_MOVES[COLOR_BLACK][sq]);
-        cout << endl;
     }
 }
 

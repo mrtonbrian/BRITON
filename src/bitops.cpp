@@ -41,9 +41,9 @@ const int BitTable[64] = {
         39, 48, 24, 59, 14, 12, 55, 38, 28, 58, 20, 37, 17, 36, 8
 };
 
-int popBit(Bitboard *bb) {
-    Bitboard b = *bb ^(*bb - 1);
+int popBit(Bitboard& bb) {
+    Bitboard b = bb ^ ((bb) - 1);
     unsigned int fold = (unsigned) ((b & 0xffffffff) ^ (b >> 32));
-    *bb &= (*bb - 1);
+    bb &= (bb - 1);
     return BitTable[(fold * 0x783a9b23) >> 26];
 }

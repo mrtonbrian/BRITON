@@ -22,6 +22,7 @@ public:
     bool setFromFEN(std::string fen);
     void resetPosition();
     void printBoard();
+    std::vector<Move> generateAllMoves();
 
     Bitboard byType[PIECE_TYPE_NB];
     Bitboard byColor[COLOR_NB];
@@ -39,6 +40,9 @@ public:
     uint64_t sideKey;
     uint64_t castleKeys[16];
     std::vector<PrevBoard> prevBoards;
+
+    void generateWhitePawnMoves(std::vector<Move> moves);
+    void generateBlackPawnMoves(std::vector<Move> moves);
 };
 
 #endif //CHESS_ENGINE_CPP_POSITION_H

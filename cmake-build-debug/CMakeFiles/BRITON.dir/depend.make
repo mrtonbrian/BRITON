@@ -10,6 +10,7 @@ CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/Bitboard.h
 CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/Position.cpp
 CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/Position.h
 CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/Types.h
+CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/bitops.h
 CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/misc.h
 
 CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/Bitboard.h
@@ -26,6 +27,7 @@ CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/misc.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/Bitboard.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/Position.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/Types.h
+CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/bitops.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/init.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/misc.h

@@ -6,7 +6,9 @@
 #include "misc.h"
 #include "Position.h"
 #include "init.h"
+#include <cassert>
 #include "movegen.h"
+#include "bitops.h"
 #include <iostream>
 
 using namespace std;

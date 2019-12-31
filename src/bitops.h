@@ -10,6 +10,6 @@
 
 int bitScanReverse(Bitboard bb);
 
-int popBit(Bitboard *bb);
+int popBit(Bitboard& bb);
 
 #endif //CHESS_ENGINE_CPP_BITOPS_H

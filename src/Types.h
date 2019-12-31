@@ -74,6 +74,11 @@ struct SMasks {
     Bitboard line; // Lower | Upper
 };
 
+struct Move {
+    int move;
+    int score;
+};
+
 extern SMasks masks[SQUARE_NUM][4];
 
 extern Bitboard KNIGHT_ATTACKS[SQUARE_NUM];
