@@ -17,9 +17,6 @@ int main() {
     initAll();
     Position p;
     p.init();
-    p.setFromFEN("8/6p1/1p6/8/3B4/2p1P3/8/8 w - - 0 1");
+    p.setFromFEN("4r3/8/8/8/8/6B1/8/4k3 w - - 0 1");
     p.printBoard();
-    cout << endl;
-    printBitboard(bishopAttacks(p.byColor[COLOR_WHITE] | p.byColor[COLOR_BLACK], SQ_D4) & ~p.byColor[COLOR_WHITE]);
-    cout << endl;
 }

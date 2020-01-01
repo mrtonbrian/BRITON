@@ -594,9 +594,26 @@ void Position::generateBlackKingMoves(std::vector<Move> moves) {
     }
 }
 
-// TODO: Implement squareAttacked
-bool Position::squareAttacked(Square sq, Color color) {
-    return false;
+bool Position::squareAttacked(Square square, Color color) {
+    Bitboard occupancy = byColor[COLOR_WHITE] | byColor[COLOR_BLACK];
+
+    Bitboard pawns = byColor[color] & byType[PAWN];
+    if (PAWN_ATTACKS[color ^ 1][square] & pawns) return true;
+
+    Bitboard knights = byColor[color] & byType[KNIGHT];
+    if (knightMoves(occupancy, square) & knights) return true;
+
+    Bitboard king = byColor[color] & byType[KING];
+    if (kingMoves(occupancy, square) & king) return true;
+
+    Bitboard bishopsQueens = (byColor[color] & byType[QUEEN])
+                             | (byColor[color] & byType[BISHOP]);
+    //printBitboard(bishopAttacks(occupancy, square));
+    if (bishopAttacks(occupancy, square) & bishopsQueens) return true;
+
+    Bitboard rooksQueens = (byColor[color] & byType[QUEEN])
+                           | (byColor[color] & byType[ROOK]);
+    return (rookAttacks(occupancy, square) & rooksQueens) != 0;
 }
 
 // Checks if ANY squares in bitmap are attacked
