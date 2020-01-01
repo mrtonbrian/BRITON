@@ -33,3 +33,7 @@ uint64_t knightMoves(Bitboard occ, Square sq) {
 uint64_t kingMoves(Bitboard occ, Square sq) {
     return KING_ATTACKS[sq] & ~occ;
 }
+
+uint64_t queenMoves(Bitboard occ, Square sq) {
+    return rookAttacks(occ, sq) | bishopAttacks(occ, sq);
+}

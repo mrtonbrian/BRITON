@@ -23,7 +23,9 @@ public:
     void resetPosition();
     void printBoard();
     std::vector<Move> generateAllMoves();
-
+    bool squareAttacked(Square sq, Color color);
+    bool squareAttacked(Bitboard bitmap, Color color);
+private:
     Bitboard byType[PIECE_TYPE_NB];
     Bitboard byColor[COLOR_NB];
     Piece board[SQUARE_NUM];
@@ -43,6 +45,16 @@ public:
 
     void generateWhitePawnMoves(std::vector<Move> moves);
     void generateBlackPawnMoves(std::vector<Move> moves);
+    void generateWhiteKnightMoves(std::vector<Move> moves);
+    void generateBlackKnightMoves(std::vector<Move> moves);
+    void generateWhiteBishopMoves(std::vector<Move> moves);
+    void generateBlackBishopMoves(std::vector<Move> moves);
+    void generateWhiteRookMoves(std::vector<Move> moves);
+    void generateBlackRookMoves(std::vector<Move> moves);
+    void generateWhiteQueenMoves(std::vector<Move> moves);
+    void generateBlackQueenMoves(std::vector<Move> moves);
+    void generateWhiteKingMoves(std::vector<Move> moves);
+    void generateBlackKingMoves(std::vector<Move> moves);
 };
 
 #endif //CHESS_ENGINE_CPP_POSITION_H

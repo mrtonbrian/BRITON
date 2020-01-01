@@ -89,4 +89,9 @@ extern Bitboard PAWN_SINGLE_MOVES[COLOR_NB][SQUARE_NUM];
 extern Bitboard PAWN_DOUBLE_MOVES[COLOR_NB][SQUARE_NUM];
 extern Bitboard PAWN_ATTACKS[COLOR_NB][SQUARE_NUM];
 
+extern Bitboard OO_MASK[COLOR_NB];
+extern Bitboard OOO_MASK[COLOR_NB];
+
+extern Bitboard OO_ATTACK_MASK[COLOR_NB];
+extern Bitboard OOO_ATTACK_MASK[COLOR_NB];
 #endif

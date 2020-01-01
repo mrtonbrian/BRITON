@@ -15,6 +15,12 @@ Bitboard PAWN_SINGLE_MOVES[COLOR_NB][SQUARE_NUM];
 Bitboard PAWN_DOUBLE_MOVES[COLOR_NB][SQUARE_NUM];
 Bitboard PAWN_ATTACKS[COLOR_NB][SQUARE_NUM];
 
+Bitboard OO_MASK[COLOR_NB];
+Bitboard OOO_MASK[COLOR_NB];
+
+Bitboard OO_ATTACK_MASK[COLOR_NB];
+Bitboard OOO_ATTACK_MASK[COLOR_NB];
+
 using namespace std;
 
 static void initODMasks() {
@@ -215,7 +221,7 @@ static void initNonSlidingMasks() {
 }
 
 static void initPawnMoveMasks() {
-    //White pawn moves
+    //COLOR_WHITE pawn moves
     for (int sq = SQ_A1; sq <= SQ_H8; sq++) {
         int file = getFile(static_cast<Square>(sq));
         int rank = getRank(static_cast<Square>(sq));
@@ -282,8 +288,21 @@ static void initPawnMoveMasks() {
     }
 }
 
+static void initCastleMasks() {
+    OO_MASK[COLOR_WHITE] = (1LL << SQ_F1) | (1LL << SQ_G1);
+    OO_MASK[COLOR_BLACK] = (1LL << SQ_F8) | (1LL << SQ_G8);
+    OOO_MASK[COLOR_WHITE] = (1LL << SQ_B1) | (1LL << SQ_C1) | (1LL << SQ_D1);
+    OOO_MASK[COLOR_BLACK] = (1LL << SQ_B8) | (1LL << SQ_C8) | (1LL << SQ_D8);
+
+    OO_ATTACK_MASK[COLOR_WHITE] = (1LL << SQ_E1) | (1LL << SQ_F1);
+    OO_ATTACK_MASK[COLOR_BLACK] = (1LL << SQ_E8) | (1LL << SQ_F8);
+    OOO_ATTACK_MASK[COLOR_WHITE] = (1LL << SQ_E1) | (1LL << SQ_D1);
+    OOO_ATTACK_MASK[COLOR_BLACK] = (1LL << SQ_E8) | (1LL << SQ_D8);
+}
+
 void initAll() {
     initODMasks();
     initNonSlidingMasks();
     initPawnMoveMasks();
+    initCastleMasks();
 }

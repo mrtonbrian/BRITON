@@ -12,6 +12,7 @@ CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/Position.h
 CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/Types.h
 CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/bitops.h
 CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/misc.h
+CMakeFiles/BRITON.dir/src/Position.cpp.o: ../src/movegen.h
 
 CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/Bitboard.h
 CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/Types.h

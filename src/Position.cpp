@@ -3,6 +3,7 @@
 #include "Bitboard.h"
 #include "bitops.h"
 #include "misc.h"
+#include "movegen.h"
 
 char pieceToChar[15] = {
         '-',
@@ -288,8 +289,18 @@ std::vector<Move> Position::generateAllMoves() {
 
     if (turn == COLOR_WHITE) {
         generateWhitePawnMoves(moves);
+        generateWhiteKnightMoves(moves);
+        generateWhiteBishopMoves(moves);
+        generateWhiteRookMoves(moves);
+        generateWhiteQueenMoves(moves);
+        generateWhiteKingMoves(moves);
     } else {
         generateBlackPawnMoves(moves);
+        generateBlackKnightMoves(moves);
+        generateBlackBishopMoves(moves);
+        generateBlackRookMoves(moves);
+        generateBlackQueenMoves(moves);
+        generateBlackKingMoves(moves);
     }
 
     return moves;
@@ -379,4 +390,223 @@ void Position::generateBlackPawnMoves(std::vector<Move> moves) {
 
         clearBit(pieceBB, from);
     }
+}
+
+void Position::generateWhiteKnightMoves(std::vector<Move> moves) {
+    Bitboard pieceBB = byColor[COLOR_WHITE] & byType[KNIGHT];
+
+    while (pieceBB) {
+        int from = popBit(pieceBB);
+
+        Bitboard moveBB = knightMoves(byColor[COLOR_WHITE], static_cast<Square>(from));
+        while (moveBB) {
+            int to = popBit(moveBB);
+            int capturePiece = board[to];
+            addMoves(moves, from, to, W_KNIGHT, capturePiece, false, false, false);
+            clearBit(moveBB, to);
+        }
+
+        clearBit(moveBB, from);
+    }
+}
+
+void Position::generateBlackKnightMoves(std::vector<Move> moves) {
+    Bitboard pieceBB = byColor[COLOR_BLACK] & byType[KNIGHT];
+
+    while (pieceBB) {
+        int from = popBit(pieceBB);
+
+        Bitboard moveBB = knightMoves(byColor[COLOR_BLACK], static_cast<Square>(from));
+        while (moveBB) {
+            int to = popBit(moveBB);
+            int capturePiece = board[to];
+            addMoves(moves, from, to, B_KNIGHT, capturePiece, false, false, false);
+            clearBit(moveBB, to);
+        }
+
+        clearBit(moveBB, from);
+    }
+}
+
+void Position::generateWhiteBishopMoves(std::vector<Move> moves) {
+    Bitboard pieceBB = byColor[COLOR_WHITE] & byType[BISHOP];
+
+    while (pieceBB) {
+        int from = popBit(pieceBB);
+
+        Bitboard moveBB = bishopAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) &
+                          ~byColor[COLOR_WHITE];
+        while (moveBB) {
+            int to = popBit(moveBB);
+            int capturePiece = board[to];
+            addMoves(moves, from, to, W_BISHOP, capturePiece, false, false, false);
+            clearBit(moveBB, to);
+        }
+
+        clearBit(moveBB, from);
+    }
+}
+
+void Position::generateBlackBishopMoves(std::vector<Move> moves) {
+    Bitboard pieceBB = byColor[COLOR_BLACK] & byType[BISHOP];
+
+    while (pieceBB) {
+        int from = popBit(pieceBB);
+
+        Bitboard moveBB = bishopAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) &
+                          ~byColor[COLOR_BLACK];
+        while (moveBB) {
+            int to = popBit(moveBB);
+            int capturePiece = board[to];
+            addMoves(moves, from, to, B_BISHOP, capturePiece, false, false, false);
+            clearBit(moveBB, to);
+        }
+
+        clearBit(moveBB, from);
+    }
+}
+
+void Position::generateWhiteRookMoves(std::vector<Move> moves) {
+    Bitboard pieceBB = byColor[COLOR_WHITE] & byType[ROOK];
+
+    while (pieceBB) {
+        int from = popBit(pieceBB);
+
+        Bitboard moveBB = rookAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) &
+                          ~byColor[COLOR_WHITE];
+        while (moveBB) {
+            int to = popBit(moveBB);
+            int capturePiece = board[to];
+            addMoves(moves, from, to, W_BISHOP, capturePiece, false, false, false);
+            clearBit(moveBB, to);
+        }
+
+        clearBit(moveBB, from);
+    }
+}
+
+void Position::generateBlackRookMoves(std::vector<Move> moves) {
+    Bitboard pieceBB = byColor[COLOR_BLACK] & byType[ROOK];
+
+    while (pieceBB) {
+        int from = popBit(pieceBB);
+
+        Bitboard moveBB = bishopAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) &
+                          ~byColor[COLOR_BLACK];
+        while (moveBB) {
+            int to = popBit(moveBB);
+            int capturePiece = board[to];
+            addMoves(moves, from, to, B_BISHOP, capturePiece, false, false, false);
+            clearBit(moveBB, to);
+        }
+
+        clearBit(moveBB, from);
+    }
+}
+
+void Position::generateWhiteQueenMoves(std::vector<Move> moves) {
+    Bitboard pieceBB = byColor[COLOR_WHITE] & byType[QUEEN];
+
+    while (pieceBB) {
+        int from = popBit(pieceBB);
+
+        Bitboard moveBB = (rookAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) |
+                           bishopAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from))) &
+                          ~byColor[COLOR_WHITE];
+        while (moveBB) {
+            int to = popBit(moveBB);
+            int capturePiece = board[to];
+            addMoves(moves, from, to, W_QUEEN, capturePiece, false, false, false);
+            clearBit(moveBB, to);
+        }
+
+        clearBit(moveBB, from);
+    }
+}
+
+void Position::generateBlackQueenMoves(std::vector<Move> moves) {
+    Bitboard pieceBB = byColor[COLOR_BLACK] & byType[QUEEN];
+
+    while (pieceBB) {
+        int from = popBit(pieceBB);
+
+        Bitboard moveBB = (rookAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) |
+                           bishopAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from))) &
+                          ~byColor[COLOR_BLACK];
+        while (moveBB) {
+            int to = popBit(moveBB);
+            int capturePiece = board[to];
+            addMoves(moves, from, to, B_QUEEN, capturePiece, false, false, false);
+            clearBit(moveBB, to);
+        }
+
+        clearBit(moveBB, from);
+    }
+}
+
+void Position::generateWhiteKingMoves(std::vector<Move> moves) {
+    Bitboard pieceBB = byColor[COLOR_WHITE] & byType[KING];
+
+    // Assume 1 King on board
+    int from = popBit(pieceBB);
+    Bitboard moveBB = kingMoves(byColor[COLOR_WHITE], static_cast<Square>(from));
+    while (moveBB) {
+        int to = popBit(moveBB);
+        int capturePiece = board[to];
+        addMoves(moves, from, to, W_KING, capturePiece, false, false, false);
+        clearBit(moveBB, to);
+    }
+
+    if ((castlePerms & WHITE_K_K) && !((byColor[COLOR_WHITE] | byColor[COLOR_BLACK]) & OO_MASK[COLOR_WHITE])) {
+        if (!squareAttacked(OO_ATTACK_MASK[COLOR_WHITE], COLOR_BLACK)) {
+            addMoves(moves, from, SQ_G1, W_KING, false, false, false, true);
+        }
+    }
+    if ((castlePerms & WHITE_K_Q) && !((byColor[COLOR_WHITE] | byColor[COLOR_BLACK]) & OOO_MASK[COLOR_WHITE])) {
+        if (!squareAttacked(OOO_ATTACK_MASK[COLOR_WHITE], COLOR_BLACK)) {
+            addMoves(moves, from, SQ_C1, W_KING, false, false, false, true);
+        }
+    }
+}
+
+void Position::generateBlackKingMoves(std::vector<Move> moves) {
+    Bitboard pieceBB = byColor[COLOR_BLACK] & byType[KING];
+
+    // Assume 1 King on board
+    int from = popBit(pieceBB);
+    Bitboard moveBB = kingMoves(byColor[COLOR_BLACK], static_cast<Square>(from));
+    while (moveBB) {
+        int to = popBit(moveBB);
+        int capturePiece = board[to];
+        addMoves(moves, from, to, B_KING, capturePiece, false, false, false);
+        clearBit(moveBB, to);
+    }
+
+    if ((castlePerms & BLACK_K_K) && !((byColor[COLOR_WHITE] | byColor[COLOR_BLACK]) & OO_MASK[COLOR_BLACK])) {
+        if (!squareAttacked(OO_ATTACK_MASK[COLOR_BLACK], COLOR_WHITE)) {
+            addMoves(moves, from, SQ_G8, B_KING, false, false, false, true);
+        }
+    }
+    if ((castlePerms & BLACK_K_Q) && !((byColor[COLOR_WHITE] | byColor[COLOR_BLACK]) & OOO_MASK[COLOR_BLACK])) {
+        if (!squareAttacked(OOO_ATTACK_MASK[COLOR_BLACK], COLOR_WHITE)) {
+            addMoves(moves, from, SQ_C8, B_KING, false, false, false, true);
+        }
+    }
+}
+
+// TODO: Implement squareAttacked
+bool Position::squareAttacked(Square sq, Color color) {
+    return false;
+}
+
+// Checks if ANY squares in bitmap are attacked
+bool Position::squareAttacked(Bitboard bitmap, Color color) {
+    Bitboard bitmapClone = bitmap;
+    while (bitmapClone) {
+        if (squareAttacked(static_cast<Square>(popBit(bitmapClone)), color)) {
+            return true;
+        }
+    }
+
+    return false;
 }

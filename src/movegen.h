@@ -15,4 +15,6 @@ uint64_t bishopAttacks(Bitboard occ, Square sq);
 uint64_t knightMoves(Bitboard occ, Square sq);
 
 uint64_t kingMoves(Bitboard occ, Square sq);
+
+uint64_t queenMoves(Bitboard occ, Square sq);
 #endif //CHESS_ENGINE_CPP_MOVEGEN_H
