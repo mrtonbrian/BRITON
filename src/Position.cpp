@@ -244,11 +244,13 @@ void Position::printBoard() {
            castlePerms & BLACK_K_Q ? 'q' : '-');
     printf("PosKey:%lX\n", zobristHash);
 
+    /*
     printf("\nWhite Bitboard:\n");
     printBitboard(byColor[COLOR_WHITE]);
 
     printf("\nBlack Bitboard:\n");
     printBitboard(byColor[COLOR_BLACK]);
+    */
 }
 
 /* move
@@ -284,13 +286,13 @@ std::vector<Move> Position::generateAllMoves() {
 }
 
 static void
-addMoves(std::vector<Move> moves, int from, int to, int piece, int capture, int promotion, int enPass, int castling) {
+addMoves(std::vector<Move>& moves, int from, int to, int piece, int capture, int promotion, int enPass, int castling) {
     Move move;
     move.move = gen_move(from, to, piece, capture, promotion, enPass, castling);
     moves.push_back(move);
 }
 
-void Position::generateWhitePawnMoves(std::vector<Move> moves) {
+void Position::generateWhitePawnMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_WHITE] & byType[PAWN];
     Bitboard currentMoveBB;
     while (pieceBB) {
@@ -329,7 +331,7 @@ void Position::generateWhitePawnMoves(std::vector<Move> moves) {
     }
 }
 
-void Position::generateBlackPawnMoves(std::vector<Move> moves) {
+void Position::generateBlackPawnMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_BLACK] & byType[PAWN];
     Bitboard currentMoveBB;
     while (pieceBB) {
@@ -369,7 +371,7 @@ void Position::generateBlackPawnMoves(std::vector<Move> moves) {
     }
 }
 
-void Position::generateWhiteKnightMoves(std::vector<Move> moves) {
+void Position::generateWhiteKnightMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_WHITE] & byType[KNIGHT];
 
     while (pieceBB) {
@@ -387,7 +389,7 @@ void Position::generateWhiteKnightMoves(std::vector<Move> moves) {
     }
 }
 
-void Position::generateBlackKnightMoves(std::vector<Move> moves) {
+void Position::generateBlackKnightMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_BLACK] & byType[KNIGHT];
 
     while (pieceBB) {
@@ -405,7 +407,7 @@ void Position::generateBlackKnightMoves(std::vector<Move> moves) {
     }
 }
 
-void Position::generateWhiteBishopMoves(std::vector<Move> moves) {
+void Position::generateWhiteBishopMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_WHITE] & byType[BISHOP];
 
     while (pieceBB) {
@@ -424,7 +426,7 @@ void Position::generateWhiteBishopMoves(std::vector<Move> moves) {
     }
 }
 
-void Position::generateBlackBishopMoves(std::vector<Move> moves) {
+void Position::generateBlackBishopMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_BLACK] & byType[BISHOP];
 
     while (pieceBB) {
@@ -443,7 +445,7 @@ void Position::generateBlackBishopMoves(std::vector<Move> moves) {
     }
 }
 
-void Position::generateWhiteRookMoves(std::vector<Move> moves) {
+void Position::generateWhiteRookMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_WHITE] & byType[ROOK];
 
     while (pieceBB) {
@@ -462,7 +464,7 @@ void Position::generateWhiteRookMoves(std::vector<Move> moves) {
     }
 }
 
-void Position::generateBlackRookMoves(std::vector<Move> moves) {
+void Position::generateBlackRookMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_BLACK] & byType[ROOK];
 
     while (pieceBB) {
@@ -481,7 +483,7 @@ void Position::generateBlackRookMoves(std::vector<Move> moves) {
     }
 }
 
-void Position::generateWhiteQueenMoves(std::vector<Move> moves) {
+void Position::generateWhiteQueenMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_WHITE] & byType[QUEEN];
 
     while (pieceBB) {
@@ -501,7 +503,7 @@ void Position::generateWhiteQueenMoves(std::vector<Move> moves) {
     }
 }
 
-void Position::generateBlackQueenMoves(std::vector<Move> moves) {
+void Position::generateBlackQueenMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_BLACK] & byType[QUEEN];
 
     while (pieceBB) {
@@ -521,7 +523,7 @@ void Position::generateBlackQueenMoves(std::vector<Move> moves) {
     }
 }
 
-void Position::generateWhiteKingMoves(std::vector<Move> moves) {
+void Position::generateWhiteKingMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_WHITE] & byType[KING];
 
     // Assume 1 King on board
@@ -546,7 +548,7 @@ void Position::generateWhiteKingMoves(std::vector<Move> moves) {
     }
 }
 
-void Position::generateBlackKingMoves(std::vector<Move> moves) {
+void Position::generateBlackKingMoves(std::vector<Move>& moves) {
     Bitboard pieceBB = byColor[COLOR_BLACK] & byType[KING];
 
     // Assume 1 King on board

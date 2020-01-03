@@ -312,6 +312,33 @@ src/movegen.cpp.s:
 	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/movegen.cpp.s
 .PHONY : src/movegen.cpp.s
 
+src/perft.o: src/perft.cpp.o
+
+.PHONY : src/perft.o
+
+# target to build an object file
+src/perft.cpp.o:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/perft.cpp.o
+.PHONY : src/perft.cpp.o
+
+src/perft.i: src/perft.cpp.i
+
+.PHONY : src/perft.i
+
+# target to preprocess a source file
+src/perft.cpp.i:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/perft.cpp.i
+.PHONY : src/perft.cpp.i
+
+src/perft.s: src/perft.cpp.s
+
+.PHONY : src/perft.s
+
+# target to generate assembly for a file
+src/perft.cpp.s:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/perft.cpp.s
+.PHONY : src/perft.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -342,6 +369,9 @@ help:
 	@echo "... src/movegen.o"
 	@echo "... src/movegen.i"
 	@echo "... src/movegen.s"
+	@echo "... src/perft.o"
+	@echo "... src/perft.i"
+	@echo "... src/perft.s"
 .PHONY : help
 
 

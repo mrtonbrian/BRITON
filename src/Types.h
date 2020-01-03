@@ -94,4 +94,13 @@ extern Bitboard OOO_MASK[COLOR_NB];
 
 extern Bitboard OO_ATTACK_MASK[COLOR_NB];
 extern Bitboard OOO_ATTACK_MASK[COLOR_NB];
+
+#define gen_move(f, t, p, c, pr, ep, ca) ((f) | (t<<6) | (p<<12) | (c<<16) | (pr<<20) | (ep<<25) | (ca<<26))
+#define mv_from(m) ((m) & (0b111111))
+#define mv_to(m) ((m >> 6) & (0b111111))
+#define mv_piece(m) ((m >> 12) & (0b1111))
+#define mv_cap(m) ((m >> 16) & (0b1111))
+#define mv_prom(m) ((m >> 20) & (0b1111))
+#define mv_ep(m) ((m >> 25) & (0b1))
+#define mv_castle(m) ((m >> 26) & (0b1))
 #endif

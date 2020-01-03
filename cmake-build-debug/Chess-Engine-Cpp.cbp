@@ -123,6 +123,12 @@
 		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/movegen.h">
 			<Option target="BRITON"/>
 		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/perft.cpp">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/perft.h">
+			<Option target="BRITON"/>
+		</Unit>
 		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

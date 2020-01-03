@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/brianton/Desktop/Chess-Engine-Cpp/src/main.cpp" "/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir/src/main.cpp.o"
   "/home/brianton/Desktop/Chess-Engine-Cpp/src/misc.cpp" "/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir/src/misc.cpp.o"
   "/home/brianton/Desktop/Chess-Engine-Cpp/src/movegen.cpp" "/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir/src/movegen.cpp.o"
+  "/home/brianton/Desktop/Chess-Engine-Cpp/src/perft.cpp" "/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir/src/perft.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

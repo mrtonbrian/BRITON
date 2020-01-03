@@ -1,4 +1,5 @@
 #include "Types.h"
+#include <string>
 
 #ifndef CHESS_ENGINE_CPP_MISC_H
 #define CHESS_ENGINE_CPP_MISC_H
@@ -32,5 +33,9 @@ constexpr bool fileRankOk(File f, Rank r) {
 }
 
 uint64_t random64BitInteger();
+
+int getTimeMs();
+
+std::string printMove(int move);
 
 #endif //CHESS_ENGINE_CPP_MISC_H

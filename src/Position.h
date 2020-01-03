@@ -6,15 +6,6 @@
 #ifndef CHESS_ENGINE_CPP_POSITION_H
 #define CHESS_ENGINE_CPP_POSITION_H
 
-#define gen_move(f, t, p, c, pr, ep, ca) ((f) | (t<<6) | (p<<12) | (c<<16) | (pr<<20) | (ep<<25) | (ca<<26))
-#define mv_from(m) ((m) & (0b111111))
-#define mv_to(m) ((m >> 6) & (0b111111))
-#define mv_piece(m) ((m >> 12) & (0b1111))
-#define mv_cap(m) ((m >> 16) & (0b1111))
-#define mv_prom(m) ((m >> 20) & (0b1111))
-#define mv_ep(m) ((m >> 25) & (0b1))
-#define mv_castle(m) ((m >> 26) & (0b1))
-
 
 const char pieceToChar[15] = {
         '-',
@@ -88,18 +79,18 @@ private:
     uint64_t castleKeys[16];
     std::vector<PrevBoard> prevBoards;
 
-    void generateWhitePawnMoves(std::vector<Move> moves);
-    void generateBlackPawnMoves(std::vector<Move> moves);
-    void generateWhiteKnightMoves(std::vector<Move> moves);
-    void generateBlackKnightMoves(std::vector<Move> moves);
-    void generateWhiteBishopMoves(std::vector<Move> moves);
-    void generateBlackBishopMoves(std::vector<Move> moves);
-    void generateWhiteRookMoves(std::vector<Move> moves);
-    void generateBlackRookMoves(std::vector<Move> moves);
-    void generateWhiteQueenMoves(std::vector<Move> moves);
-    void generateBlackQueenMoves(std::vector<Move> moves);
-    void generateWhiteKingMoves(std::vector<Move> moves);
-    void generateBlackKingMoves(std::vector<Move> moves);
+    void generateWhitePawnMoves(std::vector<Move>& moves);
+    void generateBlackPawnMoves(std::vector<Move>& moves);
+    void generateWhiteKnightMoves(std::vector<Move>& moves);
+    void generateBlackKnightMoves(std::vector<Move>& moves);
+    void generateWhiteBishopMoves(std::vector<Move>& moves);
+    void generateBlackBishopMoves(std::vector<Move>& moves);
+    void generateWhiteRookMoves(std::vector<Move>& moves);
+    void generateBlackRookMoves(std::vector<Move>& moves);
+    void generateWhiteQueenMoves(std::vector<Move>& moves);
+    void generateBlackQueenMoves(std::vector<Move>& moves);
+    void generateWhiteKingMoves(std::vector<Move>& moves);
+    void generateBlackKingMoves(std::vector<Move>& moves);
 
     void hashPiece(Piece piece, Square sq);
     void hashCastle();

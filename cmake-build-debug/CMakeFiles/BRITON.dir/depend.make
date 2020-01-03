@@ -33,6 +33,7 @@ CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/init.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/misc.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/movegen.h
+CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/perft.h
 
 CMakeFiles/BRITON.dir/src/misc.cpp.o: ../src/Types.h
 CMakeFiles/BRITON.dir/src/misc.cpp.o: ../src/misc.cpp
@@ -44,4 +45,10 @@ CMakeFiles/BRITON.dir/src/movegen.cpp.o: ../src/bitops.h
 CMakeFiles/BRITON.dir/src/movegen.cpp.o: ../src/misc.h
 CMakeFiles/BRITON.dir/src/movegen.cpp.o: ../src/movegen.cpp
 CMakeFiles/BRITON.dir/src/movegen.cpp.o: ../src/movegen.h
+
+CMakeFiles/BRITON.dir/src/perft.cpp.o: ../src/Position.h
+CMakeFiles/BRITON.dir/src/perft.cpp.o: ../src/Types.h
+CMakeFiles/BRITON.dir/src/perft.cpp.o: ../src/misc.h
+CMakeFiles/BRITON.dir/src/perft.cpp.o: ../src/perft.cpp
+CMakeFiles/BRITON.dir/src/perft.cpp.o: ../src/perft.h
 

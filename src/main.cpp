@@ -6,6 +6,7 @@
 #include "misc.h"
 #include "Position.h"
 #include "init.h"
+#include "perft.h"
 #include <cassert>
 #include "movegen.h"
 #include "bitops.h"
@@ -17,6 +18,6 @@ int main() {
     initAll();
     Position p;
     p.init();
-    p.setFromFEN("4r3/8/8/8/8/6B1/8/4k3 w - - 0 1");
-    p.printBoard();
+    p.setFromFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+    perftTest(p, 2);
 }

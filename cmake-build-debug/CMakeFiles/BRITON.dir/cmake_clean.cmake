@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/BRITON.dir/src/main.cpp.o"
   "CMakeFiles/BRITON.dir/src/misc.cpp.o"
   "CMakeFiles/BRITON.dir/src/movegen.cpp.o"
+  "CMakeFiles/BRITON.dir/src/perft.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.
