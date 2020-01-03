@@ -27,7 +27,7 @@ void perftTest(Position position, int depth) {
     std::cout << "Starting Test To Depth" << " " << depth << std::endl;
     leafNodes = 0;
 
-    double startTime = getTimeMs();
+    int startTime = getTimeMs();
 
     int moveNum = 0;
     std::vector<Move> moveList = position.generateAllMoves();
@@ -44,7 +44,7 @@ void perftTest(Position position, int depth) {
         printf("move %d : %s : %ld\n", ++moveNum, printMove(moveI).c_str(), changeNodes);
     }
 
-    double endTime = getTimeMs();
-    printf("TEST COMPLETE: %ld nodes visited in %f ms\n", leafNodes, endTime - startTime);
-    printf("That Is %.1f NPS\n", (endTime - startTime) / leafNodes);
+    int endTime = getTimeMs();
+    printf("TEST COMPLETE: %ld nodes visited in %d ms\n", leafNodes, endTime - startTime);
+    printf("That Is %.1f NPS\n", leafNodes / ((endTime - startTime) / 1000.) );
 }

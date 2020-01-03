@@ -263,7 +263,7 @@ static void initPawnMoveMasks() {
                     << makeSquare(static_cast<Rank>(testRank), static_cast<File>(testFile)));
         }
 
-        if (rank == 7) {
+        if (rank == RANK_7) {
             testFile = file;
             testRank = rank - 2;
             if (fileRankOk(static_cast<File>(testFile), static_cast<Rank>(testRank))) {

@@ -298,10 +298,10 @@ void Position::generateWhitePawnMoves(std::vector<Move>& moves) {
     while (pieceBB) {
         int from = popBit(pieceBB);
         // Valid Single Moves: If There Is No Piece in front
-        currentMoveBB = PAWN_SINGLE_MOVES[COLOR_WHITE][from] & ~(byColor[COLOR_WHITE] & byColor[COLOR_BLACK]);
+        currentMoveBB = PAWN_SINGLE_MOVES[COLOR_WHITE][from] & ~(byColor[COLOR_WHITE] | byColor[COLOR_BLACK]);
 
         if (currentMoveBB && getRank(static_cast<Square>(from)) == RANK_2) {
-            currentMoveBB |= PAWN_DOUBLE_MOVES[COLOR_WHITE][from] & ~(byColor[COLOR_WHITE] & byColor[COLOR_BLACK]);
+            currentMoveBB |= PAWN_DOUBLE_MOVES[COLOR_WHITE][from] & ~(byColor[COLOR_WHITE] | byColor[COLOR_BLACK]);
         }
         currentMoveBB |= PAWN_ATTACKS[COLOR_WHITE][from] & byColor[COLOR_BLACK];
 
@@ -337,10 +337,10 @@ void Position::generateBlackPawnMoves(std::vector<Move>& moves) {
     while (pieceBB) {
         int from = popBit(pieceBB);
         // Valid Single Moves: If There Is No Piece in front
-        currentMoveBB = PAWN_SINGLE_MOVES[COLOR_BLACK][from] & ~(byColor[COLOR_WHITE] & byColor[COLOR_BLACK]);
+        currentMoveBB = PAWN_SINGLE_MOVES[COLOR_BLACK][from] & ~(byColor[COLOR_WHITE] | byColor[COLOR_BLACK]);
 
         if (currentMoveBB && getRank(static_cast<Square>(from)) == RANK_7) {
-            currentMoveBB |= PAWN_DOUBLE_MOVES[COLOR_BLACK][from] & ~(byColor[COLOR_WHITE] & byColor[COLOR_BLACK]);
+            currentMoveBB |= PAWN_DOUBLE_MOVES[COLOR_BLACK][from] & ~(byColor[COLOR_WHITE] | byColor[COLOR_BLACK]);
         }
         // Add Attacks
         currentMoveBB |= PAWN_ATTACKS[COLOR_BLACK][from] & byColor[COLOR_WHITE];
@@ -456,7 +456,7 @@ void Position::generateWhiteRookMoves(std::vector<Move>& moves) {
         while (moveBB) {
             int to = popBit(moveBB);
             int capturePiece = board[to];
-            addMoves(moves, from, to, W_BISHOP, capturePiece, false, false, false);
+            addMoves(moves, from, to, W_ROOK, capturePiece, false, false, false);
             clearBit(moveBB, to);
         }
 
@@ -470,12 +470,12 @@ void Position::generateBlackRookMoves(std::vector<Move>& moves) {
     while (pieceBB) {
         int from = popBit(pieceBB);
 
-        Bitboard moveBB = bishopAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) &
+        Bitboard moveBB = rookAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) &
                           ~byColor[COLOR_BLACK];
         while (moveBB) {
             int to = popBit(moveBB);
             int capturePiece = board[to];
-            addMoves(moves, from, to, B_BISHOP, capturePiece, false, false, false);
+            addMoves(moves, from, to, B_ROOK, capturePiece, false, false, false);
             clearBit(moveBB, to);
         }
 
@@ -489,9 +489,7 @@ void Position::generateWhiteQueenMoves(std::vector<Move>& moves) {
     while (pieceBB) {
         int from = popBit(pieceBB);
 
-        Bitboard moveBB = (rookAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) |
-                           bishopAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from))) &
-                          ~byColor[COLOR_WHITE];
+        Bitboard moveBB = queenMoves(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) & ~byColor[COLOR_WHITE];
         while (moveBB) {
             int to = popBit(moveBB);
             int capturePiece = board[to];
@@ -509,9 +507,7 @@ void Position::generateBlackQueenMoves(std::vector<Move>& moves) {
     while (pieceBB) {
         int from = popBit(pieceBB);
 
-        Bitboard moveBB = (rookAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) |
-                           bishopAttacks(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from))) &
-                          ~byColor[COLOR_BLACK];
+        Bitboard moveBB = queenMoves(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) & ~byColor[COLOR_BLACK];
         while (moveBB) {
             int to = popBit(moveBB);
             int capturePiece = board[to];
@@ -708,10 +704,12 @@ bool Position::makeMove(int move) {
     if (turn == COLOR_BLACK) {
         // Note that color is reversed immediately before, so if turn == black, initial turn == white
         if (squareAttacked(byColor[COLOR_WHITE] & byType[KING], COLOR_BLACK)) {
+            unmakeMove();
             return false;
         }
     } else {
         if (squareAttacked(byColor[COLOR_BLACK] & byType[KING], COLOR_WHITE)) {
+            unmakeMove();
             return false;
         }
     }
