@@ -5,28 +5,7 @@
 #include "misc.h"
 #include "movegen.h"
 
-char pieceToChar[15] = {
-        '-',
-        'P',
-        'N',
-        'B',
-        'R',
-        'Q',
-        'K',
-        '\0',
-        '\0',
-        'p',
-        'n',
-        'b',
-        'r',
-        'q',
-        'k'
-};
-
-char colorToChar[2] = {
-        'W',
-        'B'
-};
+//generate the move from, to, piece, capture, promoted, ep, castling
 
 void Position::init() {
     /*
@@ -45,16 +24,25 @@ void Position::init() {
     }
 }
 
-bool Position::movePiece(Piece piece, Square from, Square to) {
-    // Create Bitboard With Only From And To Square Bits
-    Bitboard changeBB = (1ULL << from) | (1ULL << to);
-    // XOR With Corresponding Bitboards (From Square Is Unset, To Square Is Set)
-    byColor[getColorFromPiece(piece)] ^= changeBB;
-    byType[getTypeFromPiece(piece)] ^= changeBB;
-    board[from] = PIECE_NONE;
-    board[to] = piece;
+void Position::hashPiece(Piece piece, Square sq) {
+    zobristHash ^= pieceKeys[piece][sq];
+}
 
-    return true;
+void Position::hashCastle() {
+    zobristHash ^= castleKeys[castlePerms];
+}
+
+void Position::hashSide() {
+    zobristHash ^= sideKey;
+}
+
+void Position::hashEnPass() {
+    zobristHash ^= pieceKeys[PIECE_NONE][enPassSquare];
+}
+
+void Position::flipTurn() {
+    int turnTemp = turn;
+    turn = static_cast<Color>(turnTemp ^ 1);
 }
 
 void Position::resetPosition() {
@@ -71,11 +59,10 @@ void Position::resetPosition() {
 
     zobristHash = 0ULL;
     turn = COLOR_WHITE;
-    enPassSquare = PIECE_NONE;
+    enPassSquare = SQ_NONE;
     fiftyMove = 0;
     searchPly = 0;
     castlePerms = 0;
-    hisPly = 0;
 }
 
 bool Position::setFromFEN(std::string fen) {
@@ -274,16 +261,6 @@ void Position::printBoard() {
  * 0010 0000 0000 0000 0000 0000 0000 -> Castling, 0x2000000 (1 << 26) (1 Bit)
  */
 
-//generate the move from, to, piece, capture, promoted, ep, castling
-#define gen_move(f, t, p, c, pr, ep, ca) ((f) | (t<<6) | (p<<12) | (c<<16) | (pr<<20) | (ep<<25) | (ca<<26))
-#define from_sq(m) ((m) & (0b111111))
-#define to_sq(m) ((m >> 6) & (0b111111))
-#define piece(m) ((m >> 12) & (0b1111))
-#define cap(m) ((m >> 16) & (0b1111))
-#define prom(m) ((m >> 20) & (0b1111))
-#define ep(m) ((m >> 25) & (0b1))
-#define castling(m) ((m >> 26) & (0b1))
-
 std::vector<Move> Position::generateAllMoves() {
     std::vector<Move> moves;
 
@@ -342,7 +319,7 @@ void Position::generateWhitePawnMoves(std::vector<Move> moves) {
             clearBit(currentMoveBB, to);
         }
 
-        if (enPassSquare) {
+        if (enPassSquare != SQ_NONE) {
             if (PAWN_ATTACKS[COLOR_WHITE][from] & (1ULL << enPassSquare)) {
                 addMoves(moves, from, enPassSquare, W_PAWN, B_PAWN, false, true, false);
             }
@@ -382,7 +359,7 @@ void Position::generateBlackPawnMoves(std::vector<Move> moves) {
             clearBit(currentMoveBB, to);
         }
 
-        if (enPassSquare) {
+        if (enPassSquare != SQ_NONE) {
             if (PAWN_ATTACKS[COLOR_BLACK][from] & (1ULL << enPassSquare)) {
                 addMoves(moves, from, enPassSquare, B_PAWN, W_PAWN, false, true, false);
             }
@@ -626,4 +603,166 @@ bool Position::squareAttacked(Bitboard bitmap, Color color) {
     }
 
     return false;
+}
+
+void Position::clearPiece(Square square) {
+    Piece piece = board[square];
+    clearBit(byColor[getColorFromPiece(piece)], square);
+    clearBit(byType[getTypeFromPiece(piece)], square);
+    board[square] = PIECE_NONE;
+
+    hashPiece(piece, square);
+}
+
+void Position::addPiece(Piece piece, Square square) {
+    board[square] = piece;
+    setBit(byColor[getColorFromPiece(piece)], square);
+    setBit(byType[getTypeFromPiece(piece)], square);
+
+    hashPiece(piece, square);
+}
+
+bool Position::makeMove(int move) {
+    int fromSq = mv_from(move);
+    int toSq = mv_to(move);
+    int pieceMoved = mv_piece(move);
+    int capture = mv_cap(move);
+    int promotion = mv_prom(move);
+
+    // Save state
+    PrevBoard prev;
+    prev.move = move;
+    prev.castlePerms = castlePerms;
+    prev.enPassSquare = enPassSquare;
+    prev.fiftyMove = fiftyMove;
+    prev.positionKey = zobristHash;
+    prevBoards.push_back(prev);
+
+    hashCastle();
+    castlePerms &= castle_update[fromSq];
+    castlePerms &= castle_update[toSq];
+    hashCastle();
+
+    if (enPassSquare != SQ_NONE) {
+        hashEnPass();
+    }
+
+    enPassSquare = SQ_NONE;
+
+    if (pieceMoved == W_PAWN) {
+        fiftyMove = 0;
+
+        if (getRank(static_cast<Square>(fromSq)) == 2 && getRank(static_cast<Square>(toSq)) == 4) {
+            enPassSquare = toSq - 8;
+        }
+    } else if (pieceMoved == B_PAWN) {
+        fiftyMove = 0;
+
+        if (getRank(static_cast<Square>(fromSq)) == 7 && getRank(static_cast<Square>(toSq)) == 5) {
+            enPassSquare = toSq + 8;
+        }
+    }
+
+    if (mv_castle(move)) {
+        if (turn == COLOR_BLACK) {
+            if (toSq == SQ_C8) {
+                clearPiece(SQ_A8);
+                addPiece(B_ROOK, SQ_D8);
+            } else {
+                clearPiece(SQ_H8);
+                addPiece(B_ROOK, SQ_F8);
+            }
+        } else {
+            if (toSq == SQ_C1) {
+                clearPiece(SQ_A1);
+                addPiece(W_ROOK, SQ_D1);
+            } else {
+                clearPiece(SQ_H1);
+                addPiece(W_ROOK, SQ_F1);
+            }
+        }
+    } else if (mv_ep(move)) {
+        if (turn == COLOR_BLACK) {
+            clearPiece(static_cast<Square>(toSq + 8));
+        } else {
+            clearPiece(static_cast<Square>(toSq - 8));
+        }
+    } else if (capture) {
+        fiftyMove = 0;
+        clearPiece(static_cast<Square>(toSq));
+    }
+
+    // Perform Move
+    clearPiece(static_cast<Square>(fromSq));
+    if (promotion) {
+        pieceMoved = promotion;
+    }
+
+    addPiece(static_cast<Piece>(pieceMoved), static_cast<Square>(toSq));
+
+    flipTurn();
+    hashSide();
+
+    if (turn == COLOR_BLACK) {
+        // Note that color is reversed immediately before, so if turn == black, initial turn == white
+        if (squareAttacked(byColor[COLOR_WHITE] & byType[KING], COLOR_BLACK)) {
+            return false;
+        }
+    } else {
+        if (squareAttacked(byColor[COLOR_BLACK] & byType[KING], COLOR_WHITE)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+void Position::unmakeMove() {
+    PrevBoard prevBoard = prevBoards.back();
+    prevBoards.pop_back();
+
+    int move = prevBoard.move;
+    int fromSq = mv_from(move);
+    int toSq = mv_to(move);
+    int pieceMoved = mv_piece(move);
+    int capture = mv_cap(move);
+
+    clearPiece(static_cast<Square>(toSq));
+    addPiece(static_cast<Piece>(pieceMoved), static_cast<Square>(fromSq));
+
+    if (mv_castle(move)) {
+        // Unmaking white move
+        if (turn == COLOR_BLACK) {
+            if (toSq == SQ_C1) {
+                clearPiece(SQ_D1);
+                addPiece(W_ROOK, SQ_A1);
+            } else {
+                clearPiece(SQ_F1);
+                addPiece(W_ROOK, SQ_H1);
+            }
+        } else {
+            if (toSq == SQ_C8) {
+                clearPiece(SQ_D8);
+                addPiece(B_ROOK, SQ_A8);
+            } else {
+                clearPiece(SQ_F8);
+                addPiece(B_ROOK, SQ_H8);
+            }
+        }
+    } else if (mv_ep(move)) {
+        if (turn == COLOR_BLACK) {
+            addPiece(B_PAWN, static_cast<Square>(toSq - 8));
+        } else {
+            addPiece(W_PAWN, static_cast<Square>(toSq + 8));
+        }
+    } else if (capture) {
+        addPiece(static_cast<Piece>(capture), static_cast<Square>(toSq));
+    }
+
+    castlePerms = prevBoard.castlePerms;
+    enPassSquare = prevBoard.enPassSquare;
+    fiftyMove = prevBoard.fiftyMove;
+    zobristHash = prevBoard.positionKey;
+
+    flipTurn();
 }

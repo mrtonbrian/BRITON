@@ -14,15 +14,8 @@
     <list default="true" id="06577646-c850-4ffe-bfee-dd0d500d391a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/BRITON" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BRITON" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/Bitboard.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/Bitboard.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/Position.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/Position.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/bitops.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/bitops.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/init.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/init.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/misc.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/misc.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/movegen.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/movegen.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Position.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Types.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Types.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Position.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,6 +147,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1Okpc7DkgHAXoNbgf4h4cSAeSSu" />
@@ -288,7 +282,10 @@
       <workItem from="1577828322591" duration="3827000" />
       <workItem from="1577839124157" duration="3488000" />
       <workItem from="1577853051334" duration="4059000" />
-      <workItem from="1577913307665" duration="3435000" />
+      <workItem from="1577913307665" duration="3566000" />
+      <workItem from="1577919038033" duration="416000" />
+      <workItem from="1578004829506" duration="5091000" />
+      <workItem from="1578019453676" duration="2699000" />
     </task>
     <servers />
   </component>
@@ -326,29 +323,30 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="643" y="249" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576880608415">
+    <state x="643" y="249" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578006050487">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
+    <state x="643" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578006050487" />
     <state x="643" y="249" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1920.988@0.27.1920.988" timestamp="1576880608415" />
-    <state width="883" height="352" key="GridCell.Tab.0.bottom" timestamp="1577916732806">
+    <state width="883" height="352" key="GridCell.Tab.0.bottom" timestamp="1578022154960">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="883" height="352" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1577916732806" />
+    <state width="883" height="352" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578022154960" />
     <state width="883" height="352" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1577842880007" />
-    <state width="883" height="352" key="GridCell.Tab.0.center" timestamp="1577916732806">
+    <state width="883" height="352" key="GridCell.Tab.0.center" timestamp="1578022154959">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="883" height="352" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1577916732806" />
+    <state width="883" height="352" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578022154959" />
     <state width="883" height="352" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1577842880004" />
-    <state width="883" height="352" key="GridCell.Tab.0.left" timestamp="1577916732805">
+    <state width="883" height="352" key="GridCell.Tab.0.left" timestamp="1578022154959">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="883" height="352" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1577916732805" />
+    <state width="883" height="352" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578022154959" />
     <state width="883" height="352" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1577842880003" />
-    <state width="883" height="352" key="GridCell.Tab.0.right" timestamp="1577916732806">
+    <state width="883" height="352" key="GridCell.Tab.0.right" timestamp="1578022154959">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="883" height="352" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1577916732806" />
+    <state width="883" height="352" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578022154959" />
     <state width="883" height="352" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1577842880006" />
     <state width="936" height="290" key="GridCell.Tab.1.bottom" timestamp="1577832253220">
       <screen x="0" y="27" width="1920" height="988" />
@@ -374,24 +372,28 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="100" y="125" width="1720" height="790" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.988@0.27.1920.988" timestamp="1577842128754" />
-    <state x="616" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1577913318211">
+    <state x="616" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1578019453538">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="616" y="348" key="com.intellij.ide.util.TipDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1577913318211" />
+    <state x="616" y="348" key="com.intellij.ide.util.TipDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578019453538" />
     <state x="616" y="348" key="com.intellij.ide.util.TipDialog/0.27.1920.988@0.27.1920.988" timestamp="1577853068223" />
+    <state x="726" y="435" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578020406682">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="726" y="435" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578020406682" />
     <state x="704" y="163" width="501" height="713" key="refactoring.ChangeSignatureDialog" timestamp="1577831762575">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="704" y="163" width="501" height="713" key="refactoring.ChangeSignatureDialog/0.27.1920.988@0.27.1920.988" timestamp="1577831762575" />
-    <state x="624" y="237" key="run.anything.popup" timestamp="1577915965786">
+    <state x="624" y="237" key="run.anything.popup" timestamp="1578021226673">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="624" y="237" key="run.anything.popup/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1577915965786" />
+    <state x="624" y="237" key="run.anything.popup/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578021226673" />
     <state x="624" y="237" key="run.anything.popup/0.27.1920.988@0.27.1920.988" timestamp="1577831837849" />
-    <state x="623" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1577915966881">
+    <state x="623" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1578021378415">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="623" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1577915966881" />
+    <state x="623" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578021378415" />
     <state x="623" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988@0.27.1920.988" timestamp="1577653246201" />
     <state x="1142" y="241" width="1232" height="678" key="search.everywhere.popup/0.27.3520.988@0.27.3520.988" timestamp="1577855889305" />
   </component>
