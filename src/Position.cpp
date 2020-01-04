@@ -576,14 +576,13 @@ bool Position::squareAttacked(Square square, Color color) {
     if (PAWN_ATTACKS[color ^ 1][square] & pawns) return true;
 
     Bitboard knights = byColor[color] & byType[KNIGHT];
-    if (knightMoves(occupancy, square) & knights) return true;
+    if (KNIGHT_ATTACKS[square] & knights) return true;
 
     Bitboard king = byColor[color] & byType[KING];
-    if (kingMoves(occupancy, square) & king) return true;
+    if (KING_ATTACKS[square] & king) return true;
 
     Bitboard bishopsQueens = (byColor[color] & byType[QUEEN])
                              | (byColor[color] & byType[BISHOP]);
-    //printBitboard(bishopAttacks(occupancy, square));
     if (bishopAttacks(occupancy, square) & bishopsQueens) return true;
 
     Bitboard rooksQueens = (byColor[color] & byType[QUEEN])
@@ -650,13 +649,13 @@ bool Position::makeMove(int move) {
     if (pieceMoved == W_PAWN) {
         fiftyMove = 0;
 
-        if (getRank(static_cast<Square>(fromSq)) == 2 && getRank(static_cast<Square>(toSq)) == 4) {
+        if (getRank(static_cast<Square>(fromSq)) == RANK_2 && getRank(static_cast<Square>(toSq)) == RANK_4) {
             enPassSquare = toSq - 8;
         }
     } else if (pieceMoved == B_PAWN) {
         fiftyMove = 0;
 
-        if (getRank(static_cast<Square>(fromSq)) == 7 && getRank(static_cast<Square>(toSq)) == 5) {
+        if (getRank(static_cast<Square>(fromSq)) == RANK_7 && getRank(static_cast<Square>(toSq)) == RANK_5) {
             enPassSquare = toSq + 8;
         }
     }
