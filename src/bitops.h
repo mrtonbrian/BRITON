@@ -8,6 +8,12 @@
 #ifndef CHESS_ENGINE_CPP_BITOPS_H
 #define CHESS_ENGINE_CPP_BITOPS_H
 
+#ifdef __GNUC__
+#define bsr(x) (63-__builtin_clzll(x))
+#else
+#define bsr(x) (bitScanReverse(x))
+#endif
+
 int bitScanReverse(Bitboard bb);
 
 int popBit(Bitboard& bb);

@@ -10,7 +10,7 @@ uint64_t lineAttacks(Bitboard occ, const SMasks *pMask) {
     uint64_t lower, upper, mMS1B, ls1b, odiff;
     lower = pMask->lower & occ;
     upper = pMask->upper & occ;
-    mMS1B = -1ULL << bitScanReverse(lower | 1); // ms1b of lower (at least bit zero)
+    mMS1B = -1ULL << bsr(lower | 1); // ms1b of lower (at least bit zero)
     ls1b = upper & -upper;
     odiff = 2 * ls1b + mMS1B; // x86 lea option due to add -ms1b
     return pMask->line & odiff; // (pMask->lower | pMask->upper) & odiff;

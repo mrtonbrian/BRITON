@@ -12,13 +12,11 @@
 #include "bitops.h"
 #include <iostream>
 
-using namespace std;
-// e2e3 d7e6 e3e4
 int main() {
     initAll();
     Position p;
     p.init();
-    p.setFromFEN("R6r/8/8/2K5/5k2/8/8/r6R b - - 0 1");
+    p.setFromFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
 
     perftTest(p, 6);
 }

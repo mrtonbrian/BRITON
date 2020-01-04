@@ -70,6 +70,14 @@ cstdint
 Bitboard.h
 /home/brianton/Desktop/Chess-Engine-Cpp/src/Bitboard.h
 
+/home/brianton/Desktop/Chess-Engine-Cpp/src/perft.cpp
+perft.h
+/home/brianton/Desktop/Chess-Engine-Cpp/src/perft.h
+iostream
+-
+misc.h
+/home/brianton/Desktop/Chess-Engine-Cpp/src/misc.h
+
 /home/brianton/Desktop/Chess-Engine-Cpp/src/perft.h
 Position.h
 /home/brianton/Desktop/Chess-Engine-Cpp/src/Position.h

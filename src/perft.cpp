@@ -4,7 +4,7 @@
 
 long leafNodes;
 
-static void perft(Position position, int depth) {
+static void perft(Position& position, int depth) {
     if (depth == 0) {
         leafNodes++;
         return;
@@ -22,7 +22,7 @@ static void perft(Position position, int depth) {
     }
 }
 
-void perftTest(Position position, int depth) {
+void perftTest(Position& position, int depth) {
     position.printBoard();
     std::cout << "Starting Test To Depth" << " " << depth << std::endl;
     leafNodes = 0;
