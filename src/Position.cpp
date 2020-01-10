@@ -62,6 +62,7 @@ void Position::resetPosition() {
     enPassSquare = SQ_NONE;
     fiftyMove = 0;
     searchPly = 0;
+    hisPly = 0;
     castlePerms = 0;
 }
 
@@ -243,14 +244,6 @@ void Position::printBoard() {
            castlePerms & BLACK_K_K ? 'k' : '-',
            castlePerms & BLACK_K_Q ? 'q' : '-');
     printf("PosKey:%lX\n", zobristHash);
-
-    /*
-    printf("\nWhite Bitboard:\n");
-    printBitboard(byColor[COLOR_WHITE]);
-
-    printf("\nBlack Bitboard:\n");
-    printBitboard(byColor[COLOR_BLACK]);
-    */
 }
 
 /* move
@@ -265,6 +258,8 @@ void Position::printBoard() {
 
 std::vector<Move> Position::generateAllMoves() {
     std::vector<Move> moves;
+    // Reduces Reallocation Occurrences
+    moves.reserve(100);
 
     if (turn == COLOR_WHITE) {
         generateWhitePawnMoves(moves);
@@ -286,14 +281,14 @@ std::vector<Move> Position::generateAllMoves() {
 }
 
 static void
-addMoves(std::vector<Move>& moves, int from, int to, int piece, int capture, int promotion, int enPass, int castling) {
+addMoves(std::vector<Move> &moves, int from, int to, int piece, int capture, int promotion, int enPass, int castling) {
     Move move;
     move.move = gen_move(from, to, piece, capture, promotion, enPass, castling);
     moves.push_back(move);
 }
 
-void Position::generateWhitePawnMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_WHITE] & byType[PAWN];
+void Position::generateWhitePawnMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_WHITE, PAWN);
     Bitboard currentMoveBB;
     while (pieceBB) {
         int from = popBit(pieceBB);
@@ -331,8 +326,8 @@ void Position::generateWhitePawnMoves(std::vector<Move>& moves) {
     }
 }
 
-void Position::generateBlackPawnMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_BLACK] & byType[PAWN];
+void Position::generateBlackPawnMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_BLACK, PAWN);
     Bitboard currentMoveBB;
     while (pieceBB) {
         int from = popBit(pieceBB);
@@ -371,8 +366,8 @@ void Position::generateBlackPawnMoves(std::vector<Move>& moves) {
     }
 }
 
-void Position::generateWhiteKnightMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_WHITE] & byType[KNIGHT];
+void Position::generateWhiteKnightMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_WHITE, KNIGHT);
 
     while (pieceBB) {
         int from = popBit(pieceBB);
@@ -389,8 +384,8 @@ void Position::generateWhiteKnightMoves(std::vector<Move>& moves) {
     }
 }
 
-void Position::generateBlackKnightMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_BLACK] & byType[KNIGHT];
+void Position::generateBlackKnightMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_BLACK, KNIGHT);
 
     while (pieceBB) {
         int from = popBit(pieceBB);
@@ -407,8 +402,8 @@ void Position::generateBlackKnightMoves(std::vector<Move>& moves) {
     }
 }
 
-void Position::generateWhiteBishopMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_WHITE] & byType[BISHOP];
+void Position::generateWhiteBishopMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_WHITE, BISHOP);
 
     while (pieceBB) {
         int from = popBit(pieceBB);
@@ -426,8 +421,8 @@ void Position::generateWhiteBishopMoves(std::vector<Move>& moves) {
     }
 }
 
-void Position::generateBlackBishopMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_BLACK] & byType[BISHOP];
+void Position::generateBlackBishopMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_BLACK, BISHOP);
 
     while (pieceBB) {
         int from = popBit(pieceBB);
@@ -445,8 +440,8 @@ void Position::generateBlackBishopMoves(std::vector<Move>& moves) {
     }
 }
 
-void Position::generateWhiteRookMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_WHITE] & byType[ROOK];
+void Position::generateWhiteRookMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_WHITE, ROOK);
 
     while (pieceBB) {
         int from = popBit(pieceBB);
@@ -464,8 +459,8 @@ void Position::generateWhiteRookMoves(std::vector<Move>& moves) {
     }
 }
 
-void Position::generateBlackRookMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_BLACK] & byType[ROOK];
+void Position::generateBlackRookMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_BLACK, ROOK);
 
     while (pieceBB) {
         int from = popBit(pieceBB);
@@ -483,13 +478,14 @@ void Position::generateBlackRookMoves(std::vector<Move>& moves) {
     }
 }
 
-void Position::generateWhiteQueenMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_WHITE] & byType[QUEEN];
+void Position::generateWhiteQueenMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_WHITE, QUEEN);
 
     while (pieceBB) {
         int from = popBit(pieceBB);
 
-        Bitboard moveBB = queenMoves(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) & ~byColor[COLOR_WHITE];
+        Bitboard moveBB = queenMoves(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) &
+                          ~byColor[COLOR_WHITE];
         while (moveBB) {
             int to = popBit(moveBB);
             int capturePiece = board[to];
@@ -501,13 +497,14 @@ void Position::generateWhiteQueenMoves(std::vector<Move>& moves) {
     }
 }
 
-void Position::generateBlackQueenMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_BLACK] & byType[QUEEN];
+void Position::generateBlackQueenMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_BLACK, QUEEN);
 
     while (pieceBB) {
         int from = popBit(pieceBB);
 
-        Bitboard moveBB = queenMoves(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) & ~byColor[COLOR_BLACK];
+        Bitboard moveBB = queenMoves(byColor[COLOR_WHITE] | byColor[COLOR_BLACK], static_cast<Square>(from)) &
+                          ~byColor[COLOR_BLACK];
         while (moveBB) {
             int to = popBit(moveBB);
             int capturePiece = board[to];
@@ -519,8 +516,8 @@ void Position::generateBlackQueenMoves(std::vector<Move>& moves) {
     }
 }
 
-void Position::generateWhiteKingMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_WHITE] & byType[KING];
+void Position::generateWhiteKingMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_WHITE, KING);
 
     // Assume 1 King on board
     int from = popBit(pieceBB);
@@ -544,8 +541,8 @@ void Position::generateWhiteKingMoves(std::vector<Move>& moves) {
     }
 }
 
-void Position::generateBlackKingMoves(std::vector<Move>& moves) {
-    Bitboard pieceBB = byColor[COLOR_BLACK] & byType[KING];
+void Position::generateBlackKingMoves(std::vector<Move> &moves) {
+    Bitboard pieceBB = pieces(COLOR_BLACK, KING);
 
     // Assume 1 King on board
     int from = popBit(pieceBB);
@@ -570,23 +567,23 @@ void Position::generateBlackKingMoves(std::vector<Move>& moves) {
 }
 
 bool Position::squareAttacked(Square square, Color color) {
-    Bitboard occupancy = byColor[COLOR_WHITE] | byColor[COLOR_BLACK];
+    Bitboard occupancy = pieces();
 
-    Bitboard pawns = byColor[color] & byType[PAWN];
+    Bitboard pawns = pieces(color, PAWN);
     if (PAWN_ATTACKS[color ^ 1][square] & pawns) return true;
 
-    Bitboard knights = byColor[color] & byType[KNIGHT];
+    Bitboard knights = pieces(color, KNIGHT);
     if (KNIGHT_ATTACKS[square] & knights) return true;
 
-    Bitboard king = byColor[color] & byType[KING];
+    Bitboard king = pieces(color, KING);
     if (KING_ATTACKS[square] & king) return true;
 
-    Bitboard bishopsQueens = (byColor[color] & byType[QUEEN])
-                             | (byColor[color] & byType[BISHOP]);
+    Bitboard bishopsQueens = (pieces(color, QUEEN))
+                             | (pieces(color, BISHOP));
     if (bishopAttacks(occupancy, square) & bishopsQueens) return true;
 
-    Bitboard rooksQueens = (byColor[color] & byType[QUEEN])
-                           | (byColor[color] & byType[ROOK]);
+    Bitboard rooksQueens = (pieces(color, QUEEN))
+                           | (pieces(color, ROOK));
     return (rookAttacks(occupancy, square) & rooksQueens) != 0;
 }
 
@@ -627,13 +624,12 @@ bool Position::makeMove(int move) {
     int promotion = mv_prom(move);
 
     // Save state
-    PrevBoard prev;
-    prev.move = move;
-    prev.castlePerms = castlePerms;
-    prev.enPassSquare = enPassSquare;
-    prev.fiftyMove = fiftyMove;
-    prev.positionKey = zobristHash;
-    prevBoards.push_back(prev);
+    prevBoards[hisPly].move = move;
+    prevBoards[hisPly].castlePerms = castlePerms;
+    prevBoards[hisPly].enPassSquare = enPassSquare;
+    prevBoards[hisPly].fiftyMove = fiftyMove;
+    prevBoards[hisPly].positionKey = zobristHash;
+    hisPly++;
 
     hashCastle();
     castlePerms &= castle_update[fromSq];
@@ -702,12 +698,12 @@ bool Position::makeMove(int move) {
 
     if (turn == COLOR_BLACK) {
         // Note that color is reversed immediately before, so if turn == black, initial turn == white
-        if (squareAttacked(byColor[COLOR_WHITE] & byType[KING], COLOR_BLACK)) {
+        if (squareAttacked(pieces(COLOR_WHITE, KING), COLOR_BLACK)) {
             unmakeMove();
             return false;
         }
     } else {
-        if (squareAttacked(byColor[COLOR_BLACK] & byType[KING], COLOR_WHITE)) {
+        if (squareAttacked(pieces(COLOR_BLACK, KING), COLOR_WHITE)) {
             unmakeMove();
             return false;
         }
@@ -717,8 +713,7 @@ bool Position::makeMove(int move) {
 }
 
 void Position::unmakeMove() {
-    PrevBoard prevBoard = prevBoards.back();
-    prevBoards.pop_back();
+    PrevBoard prevBoard = prevBoards[--hisPly];
 
     int move = prevBoard.move;
     int fromSq = mv_from(move);

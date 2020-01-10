@@ -204,6 +204,33 @@ src/bitops.cpp.s:
 	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/bitops.cpp.s
 .PHONY : src/bitops.cpp.s
 
+src/eval.o: src/eval.cpp.o
+
+.PHONY : src/eval.o
+
+# target to build an object file
+src/eval.cpp.o:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/eval.cpp.o
+.PHONY : src/eval.cpp.o
+
+src/eval.i: src/eval.cpp.i
+
+.PHONY : src/eval.i
+
+# target to preprocess a source file
+src/eval.cpp.i:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/eval.cpp.i
+.PHONY : src/eval.cpp.i
+
+src/eval.s: src/eval.cpp.s
+
+.PHONY : src/eval.s
+
+# target to generate assembly for a file
+src/eval.cpp.s:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/eval.cpp.s
+.PHONY : src/eval.cpp.s
+
 src/init.o: src/init.cpp.o
 
 .PHONY : src/init.o
@@ -357,6 +384,9 @@ help:
 	@echo "... src/bitops.o"
 	@echo "... src/bitops.i"
 	@echo "... src/bitops.s"
+	@echo "... src/eval.o"
+	@echo "... src/eval.i"
+	@echo "... src/eval.s"
 	@echo "... src/init.o"
 	@echo "... src/init.i"
 	@echo "... src/init.s"

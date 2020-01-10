@@ -102,6 +102,12 @@
 		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/bitops.h">
 			<Option target="BRITON"/>
 		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/eval.cpp">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/eval.h">
+			<Option target="BRITON"/>
+		</Unit>
 		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/init.cpp">
 			<Option target="BRITON"/>
 		</Unit>

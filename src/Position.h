@@ -62,6 +62,11 @@ public:
     void flipTurn();
     bool makeMove(int move);
     void unmakeMove();
+
+    Bitboard pieces();
+    Bitboard pieces(PieceType pieceType);
+    Bitboard pieces(Color c);
+    Bitboard pieces(Color c, PieceType pieceType);
 private:
     Bitboard byType[PIECE_TYPE_NB];
     Bitboard byColor[COLOR_NB];
@@ -73,11 +78,12 @@ private:
     int enPassSquare;
     int fiftyMove;
     int searchPly;
+    int hisPly;
 
     uint64_t pieceKeys[15][SQUARE_NUM];
     uint64_t sideKey;
     uint64_t castleKeys[16];
-    std::vector<PrevBoard> prevBoards;
+    PrevBoard prevBoards[2048];
 
     void generateWhitePawnMoves(std::vector<Move>& moves);
     void generateBlackPawnMoves(std::vector<Move>& moves);
@@ -101,4 +107,19 @@ private:
     void addPiece(Piece piece, Square square);
 };
 
+inline Bitboard Position::pieces() {
+    return byColor[COLOR_WHITE] | byColor[COLOR_BLACK];
+}
+
+inline Bitboard Position::pieces(PieceType pieceType) {
+    return byType[pieceType];
+}
+
+inline Bitboard Position::pieces(Color color) {
+    return byColor[color];
+}
+
+inline Bitboard Position::pieces(Color color, PieceType pieceType) {
+    return byColor[color] & byType[pieceType];
+}
 #endif //CHESS_ENGINE_CPP_POSITION_H

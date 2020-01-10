@@ -20,6 +20,12 @@ CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/bitops.cpp
 CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/bitops.h
 CMakeFiles/BRITON.dir/src/bitops.cpp.o: ../src/misc.h
 
+CMakeFiles/BRITON.dir/src/eval.cpp.o: ../src/Position.h
+CMakeFiles/BRITON.dir/src/eval.cpp.o: ../src/Types.h
+CMakeFiles/BRITON.dir/src/eval.cpp.o: ../src/eval.cpp
+CMakeFiles/BRITON.dir/src/eval.cpp.o: ../src/eval.h
+CMakeFiles/BRITON.dir/src/eval.cpp.o: ../src/misc.h
+
 CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/Bitboard.h
 CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/Types.h
 CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/init.cpp

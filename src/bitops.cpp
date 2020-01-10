@@ -25,7 +25,6 @@ const int index64[64] = {
  */
 int bitScanReverse(Bitboard bb) {
     const uint64_t debruijn64 = 0x03f79d71b4cb0a89ULL;
-    assert(bb != 0);
     bb |= bb >> 1;
     bb |= bb >> 2;
     bb |= bb >> 4;
@@ -35,8 +34,21 @@ int bitScanReverse(Bitboard bb) {
     return index64[(bb * debruijn64) >> 58];
 }
 
-int popBit(Bitboard& bb) {
+int popBit(Bitboard &bb) {
     int out = bsr(bb);
     bb ^= (1ULL << out);
     return out;
+}
+
+// https://www.chessprogramming.org/Population_Count#The_PopCount_routine
+const uint64_t k1 = 0x5555555555555555ULL; /*  -1/3   */
+const uint64_t k2 = 0x3333333333333333ULL; /*  -1/5   */
+const uint64_t k4 = 0x0f0f0f0f0f0f0f0fULL; /*  -1/17  */
+const uint64_t kf = 0x0101010101010101ULL; /*  -1/255 */
+int populationCount(Bitboard bb) {
+    bb = bb - ((bb >> 1) & k1); /* put count of each 2 bits into those 2 bits */
+    bb = (bb & k2) + ((bb >> 2) & k2); /* put count of each 4 bits into those 4 bits */
+    bb = (bb + (bb >> 4)) & k4; /* put count of each 8 bits into those 8 bits */
+    bb = (bb * kf) >> 56; /* returns 8 most significant bits of x + (x<<8) + (x<<16) + (x<<24) + ...  */
+    return (int) bb;
 }
