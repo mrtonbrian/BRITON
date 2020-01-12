@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "BRITON.pdb"
   "CMakeFiles/BRITON.dir/src/Bitboard.cpp.o"
   "CMakeFiles/BRITON.dir/src/Position.cpp.o"
+  "CMakeFiles/BRITON.dir/src/TranspositionTable.cpp.o"
   "CMakeFiles/BRITON.dir/src/bitops.cpp.o"
   "CMakeFiles/BRITON.dir/src/eval.cpp.o"
   "CMakeFiles/BRITON.dir/src/init.cpp.o"

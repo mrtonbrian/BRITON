@@ -760,3 +760,15 @@ void Position::unmakeMove() {
 
     flipTurn();
 }
+
+bool Position::makeMoveIfExists(int move) {
+    std::vector<Move> moveList = generateAllMoves();
+
+    for (Move m : moveList) {
+        if (m.move == move && makeMove(move)) {
+            return true;
+        }
+    }
+
+    return false;
+}

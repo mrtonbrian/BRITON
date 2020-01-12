@@ -96,6 +96,12 @@
 		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/Position.h">
 			<Option target="BRITON"/>
 		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/TranspositionTable.cpp">
+			<Option target="BRITON"/>
+		</Unit>
+		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/TranspositionTable.h">
+			<Option target="BRITON"/>
+		</Unit>
 		<Unit filename="/home/brianton/Desktop/Chess-Engine-Cpp/src/bitops.cpp">
 			<Option target="BRITON"/>
 		</Unit>

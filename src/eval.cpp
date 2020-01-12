@@ -3,3 +3,11 @@
 //
 
 #include "eval.h"
+
+static int evalPositionMaterial() {
+
+}
+
+int evalPosition(Position position) {
+
+}

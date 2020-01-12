@@ -32,6 +32,7 @@ enum Color {
 };
 
 constexpr int MAX_DEPTH = 64;
+constexpr int MATE_SCORE = 100000;
 
 /*
  * Values Come From Stockfish
@@ -77,6 +78,13 @@ struct SMasks {
 struct Move {
     int move;
     int score;
+};
+
+enum TableFlags {
+    NONE,
+    ALPHA,
+    BETA,
+    EXACT
 };
 
 extern SMasks masks[SQUARE_NUM][4];

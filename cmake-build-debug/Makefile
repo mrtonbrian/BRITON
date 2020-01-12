@@ -177,6 +177,33 @@ src/Position.cpp.s:
 	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/Position.cpp.s
 .PHONY : src/Position.cpp.s
 
+src/TranspositionTable.o: src/TranspositionTable.cpp.o
+
+.PHONY : src/TranspositionTable.o
+
+# target to build an object file
+src/TranspositionTable.cpp.o:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/TranspositionTable.cpp.o
+.PHONY : src/TranspositionTable.cpp.o
+
+src/TranspositionTable.i: src/TranspositionTable.cpp.i
+
+.PHONY : src/TranspositionTable.i
+
+# target to preprocess a source file
+src/TranspositionTable.cpp.i:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/TranspositionTable.cpp.i
+.PHONY : src/TranspositionTable.cpp.i
+
+src/TranspositionTable.s: src/TranspositionTable.cpp.s
+
+.PHONY : src/TranspositionTable.s
+
+# target to generate assembly for a file
+src/TranspositionTable.cpp.s:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/TranspositionTable.cpp.s
+.PHONY : src/TranspositionTable.cpp.s
+
 src/bitops.o: src/bitops.cpp.o
 
 .PHONY : src/bitops.o
@@ -381,6 +408,9 @@ help:
 	@echo "... src/Position.o"
 	@echo "... src/Position.i"
 	@echo "... src/Position.s"
+	@echo "... src/TranspositionTable.o"
+	@echo "... src/TranspositionTable.i"
+	@echo "... src/TranspositionTable.s"
 	@echo "... src/bitops.o"
 	@echo "... src/bitops.i"
 	@echo "... src/bitops.s"

@@ -61,12 +61,16 @@ public:
     bool squareAttacked(Bitboard bitmap, Color color);
     void flipTurn();
     bool makeMove(int move);
+    bool makeMoveIfExists(int move);
     void unmakeMove();
 
     Bitboard pieces();
     Bitboard pieces(PieceType pieceType);
     Bitboard pieces(Color c);
     Bitboard pieces(Color c, PieceType pieceType);
+    uint64_t getZobristHash();
+
+    int principalVariation[512];
 private:
     Bitboard byType[PIECE_TYPE_NB];
     Bitboard byColor[COLOR_NB];
@@ -121,5 +125,9 @@ inline Bitboard Position::pieces(Color color) {
 
 inline Bitboard Position::pieces(Color color, PieceType pieceType) {
     return byColor[color] & byType[pieceType];
+}
+
+inline uint64_t Position::getZobristHash() {
+    return zobristHash;
 }
 #endif //CHESS_ENGINE_CPP_POSITION_H
