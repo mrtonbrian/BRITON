@@ -1,5 +1,6 @@
 #include "misc.h"
 #include "Types.h"
+#include "bitops.h"
 #include <string>
 #include <vector>
 
@@ -38,7 +39,7 @@ const uint8_t castle_update[64] = {
         15, 15, 15, 15, 15, 15, 15, 15,
         15, 15, 15, 15, 15, 15, 15, 15,
         15, 15, 15, 15, 15, 15, 15, 15,
-        7,  15, 15, 15, 3, 15, 15, 11
+        7, 15, 15, 15, 3, 15, 15, 11
 };
 
 struct PrevBoard {
@@ -63,6 +64,9 @@ public:
     bool makeMove(int move);
     bool makeMoveIfExists(int move);
     void unmakeMove();
+
+    bool oppositeBishops();
+    int fiftyMoveCount();
 
     Bitboard pieces();
     Bitboard pieces(PieceType pieceType);
@@ -89,18 +93,18 @@ private:
     uint64_t castleKeys[16];
     PrevBoard prevBoards[2048];
 
-    void generateWhitePawnMoves(std::vector<Move>& moves);
-    void generateBlackPawnMoves(std::vector<Move>& moves);
-    void generateWhiteKnightMoves(std::vector<Move>& moves);
-    void generateBlackKnightMoves(std::vector<Move>& moves);
-    void generateWhiteBishopMoves(std::vector<Move>& moves);
-    void generateBlackBishopMoves(std::vector<Move>& moves);
-    void generateWhiteRookMoves(std::vector<Move>& moves);
-    void generateBlackRookMoves(std::vector<Move>& moves);
-    void generateWhiteQueenMoves(std::vector<Move>& moves);
-    void generateBlackQueenMoves(std::vector<Move>& moves);
-    void generateWhiteKingMoves(std::vector<Move>& moves);
-    void generateBlackKingMoves(std::vector<Move>& moves);
+    void generateWhitePawnMoves(std::vector<Move> &moves);
+    void generateBlackPawnMoves(std::vector<Move> &moves);
+    void generateWhiteKnightMoves(std::vector<Move> &moves);
+    void generateBlackKnightMoves(std::vector<Move> &moves);
+    void generateWhiteBishopMoves(std::vector<Move> &moves);
+    void generateBlackBishopMoves(std::vector<Move> &moves);
+    void generateWhiteRookMoves(std::vector<Move> &moves);
+    void generateBlackRookMoves(std::vector<Move> &moves);
+    void generateWhiteQueenMoves(std::vector<Move> &moves);
+    void generateBlackQueenMoves(std::vector<Move> &moves);
+    void generateWhiteKingMoves(std::vector<Move> &moves);
+    void generateBlackKingMoves(std::vector<Move> &moves);
 
     void hashPiece(Piece piece, Square sq);
     void hashCastle();
@@ -129,5 +133,16 @@ inline Bitboard Position::pieces(Color color, PieceType pieceType) {
 
 inline uint64_t Position::getZobristHash() {
     return zobristHash;
+}
+
+inline bool Position::oppositeBishops() {
+    return popcnt(pieces(COLOR_WHITE, BISHOP)) == 1 &&
+           popcnt(pieces(COLOR_BLACK, BISHOP)) == 1 &&
+           (getColorFromPiece(board[lsb(pieces(COLOR_WHITE, BISHOP))]) !=
+            getColorFromPiece(board[lsb(pieces(COLOR_BLACK, BISHOP))]));
+}
+
+inline int Position::fiftyMoveCount() {
+    return fiftyMove;
 }
 #endif //CHESS_ENGINE_CPP_POSITION_H

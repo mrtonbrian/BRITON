@@ -14,25 +14,13 @@ Types.h
 misc.h
 /home/brianton/Desktop/Chess-Engine-Cpp/src/misc.h
 
-/home/brianton/Desktop/Chess-Engine-Cpp/src/Position.cpp
-iostream
--
-Position.h
-/home/brianton/Desktop/Chess-Engine-Cpp/src/Position.h
-Bitboard.h
-/home/brianton/Desktop/Chess-Engine-Cpp/src/Bitboard.h
-bitops.h
-/home/brianton/Desktop/Chess-Engine-Cpp/src/bitops.h
-misc.h
-/home/brianton/Desktop/Chess-Engine-Cpp/src/misc.h
-movegen.h
-/home/brianton/Desktop/Chess-Engine-Cpp/src/movegen.h
-
 /home/brianton/Desktop/Chess-Engine-Cpp/src/Position.h
 misc.h
 /home/brianton/Desktop/Chess-Engine-Cpp/src/misc.h
 Types.h
 /home/brianton/Desktop/Chess-Engine-Cpp/src/Types.h
+bitops.h
+/home/brianton/Desktop/Chess-Engine-Cpp/src/bitops.h
 string
 -
 vector
@@ -48,15 +36,21 @@ Bitboard.h
 Types.h
 /home/brianton/Desktop/Chess-Engine-Cpp/src/Types.h
 
+/home/brianton/Desktop/Chess-Engine-Cpp/src/eval.cpp
+eval.h
+/home/brianton/Desktop/Chess-Engine-Cpp/src/eval.h
+algorithm
+-
+
+/home/brianton/Desktop/Chess-Engine-Cpp/src/eval.h
+Position.h
+/home/brianton/Desktop/Chess-Engine-Cpp/src/Position.h
+bitops.h
+/home/brianton/Desktop/Chess-Engine-Cpp/src/bitops.h
+
 /home/brianton/Desktop/Chess-Engine-Cpp/src/misc.h
 Types.h
 /home/brianton/Desktop/Chess-Engine-Cpp/src/Types.h
 string
 -
-
-/home/brianton/Desktop/Chess-Engine-Cpp/src/movegen.h
-cstdint
--
-Bitboard.h
-/home/brianton/Desktop/Chess-Engine-Cpp/src/Bitboard.h
 

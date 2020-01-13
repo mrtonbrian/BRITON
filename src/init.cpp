@@ -21,6 +21,8 @@ Bitboard OOO_MASK[COLOR_NB];
 Bitboard OO_ATTACK_MASK[COLOR_NB];
 Bitboard OOO_ATTACK_MASK[COLOR_NB];
 
+int MaterialValues[NUM_GAME_STATES][PIECE_TYPE_NB];
+
 using namespace std;
 
 static void initODMasks() {
@@ -300,9 +302,28 @@ static void initCastleMasks() {
     OOO_ATTACK_MASK[COLOR_BLACK] = (1LL << SQ_E8) | (1LL << SQ_D8);
 }
 
+/*
+ *  Could be made shorter by initializing at declaring
+ *  But I don't really care :|
+ *  Values From: https://github.com/official-stockfish/Stockfish/blob/master/src/types.h
+*/
+static void initEvalValues() {
+    MaterialValues[MIDGAME][PAWN] = 128;
+    MaterialValues[ENDGAME][PAWN] = 213;
+    MaterialValues[MIDGAME][KNIGHT] = 782;
+    MaterialValues[ENDGAME][KNIGHT] = 865;
+    MaterialValues[MIDGAME][BISHOP] = 830;
+    MaterialValues[ENDGAME][BISHOP] = 918;
+    MaterialValues[MIDGAME][ROOK] = 1289;
+    MaterialValues[ENDGAME][ROOK] = 1378;
+    MaterialValues[MIDGAME][QUEEN] = 2529;
+    MaterialValues[ENDGAME][QUEEN] = 2687;
+}
+
 void initAll() {
     initODMasks();
     initNonSlidingMasks();
     initPawnMoveMasks();
     initCastleMasks();
+    initEvalValues();
 }

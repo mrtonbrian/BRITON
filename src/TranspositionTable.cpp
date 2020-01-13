@@ -5,6 +5,8 @@
 #include "TranspositionTable.h"
 #include <cassert>
 
+TranspositionTable TT;
+
 void clearTable() {
     TT.numOverwrite = 0;
 
@@ -28,7 +30,7 @@ void initTable(int mb) {
 
     TT.entries = (TranspositionTableEntry *) calloc(TT.numEntries, sizeof(TranspositionTableEntry));
     if (TT.entries == NULL) {
-        printf("hashtable alloc failed; trying %d Mb". mb / 2);
+        printf("hashtable alloc failed; trying %d Mb", mb / 2);
         initTable(mb / 2);
     }
 
@@ -110,15 +112,18 @@ std::vector<int> getPVLine(Position pos, int depth) {
 
     assert(pos.makeMoveIfExists(out[0]));
     TranspositionTableEntry* entry;
-    while (out.size() < depth && (entry = getHashEntry(pos.getZobristHash()))!= NULL) {
+    int i = 0;
+    int j = 0;
+    while (i < depth && (entry = getHashEntry(pos.getZobristHash()))!= NULL) {
         if (pos.makeMoveIfExists(entry->move)) {
             out.push_back(entry->move);
         } else {
             break;
         }
+        i++;
     }
 
-    for (int i = 0; i <= out.size(); i++) {
+    for (int j = 0; j <= i; j++) {
         pos.unmakeMove();
     }
 

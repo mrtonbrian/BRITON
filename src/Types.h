@@ -39,14 +39,10 @@ constexpr int MATE_SCORE = 100000;
  * https://github.com/official-stockfish/Stockfish/tree/master
  */
 
-enum EvalValues {
-    PawnValueMg = 128, PawnValueEg = 213,
-    KnightValueMg = 782, KnightValueEg = 865,
-    BishopValueMg = 830, BishopValueEg = 918,
-    RookValueMg = 1289, RookValueEg = 1378,
-    QueenValueMg = 2529, QueenValueEg = 2687,
-
-    MidgameLimit = 15258, EndgameLimit = 3915
+enum GameStates {
+    MIDGAME,
+    ENDGAME,
+    NUM_GAME_STATES = 2
 };
 
 // Castling White Kingside, White Queenside, etc.
@@ -87,6 +83,9 @@ enum TableFlags {
     EXACT
 };
 
+constexpr int MIDGAME_LIMIT = 15258;
+constexpr int ENDGAME_LIMIT = 3915;
+
 extern SMasks masks[SQUARE_NUM][4];
 
 extern Bitboard KNIGHT_ATTACKS[SQUARE_NUM];
@@ -102,6 +101,8 @@ extern Bitboard OOO_MASK[COLOR_NB];
 
 extern Bitboard OO_ATTACK_MASK[COLOR_NB];
 extern Bitboard OOO_ATTACK_MASK[COLOR_NB];
+
+extern int MaterialValues[NUM_GAME_STATES][PIECE_TYPE_NB];
 
 #define gen_move(f, t, p, c, pr, ep, ca) ((f) | (t<<6) | (p<<12) | (c<<16) | (pr<<20) | (ep<<25) | (ca<<26))
 #define mv_from(m) ((m) & (0b111111))
