@@ -45,6 +45,11 @@ void Position::flipTurn() {
     turn = static_cast<Color>(turnTemp ^ 1);
 }
 
+void Position::clearForSearch() {
+    searchPly = 0;
+    nodesSearched = 0;
+}
+
 void Position::resetPosition() {
     for (int i = 0; i < PIECE_TYPE_NB; i++) {
         byType[i] = 0ULL;
@@ -64,6 +69,7 @@ void Position::resetPosition() {
     searchPly = 0;
     hisPly = 0;
     castlePerms = 0;
+    nodesSearched = 0;
 }
 
 bool Position::setFromFEN(std::string fen) {
@@ -631,6 +637,8 @@ bool Position::makeMove(int move) {
     prevBoards[hisPly].positionKey = zobristHash;
     hisPly++;
 
+    searchPly++;
+
     hashCastle();
     castlePerms &= castle_update[fromSq];
     castlePerms &= castle_update[toSq];
@@ -714,7 +722,7 @@ bool Position::makeMove(int move) {
 
 void Position::unmakeMove() {
     PrevBoard prevBoard = prevBoards[--hisPly];
-
+    searchPly--;
     int move = prevBoard.move;
     int fromSq = mv_from(move);
     int toSq = mv_to(move);

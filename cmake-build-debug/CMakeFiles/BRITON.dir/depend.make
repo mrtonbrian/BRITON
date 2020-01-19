@@ -37,7 +37,10 @@ CMakeFiles/BRITON.dir/src/eval.cpp.o: ../src/eval.h
 CMakeFiles/BRITON.dir/src/eval.cpp.o: ../src/misc.h
 
 CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/Bitboard.h
+CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/Position.h
+CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/TranspositionTable.h
 CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/Types.h
+CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/bitops.h
 CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/init.cpp
 CMakeFiles/BRITON.dir/src/init.cpp.o: ../src/misc.h
 
@@ -45,10 +48,10 @@ CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/Bitboard.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/Position.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/Types.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/bitops.h
-CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/eval.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/init.h
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/misc.h
+CMakeFiles/BRITON.dir/src/main.cpp.o: ../src/search.h
 
 CMakeFiles/BRITON.dir/src/misc.cpp.o: ../src/Types.h
 CMakeFiles/BRITON.dir/src/misc.cpp.o: ../src/misc.cpp
@@ -68,4 +71,14 @@ CMakeFiles/BRITON.dir/src/perft.cpp.o: ../src/bitops.h
 CMakeFiles/BRITON.dir/src/perft.cpp.o: ../src/misc.h
 CMakeFiles/BRITON.dir/src/perft.cpp.o: ../src/perft.cpp
 CMakeFiles/BRITON.dir/src/perft.cpp.o: ../src/perft.h
+
+CMakeFiles/BRITON.dir/src/search.cpp.o: ../src/Bitboard.h
+CMakeFiles/BRITON.dir/src/search.cpp.o: ../src/Position.h
+CMakeFiles/BRITON.dir/src/search.cpp.o: ../src/TranspositionTable.h
+CMakeFiles/BRITON.dir/src/search.cpp.o: ../src/Types.h
+CMakeFiles/BRITON.dir/src/search.cpp.o: ../src/bitops.h
+CMakeFiles/BRITON.dir/src/search.cpp.o: ../src/eval.h
+CMakeFiles/BRITON.dir/src/search.cpp.o: ../src/misc.h
+CMakeFiles/BRITON.dir/src/search.cpp.o: ../src/search.cpp
+CMakeFiles/BRITON.dir/src/search.cpp.o: ../src/search.h
 

@@ -34,7 +34,7 @@ constexpr bool fileRankOk(File f, Rank r) {
 
 uint64_t random64BitInteger();
 
-int getTimeMs();
+long getTimeMs();
 
 std::string printMove(int move);
 

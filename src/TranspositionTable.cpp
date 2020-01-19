@@ -37,38 +37,17 @@ void initTable(int mb) {
     printf("init hashtable with %d entries\n", TT.numEntries);
 }
 
-void storeMove(Position& position, int move, int score, TableFlags flags, int depth, int ply) {
+void storeMove(Position &position, int move, int score, TableFlags flags, int depth) {
     int tableIndex = position.getZobristHash() % TT.numEntries;
 
-    TranspositionTableEntry* prevEntry = &TT.entries[tableIndex];
-
-    // Entry Exists
-    if (prevEntry->positionKey != 0) {
-        int putScore = depth - prevEntry->depth;
-        putScore += (ply - prevEntry->ply);
-
-        // Prioritize Exact Evals Over Beta-Cutoffs
-        if (flags == EXACT) putScore += 2;
-        else if (flags == BETA) putScore += 1;
-
-        TableFlags prevFlag = prevEntry->flags;
-        if (prevFlag == EXACT) putScore -= 2;
-        else if (prevFlag == BETA) putScore -= 1;
-
-        // Add If Desired
-        if (putScore > 0) {
-            TT.entries[tableIndex].positionKey = position.getZobristHash();
-            TT.entries[tableIndex].move = move;
-            TT.entries[tableIndex].score = score;
-            TT.entries[tableIndex].depth = depth;
-            TT.entries[tableIndex].ply = ply;
-            TT.entries[tableIndex].flags = flags;
-            TT.numOverwrite++;
-        }
-    }
+    TT.entries[tableIndex].positionKey = position.getZobristHash();
+    TT.entries[tableIndex].move = move;
+    TT.entries[tableIndex].score = score;
+    TT.entries[tableIndex].depth = depth;
+    TT.entries[tableIndex].flags = flags;
 }
 
-bool probeHashEntry(Position& position, int* move, int* score, int alpha, int beta, int depth) {
+bool probeHashEntry(Position &position, int *move, int *score, int alpha, int beta, int depth) {
     int tableIndex = position.getZobristHash() % TT.numEntries;
 
     if (TT.entries[tableIndex].positionKey == position.getZobristHash()) {
@@ -98,7 +77,7 @@ bool probeHashEntry(Position& position, int* move, int* score, int alpha, int be
     return false;
 }
 
-TranspositionTableEntry* getHashEntry(uint64_t key) {
+TranspositionTableEntry *getHashEntry(uint64_t key) {
     int i = key % TT.numEntries;
     if (TT.entries[i].positionKey == key) {
         return &TT.entries[i];
@@ -106,20 +85,19 @@ TranspositionTableEntry* getHashEntry(uint64_t key) {
     return NULL;
 }
 
-std::vector<int> getPVLine(Position pos, int depth) {
+std::vector<int> getPVLine(Position &pos, int depth) {
     std::vector<int> out;
     out.push_back(pos.principalVariation[0]);
-
-    assert(pos.makeMoveIfExists(out[0]));
-    TranspositionTableEntry* entry;
+    pos.makeMove(out[0]);
+    TranspositionTableEntry *entry = getHashEntry(pos.getZobristHash());
     int i = 0;
-    int j = 0;
-    while (i < depth && (entry = getHashEntry(pos.getZobristHash()))!= NULL) {
+    while (i < depth && entry) {
         if (pos.makeMoveIfExists(entry->move)) {
             out.push_back(entry->move);
         } else {
             break;
         }
+        entry = getHashEntry(pos.getZobristHash());
         i++;
     }
 

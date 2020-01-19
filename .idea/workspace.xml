@@ -12,15 +12,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06577646-c850-4ffe-bfee-dd0d500d391a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/search.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/search.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/BRITON" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BRITON" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/Bitboard.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/Bitboard.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/Position.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/Position.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/TranspositionTable.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/TranspositionTable.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/bitops.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/bitops.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/eval.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/eval.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/init.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/init.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/misc.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/misc.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/movegen.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/movegen.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/perft.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/perft.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Chess-Engine-Cpp.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Chess-Engine-Cpp.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Position.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Position.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TranspositionTable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/TranspositionTable.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TranspositionTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/TranspositionTable.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Types.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Types.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eval.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/eval.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eval.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eval.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/init.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/init.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/misc.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/misc.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/misc.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/misc.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +183,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1Okpc7DkgHAXoNbgf4h4cSAeSSu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -301,7 +332,12 @@
       <workItem from="1578690456652" duration="698000" />
       <workItem from="1578700035849" duration="5184000" />
       <workItem from="1578859402389" duration="4475000" />
-      <workItem from="1578875648474" duration="4961000" />
+      <workItem from="1578875648474" duration="5459000" />
+      <workItem from="1578958730052" duration="4958000" />
+      <workItem from="1579303286443" duration="14000" />
+      <workItem from="1579303529718" duration="4409000" />
+      <workItem from="1579413862416" duration="2262000" />
+      <workItem from="1579454616810" duration="3674000" />
     </task>
     <servers />
   </component>
@@ -356,50 +392,59 @@
     </state>
     <state x="643" y="249" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578185654882" />
     <state x="643" y="249" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1920.988@0.27.1920.988" timestamp="1576880608415" />
-    <state x="718" y="137" key="#xdebugger.evaluate" timestamp="1578037801558">
-      <screen x="0" y="27" width="1920" height="988" />
+    <state x="1316" y="137" key="#xdebugger.evaluate" timestamp="1579457111383">
+      <screen x="0" y="27" width="3520" height="988" />
     </state>
     <state x="718" y="137" key="#xdebugger.evaluate/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578037801558" />
-    <state width="1382" height="439" key="GridCell.Tab.0.bottom" timestamp="1578881077032">
-      <screen x="0" y="27" width="1920" height="988" />
+    <state x="1316" y="137" key="#xdebugger.evaluate/0.27.3520.988@0.27.3520.988" timestamp="1579457111383" />
+    <state width="1115" height="276" key="GridCell.Tab.0.bottom" timestamp="1579458277403">
+      <screen x="0" y="27" width="3520" height="988" />
     </state>
     <state width="1387" height="296" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578287273116" />
-    <state width="1382" height="439" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1578881077032" />
-    <state width="1382" height="439" key="GridCell.Tab.0.center" timestamp="1578881077032">
-      <screen x="0" y="27" width="1920" height="988" />
+    <state width="1108" height="286" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1579416126426" />
+    <state width="1115" height="276" key="GridCell.Tab.0.bottom/0.27.3520.988@0.27.3520.988" timestamp="1579458277403" />
+    <state width="1115" height="276" key="GridCell.Tab.0.center" timestamp="1579458277402">
+      <screen x="0" y="27" width="3520" height="988" />
     </state>
     <state width="1387" height="296" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578287273116" />
-    <state width="1382" height="439" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1578881077032" />
-    <state width="1382" height="439" key="GridCell.Tab.0.left" timestamp="1578881077031">
-      <screen x="0" y="27" width="1920" height="988" />
+    <state width="1108" height="286" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1579416126425" />
+    <state width="1115" height="276" key="GridCell.Tab.0.center/0.27.3520.988@0.27.3520.988" timestamp="1579458277402" />
+    <state width="1115" height="276" key="GridCell.Tab.0.left" timestamp="1579458277402">
+      <screen x="0" y="27" width="3520" height="988" />
     </state>
     <state width="1387" height="296" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578287273115" />
-    <state width="1382" height="439" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1578881077031" />
-    <state width="1382" height="439" key="GridCell.Tab.0.right" timestamp="1578881077032">
-      <screen x="0" y="27" width="1920" height="988" />
+    <state width="1108" height="286" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1579416126425" />
+    <state width="1115" height="276" key="GridCell.Tab.0.left/0.27.3520.988@0.27.3520.988" timestamp="1579458277402" />
+    <state width="1115" height="276" key="GridCell.Tab.0.right" timestamp="1579458277403">
+      <screen x="0" y="27" width="3520" height="988" />
     </state>
     <state width="1387" height="296" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578287273116" />
-    <state width="1382" height="439" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1578881077032" />
-    <state width="1127" height="290" key="GridCell.Tab.1.bottom" timestamp="1578285427610">
-      <screen x="0" y="27" width="1920" height="988" />
+    <state width="1108" height="286" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1579416126426" />
+    <state width="1115" height="276" key="GridCell.Tab.0.right/0.27.3520.988@0.27.3520.988" timestamp="1579458277403" />
+    <state width="904" height="251" key="GridCell.Tab.1.bottom" timestamp="1579458275420">
+      <screen x="0" y="27" width="3520" height="988" />
     </state>
     <state width="1127" height="290" key="GridCell.Tab.1.bottom/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578285427610" />
-    <state width="936" height="290" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1577832253220" />
-    <state width="1127" height="290" key="GridCell.Tab.1.center" timestamp="1578285427610">
-      <screen x="0" y="27" width="1920" height="988" />
+    <state width="1108" height="286" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1579416126429" />
+    <state width="904" height="251" key="GridCell.Tab.1.bottom/0.27.3520.988@0.27.3520.988" timestamp="1579458275420" />
+    <state width="904" height="251" key="GridCell.Tab.1.center" timestamp="1579458275420">
+      <screen x="0" y="27" width="3520" height="988" />
     </state>
     <state width="1127" height="290" key="GridCell.Tab.1.center/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578285427610" />
-    <state width="936" height="290" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1577832253219" />
-    <state width="1127" height="290" key="GridCell.Tab.1.left" timestamp="1578285427610">
-      <screen x="0" y="27" width="1920" height="988" />
+    <state width="1108" height="286" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1579416126428" />
+    <state width="904" height="251" key="GridCell.Tab.1.center/0.27.3520.988@0.27.3520.988" timestamp="1579458275420" />
+    <state width="904" height="251" key="GridCell.Tab.1.left" timestamp="1579458275419">
+      <screen x="0" y="27" width="3520" height="988" />
     </state>
     <state width="1127" height="290" key="GridCell.Tab.1.left/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578285427610" />
-    <state width="936" height="290" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1577832253218" />
-    <state width="1127" height="290" key="GridCell.Tab.1.right" timestamp="1578285427610">
-      <screen x="0" y="27" width="1920" height="988" />
+    <state width="1108" height="286" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1579416126428" />
+    <state width="904" height="251" key="GridCell.Tab.1.left/0.27.3520.988@0.27.3520.988" timestamp="1579458275419" />
+    <state width="904" height="251" key="GridCell.Tab.1.right" timestamp="1579458275420">
+      <screen x="0" y="27" width="3520" height="988" />
     </state>
     <state width="1127" height="290" key="GridCell.Tab.1.right/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578285427610" />
-    <state width="936" height="290" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1577832253220" />
+    <state width="1108" height="286" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1579416126428" />
+    <state width="904" height="251" key="GridCell.Tab.1.right/0.27.3520.988@0.27.3520.988" timestamp="1579458275420" />
     <state x="449" y="156" key="SettingsEditor" timestamp="1577574376949">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -408,11 +453,11 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="100" y="125" width="1720" height="790" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.988@0.27.1920.988" timestamp="1577842128754" />
-    <state x="616" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1578875648799">
+    <state x="616" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1579454616498">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="616" y="348" key="com.intellij.ide.util.TipDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578284624941" />
-    <state x="616" y="348" key="com.intellij.ide.util.TipDialog/0.27.1920.988@0.27.1920.988" timestamp="1578875648799" />
+    <state x="616" y="348" key="com.intellij.ide.util.TipDialog/0.27.1920.988@0.27.1920.988" timestamp="1579454616498" />
     <state x="726" y="435" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578875978776">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -437,5 +482,17 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="685" y="416" width="540" height="208" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578183713692" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <condition expression="depth == 6" language="ObjectiveC" />
+          <url>file://$PROJECT_DIR$/src/TranspositionTable.cpp</url>
+          <line>93</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

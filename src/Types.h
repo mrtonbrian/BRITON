@@ -31,8 +31,10 @@ enum Color {
     COLOR_NB = 2
 };
 
-constexpr int MAX_DEPTH = 64;
-constexpr int MATE_SCORE = 100000;
+const int MAX_DEPTH = 64;
+const int MATE_SCORE = 100000;
+const int MIN_VAL = -1000001;
+const int MAX_VAL = 1000001;
 
 /*
  * Values Come From Stockfish
@@ -76,6 +78,17 @@ struct Move {
     int score;
 };
 
+struct SearchInfo {
+    long starttime;
+    long stoptime;
+
+    int depth;
+    int depthset;
+
+    bool stopped;
+    bool timeSet;
+};
+
 enum TableFlags {
     NONE,
     ALPHA,
@@ -83,8 +96,8 @@ enum TableFlags {
     EXACT
 };
 
-constexpr int MIDGAME_LIMIT = 15258;
-constexpr int ENDGAME_LIMIT = 3915;
+const int MIDGAME_LIMIT = 15258;
+const int ENDGAME_LIMIT = 3915;
 
 extern SMasks masks[SQUARE_NUM][4];
 

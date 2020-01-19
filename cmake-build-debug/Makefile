@@ -393,6 +393,33 @@ src/perft.cpp.s:
 	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/perft.cpp.s
 .PHONY : src/perft.cpp.s
 
+src/search.o: src/search.cpp.o
+
+.PHONY : src/search.o
+
+# target to build an object file
+src/search.cpp.o:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/search.cpp.o
+.PHONY : src/search.cpp.o
+
+src/search.i: src/search.cpp.i
+
+.PHONY : src/search.i
+
+# target to preprocess a source file
+src/search.cpp.i:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/search.cpp.i
+.PHONY : src/search.cpp.i
+
+src/search.s: src/search.cpp.s
+
+.PHONY : src/search.s
+
+# target to generate assembly for a file
+src/search.cpp.s:
+	$(MAKE) -f CMakeFiles/BRITON.dir/build.make CMakeFiles/BRITON.dir/src/search.cpp.s
+.PHONY : src/search.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -432,6 +459,9 @@ help:
 	@echo "... src/perft.o"
 	@echo "... src/perft.i"
 	@echo "... src/perft.s"
+	@echo "... src/search.o"
+	@echo "... src/search.i"
+	@echo "... src/search.s"
 .PHONY : help
 
 

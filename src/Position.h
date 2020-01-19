@@ -64,6 +64,7 @@ public:
     bool makeMove(int move);
     bool makeMoveIfExists(int move);
     void unmakeMove();
+    void clearForSearch();
 
     bool oppositeBishops();
     int fiftyMoveCount();
@@ -74,7 +75,14 @@ public:
     Bitboard pieces(Color c, PieceType pieceType);
     uint64_t getZobristHash();
 
+    int getHisPly();
+    int getSearchPly();
+    PrevBoard getPrevBoard(int index);
+
+    Color getTurn();
+
     int principalVariation[512];
+    long nodesSearched;
 private:
     Bitboard byType[PIECE_TYPE_NB];
     Bitboard byColor[COLOR_NB];
@@ -144,5 +152,21 @@ inline bool Position::oppositeBishops() {
 
 inline int Position::fiftyMoveCount() {
     return fiftyMove;
+}
+
+inline int Position::getHisPly() {
+    return hisPly;
+}
+
+inline PrevBoard Position::getPrevBoard(int index) {
+    return prevBoards[index];
+}
+
+inline Color Position::getTurn() {
+    return turn;
+}
+
+inline int Position::getSearchPly() {
+    return searchPly;
 }
 #endif //CHESS_ENGINE_CPP_POSITION_H

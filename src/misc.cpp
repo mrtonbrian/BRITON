@@ -6,13 +6,7 @@
 #include <random>
 #include <cassert>
 #include <sstream>
-
-#if defined _WIN32 || defined _WIN64
-#include "windows.h"
-#else
-#include "sys/time.h"
-#include "sys/select.h"
-#endif
+#include <chrono>
 
 uint64_t random64BitInteger() {
     std::random_device seed;
@@ -22,14 +16,10 @@ uint64_t random64BitInteger() {
     return distribution(generator);
 }
 
-int getTimeMs() {
-#if defined _WIN32 || defined _WIN64
-    return GetTickCount();
-#else
-    struct timeval t;
-    gettimeofday(&t, 0);
-    return t.tv_sec * 1000 + t.tv_usec / 1000;
-#endif
+long getTimeMs() {
+    return std::chrono::duration_cast<std::chrono::milliseconds>(
+        std::chrono::system_clock::now().time_since_epoch()
+    ).count();
 }
 
 std::string printMove(int move) {

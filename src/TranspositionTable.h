@@ -13,7 +13,6 @@ struct TranspositionTableEntry {
     int move;
     int score;
     int depth;
-    int ply;
     TableFlags flags;
 };
 
@@ -24,6 +23,10 @@ struct TranspositionTable {
 };
 extern TranspositionTable TT;
 
+std::vector<int> getPVLine(Position& pos, int depth);
+TranspositionTableEntry* getHashEntry(uint64_t key);
+bool probeHashEntry(Position& position, int* move, int* score, int alpha, int beta, int depth);
+void storeMove(Position& position, int move, int score, TableFlags flags, int depth);
+void initTable(int mb);
 void clearTable();
-bool probeHashEntry();
 #endif //CHESS_ENGINE_CPP_TRANSPOSITIONTABLE_H

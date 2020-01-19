@@ -12,7 +12,7 @@ static int evalPositionMaterialPhase(Position &position, GameStates gs) {
     for (PieceType p : {PAWN, KNIGHT, BISHOP, ROOK, QUEEN}) {
         total += popcnt(position.pieces(COLOR_WHITE, p)) * MaterialValues[gs][p];
     }
-    std::cout << total << std::endl;
+
     for (PieceType p : {PAWN, KNIGHT, BISHOP, ROOK, QUEEN}) {
         total -= popcnt(position.pieces(COLOR_BLACK, p)) * MaterialValues[gs][p];
     }
@@ -66,8 +66,8 @@ int evalPosition(Position &position) {
     // Score Material
     int midGameEvaluation = evalPositionMaterialPhase(position, MIDGAME);
     int endGameEvaluation = evalPositionMaterialPhase(position, ENDGAME);
+
     endGameEvaluation = endGameEvaluation * scaleFactor(position, endGameEvaluation) / 64;
     int p = phase(position);
-    std::cout << "SF: " << scaleFactor(position, endGameEvaluation) << std::endl;
-    return (((midGameEvaluation * p + ((endGameEvaluation * (128 - p)) << 0)) / 128) << 0);
+    return (((midGameEvaluation * p + ((endGameEvaluation * (128 - p)) << 0)) / 128) << 0) * (1 - 2 * position.getTurn());
 }

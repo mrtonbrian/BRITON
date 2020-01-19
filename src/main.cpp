@@ -1,17 +1,23 @@
 //
 // Created by brianton on 10/23/19.
 //
+#include "Types.h"
+#include "search.h"
 #include "Position.h"
 #include "init.h"
-#include "eval.h"
-#include <cassert>
-#include <iostream>
+
+SearchInfo SEARCH_SETTINGS;
 
 int main() {
     initAll();
     Position p;
     p.init();
-    p.setFromFEN("rnb1kbnr/pppppppp/8/8/8/8/PPPPPPPP/RNB1KBNR w KQkq - 0 1");
+    p.setFromFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     p.printBoard();
-    std::cout << evalPosition(p) << std::endl;
+    SEARCH_SETTINGS.starttime = getTimeMs();
+    SEARCH_SETTINGS.stoptime = SEARCH_SETTINGS.starttime + 1000;
+    SEARCH_SETTINGS.stopped = false;
+    SEARCH_SETTINGS.depth = 64;
+    SEARCH_SETTINGS.timeSet = true;
+    searchPosition(p);
 }
