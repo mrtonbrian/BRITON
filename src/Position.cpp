@@ -286,6 +286,22 @@ std::vector<Move> Position::generateAllMoves() {
     return moves;
 }
 
+std::vector<Move> Position::generateAllCaps() {
+    // Branching Factor For Chess Is Only Like 40 Moves
+    // So We Can Just Generate All Moves Then Sift Out Any Captures
+    std::vector<Move> allMoves = generateAllMoves();
+    // Instead Of Resizing Vector, We Create Another One
+    std::vector<Move> out;
+    out.reserve(100);
+
+    for (Move move : allMoves) {
+        if (mv_cap(move.move)) {
+            out.push_back(move);
+        }
+    }
+    return out;
+}
+
 static void
 addMoves(std::vector<Move> &moves, int from, int to, int piece, int capture, int promotion, int enPass, int castling) {
     Move move;

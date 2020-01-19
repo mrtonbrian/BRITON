@@ -24,10 +24,58 @@ static bool isRepetition(Position& position) {
     return false;
 }
 
+static int quiescence(int alpha, int beta, Position& position) {
+    position.nodesSearched++;
+    if ((position.nodesSearched & 4095) == 0) {
+        checkUpTime();
+    }
+
+    if (position.getSearchPly() && (isRepetition(position) || position.fiftyMoveCount() >= 100)) {
+        return 0;
+    }
+
+    if (position.getSearchPly() > MAX_DEPTH - 1) {
+        return evalPosition(position);
+    }
+
+    int score = evalPosition(position);
+
+    if (score >= beta) {
+        return beta;
+    }
+
+    if (score > alpha) {
+        alpha = score;
+    }
+    std::vector<Move> captures = position.generateAllCaps();
+    std::sort(captures.begin(), captures.end(), [](Move a, Move b) {
+        return a.score > b.score;
+    });
+    for (Move capture : captures) {
+        if (!position.makeMove(capture.move)) {
+            continue;
+        }
+        score = -quiescence(-beta, -alpha, position);
+        position.unmakeMove();
+        if (SEARCH_SETTINGS.stopped) {
+            return MIN_VAL;
+        }
+
+        if (score > alpha) {
+            if (score >= beta) {
+                return beta;
+            }
+            alpha = score;
+        }
+    }
+
+    return alpha;
+}
+
 static int alphaBeta(int alpha, int beta, int depth, Position& position) {
     position.nodesSearched++;
     if (depth == 0) {
-        return evalPosition(position);
+        return quiescence(alpha, beta, position);
     }
 
     if ((position.nodesSearched & 4095) == 0) {

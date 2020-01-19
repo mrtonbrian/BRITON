@@ -58,6 +58,7 @@ public:
     void resetPosition();
     void printBoard();
     std::vector<Move> generateAllMoves();
+    std::vector<Move> generateAllCaps();
     bool squareAttacked(Square sq, Color color);
     bool squareAttacked(Bitboard bitmap, Color color);
     void flipTurn();
