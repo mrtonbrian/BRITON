@@ -3,6 +3,8 @@
 *.sh
 env/
 .ebignore
+cmake-build-debug/
+cmake-build-release/
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <assert.h>
 #include "Position.h"
 #include "Bitboard.h"
 #include "bitops.h"
@@ -60,6 +61,10 @@ void Position::resetPosition() {
 
     for (int i = 0; i < PIECE_NB; i++) {
         pieceCount[i] = 0;
+    }
+
+    for (int sq = SQ_A1; sq <= SQ_H8; sq++) {
+        board[sq] = PIECE_NONE;
     }
 
     zobristHash = 0ULL;
@@ -202,7 +207,7 @@ bool Position::setFromFEN(std::string fen) {
 uint64_t Position::generatePositionKey() {
     zobristHash = 0ULL;
 
-    for (int sq = SQ_A1; sq < SQ_H8; sq++) {
+    for (int sq = SQ_A1; sq <= SQ_H8; sq++) {
         Piece piece = board[sq];
 
         if (piece != PIECE_NONE) {

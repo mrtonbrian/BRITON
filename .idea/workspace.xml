@@ -8,15 +8,130 @@
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Release" CONFIG_NAME="Release" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06577646-c850-4ffe-bfee-dd0d500d391a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/perftsuite.epd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BRITON" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BRITON" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BRITON" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/Bitboard.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/Position.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/TranspositionTable.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/bitops.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/eval.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/init.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/misc.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/movegen.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/perft.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BRITON.dir/src/search.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Chess_Engine_Cpp.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Chess_Engine_Cpp.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Chess_Engine_Cpp.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Chess_Engine_Cpp.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Chess_Engine_Cpp.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Chess_Engine_Cpp.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Chess_Engine_Cpp.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/attack.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/bitboards.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/board.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/evaluate.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/hashkey.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/init.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/io.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/makemove.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/misc.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/move.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/movegen.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/perft.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/pvtable.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/search.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/uci.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chess.dir/validate.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Chess-Engine-Cpp.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Chess_Engine_Cpp.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/callgrind.out.5956" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gmon.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/mirrorTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/out.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/testMirror.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Position.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Position.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/search.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TranspositionTable.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TranspositionTable.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eval.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eval.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/init.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/init.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/perft.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/perft.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/perft.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/perft.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,116 +142,6 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
-  <component name="FavoritesManager">
-    <favorites_list name="Chess Engine">
-      <favorite_root url="file://$PROJECT_DIR$" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-        <favorite_root url="file://$PROJECT_DIR$/io.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/.idea" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-          <favorite_root url="file://$PROJECT_DIR$/.idea/.name" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/.idea/vcs.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/.idea/misc.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/.idea/modules.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/.idea/encodings.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/.idea/workspace.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/.idea/Chess Engine Flask.iml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        </favorite_root>
-        <favorite_root url="file://$PROJECT_DIR$/chess" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/uci.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/defs.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/init.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/io.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/misc.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/move.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/static" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-          <favorite_root url="file://$PROJECT_DIR$/static/img" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-            <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-              <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/bB.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/bK.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/bN.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/bP.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/bQ.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/bR.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/wB.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/wK.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/wN.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/wP.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/wQ.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-                <favorite_root url="file://$PROJECT_DIR$/static/img/chesspieces/wikipedia/wR.png" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-              </favorite_root>
-            </favorite_root>
-          </favorite_root>
-          <favorite_root url="file://$PROJECT_DIR$/static/game.js" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/static/chess.js" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/static/jquery-1.10.1.js" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/static/chessboard-0.3.0.js" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/static/chessboard-0.3.0.css" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-          <favorite_root url="file://$PROJECT_DIR$/static/chessboard-0.3.0.min.js" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        </favorite_root>
-        <favorite_root url="file://$PROJECT_DIR$/.vscode" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-          <favorite_root url="file://$PROJECT_DIR$/.vscode/settings.json" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        </favorite_root>
-        <favorite_root url="file://$PROJECT_DIR$/Pipfile" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/board.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/out.dat" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/perft.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/uci.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/attack.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/gmon.out" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/init.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/main.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/misc.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/move.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/search.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/FENGEN.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/Globals.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/README.md" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/board.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/chess.exe" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/hashkey.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/movegen.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/perft.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/pvtable.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/templates" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-          <favorite_root url="file://$PROJECT_DIR$/templates/Chess.html" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        </favorite_root>
-        <favorite_root url="file://$PROJECT_DIR$/.gitignore" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/attack.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/evaluate.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/makemove.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/search.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/validate.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/bitboards.h" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/hashkey.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/movegen.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/pvtable.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/Pipfile.lock" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/evaluate.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/flask_app.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/makemove.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/validate.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/bitboards.cpp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/NERO-Chess.pgn" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/mirrorTest.txt" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/chessProfile.dat" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/requirements.txt" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-        <favorite_root url="file://$PROJECT_DIR$/cmake-build-debug" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-          <favorite_root url="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-            <favorite_root url="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-              <favorite_root url="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdC" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-                <favorite_root url="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdC/tmp" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-              </favorite_root>
-              <favorite_root url="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdCXX" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
-                <favorite_root url="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdCXX/tmp" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-              </favorite_root>
-            </favorite_root>
-            <favorite_root url="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeTmp" module="Chess Engine Flask" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-          </favorite_root>
-        </favorite_root>
-        <favorite_root url="file://$PROJECT_DIR$/compilecommand.txt" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-      </favorite_root>
-    </favorites_list>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -156,13 +161,13 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="OCFindUsagesOptions.isSearchForTextOccurrences" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -171,22 +176,28 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/cmake-build-release" />
+      <recent name="$PROJECT_DIR$/cmake-build-debug" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/cmake-build-debug" />
+      <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/templates" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.BRITON">
-    <configuration name="BRITON" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Chess-Engine-Cpp" TARGET_NAME="BRITON" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Chess-Engine-Cpp" RUN_TARGET_NAME="BRITON">
+    <configuration name="BRITON" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Chess-Engine-Cpp" TARGET_NAME="BRITON" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Chess-Engine-Cpp" RUN_TARGET_NAME="BRITON">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python">
       <module name="Chess Engine Flask" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -211,23 +222,6 @@
       <item itemvalue="CMake Application.BRITON" />
       <item itemvalue="Python.app" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.app" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -306,12 +300,23 @@
       <workItem from="1579303529718" duration="4409000" />
       <workItem from="1579413862416" duration="2262000" />
       <workItem from="1579454616810" duration="3828000" />
-      <workItem from="1579460461767" duration="1294000" />
+      <workItem from="1579460461767" duration="1459000" />
+      <workItem from="1579463293431" duration="76000" />
+      <workItem from="1579465834878" duration="2730000" />
+      <workItem from="1579920655219" duration="414000" />
+      <workItem from="1579987383407" duration="600000" />
+      <workItem from="1579992854850" duration="2729000" />
+      <workItem from="1583645769396" duration="4000" />
+      <workItem from="1584214321816" duration="4149000" />
+      <workItem from="1587869897881" duration="4000" />
+      <workItem from="1587882995985" duration="118000" />
+      <workItem from="1590873973812" duration="598000" />
+      <workItem from="1590899606159" duration="6455000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
@@ -321,9 +326,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -342,127 +345,75 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="181" width="800" height="677" key="#Images" timestamp="1578115021699">
+    <state x="418" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590905743035">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="555" y="181" width="800" height="677" key="#Images/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578115021699" />
-    <state x="550" y="183" width="800" height="677" key="#Updates" timestamp="1578185654181">
+    <state x="418" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590905743035" />
+    <state x="640" y="313" width="629" height="420" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590900219463">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="550" y="183" width="800" height="677" key="#Updates/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578185654181" />
-    <state x="418" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578099326682">
+    <state x="640" y="313" width="629" height="420" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590900219463" />
+    <state x="792" y="106" key="#xdebugger.evaluate" timestamp="1590902596056">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="418" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578099326682" />
-    <state x="643" y="249" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578185654882">
+    <state x="792" y="106" key="#xdebugger.evaluate/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590902596056" />
+    <state x="737" y="267" width="424" height="517" key="FileChooserDialogImpl" timestamp="1587883050710">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="643" y="249" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578185654882" />
-    <state x="643" y="249" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1920.988@0.27.1920.988" timestamp="1576880608415" />
-    <state x="1316" y="137" key="#xdebugger.evaluate" timestamp="1579457111383">
-      <screen x="0" y="27" width="3520" height="988" />
-    </state>
-    <state x="718" y="137" key="#xdebugger.evaluate/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578037801558" />
-    <state x="1316" y="137" key="#xdebugger.evaluate/0.27.3520.988@0.27.3520.988" timestamp="1579457111383" />
-    <state width="904" height="251" key="GridCell.Tab.0.bottom" timestamp="1579458447801">
-      <screen x="0" y="27" width="3520" height="988" />
-    </state>
-    <state width="1387" height="296" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578287273116" />
-    <state width="1108" height="286" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1579416126426" />
-    <state width="904" height="251" key="GridCell.Tab.0.bottom/0.27.3520.988@0.27.3520.988" timestamp="1579458447801" />
-    <state width="904" height="251" key="GridCell.Tab.0.center" timestamp="1579458447798">
-      <screen x="0" y="27" width="3520" height="988" />
-    </state>
-    <state width="1387" height="296" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578287273116" />
-    <state width="1108" height="286" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1579416126425" />
-    <state width="904" height="251" key="GridCell.Tab.0.center/0.27.3520.988@0.27.3520.988" timestamp="1579458447798" />
-    <state width="904" height="251" key="GridCell.Tab.0.left" timestamp="1579458447798">
-      <screen x="0" y="27" width="3520" height="988" />
-    </state>
-    <state width="1387" height="296" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578287273115" />
-    <state width="1108" height="286" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1579416126425" />
-    <state width="904" height="251" key="GridCell.Tab.0.left/0.27.3520.988@0.27.3520.988" timestamp="1579458447798" />
-    <state width="904" height="251" key="GridCell.Tab.0.right" timestamp="1579458447799">
-      <screen x="0" y="27" width="3520" height="988" />
-    </state>
-    <state width="1387" height="296" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578287273116" />
-    <state width="1108" height="286" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1579416126426" />
-    <state width="904" height="251" key="GridCell.Tab.0.right/0.27.3520.988@0.27.3520.988" timestamp="1579458447799" />
-    <state width="904" height="251" key="GridCell.Tab.1.bottom" timestamp="1579458447810">
-      <screen x="0" y="27" width="3520" height="988" />
-    </state>
-    <state width="1127" height="290" key="GridCell.Tab.1.bottom/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578285427610" />
-    <state width="1108" height="286" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1579416126429" />
-    <state width="904" height="251" key="GridCell.Tab.1.bottom/0.27.3520.988@0.27.3520.988" timestamp="1579458447810" />
-    <state width="904" height="251" key="GridCell.Tab.1.center" timestamp="1579458447803">
-      <screen x="0" y="27" width="3520" height="988" />
-    </state>
-    <state width="1127" height="290" key="GridCell.Tab.1.center/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578285427610" />
-    <state width="1108" height="286" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1579416126428" />
-    <state width="904" height="251" key="GridCell.Tab.1.center/0.27.3520.988@0.27.3520.988" timestamp="1579458447803" />
-    <state width="904" height="251" key="GridCell.Tab.1.left" timestamp="1579458447803">
-      <screen x="0" y="27" width="3520" height="988" />
-    </state>
-    <state width="1127" height="290" key="GridCell.Tab.1.left/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578285427610" />
-    <state width="1108" height="286" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1579416126428" />
-    <state width="904" height="251" key="GridCell.Tab.1.left/0.27.3520.988@0.27.3520.988" timestamp="1579458447803" />
-    <state width="904" height="251" key="GridCell.Tab.1.right" timestamp="1579458447804">
-      <screen x="0" y="27" width="3520" height="988" />
-    </state>
-    <state width="1127" height="290" key="GridCell.Tab.1.right/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578285427610" />
-    <state width="1108" height="286" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1579416126428" />
-    <state width="904" height="251" key="GridCell.Tab.1.right/0.27.3520.988@0.27.3520.988" timestamp="1579458447804" />
-    <state x="449" y="156" key="SettingsEditor" timestamp="1577574376949">
+    <state x="737" y="267" width="424" height="517" key="FileChooserDialogImpl/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1587883050710" />
+    <state width="1248" height="298" key="GridCell.Tab.0.bottom" timestamp="1590906132370">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="449" y="156" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1577574376949" />
-    <state x="100" y="125" width="1720" height="790" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1577842128754">
+    <state width="1248" height="298" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590906132370" />
+    <state width="1248" height="298" key="GridCell.Tab.0.center" timestamp="1590906132369">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="100" y="125" width="1720" height="790" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.988@0.27.1920.988" timestamp="1577842128754" />
-    <state x="2433" y="292" key="com.intellij.ide.util.TipDialog" timestamp="1579460462769">
-      <screen x="1920" y="0" width="1600" height="900" />
-    </state>
-    <state x="616" y="348" key="com.intellij.ide.util.TipDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578284624941" />
-    <state x="2433" y="292" key="com.intellij.ide.util.TipDialog/0.27.1920.988/1920.0.1600.900@1920.0.1600.900" timestamp="1579460462769" />
-    <state x="616" y="348" key="com.intellij.ide.util.TipDialog/0.27.1920.988@0.27.1920.988" timestamp="1579454616498" />
-    <state x="726" y="435" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578875978776">
+    <state width="1248" height="298" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590906132369" />
+    <state width="1248" height="298" key="GridCell.Tab.0.left" timestamp="1590906132369">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="726" y="435" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578020406682" />
-    <state x="726" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.988@0.27.1920.988" timestamp="1578875978776" />
-    <state x="704" y="163" width="501" height="713" key="refactoring.ChangeSignatureDialog" timestamp="1577831762575">
+    <state width="1248" height="298" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590906132369" />
+    <state width="1248" height="298" key="GridCell.Tab.0.right" timestamp="1590906132369">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="704" y="163" width="501" height="713" key="refactoring.ChangeSignatureDialog/0.27.1920.988@0.27.1920.988" timestamp="1577831762575" />
-    <state x="624" y="237" key="run.anything.popup" timestamp="1578703281831">
+    <state width="1248" height="298" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590906132369" />
+    <state width="1073" height="367" key="GridCell.Tab.1.bottom" timestamp="1590904337620">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="624" y="237" key="run.anything.popup/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578038593903" />
-    <state x="624" y="237" key="run.anything.popup/0.27.1920.988@0.27.1920.988" timestamp="1578703281831" />
-    <state x="623" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1578702166908">
+    <state width="1073" height="367" key="GridCell.Tab.1.bottom/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590904337620" />
+    <state width="1073" height="367" key="GridCell.Tab.1.center" timestamp="1590904337620">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="623" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578097060397" />
-    <state x="623" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988@0.27.1920.988" timestamp="1578702166908" />
-    <state x="1142" y="241" width="1232" height="678" key="search.everywhere.popup/0.27.3520.988@0.27.3520.988" timestamp="1577855889305" />
-    <state x="685" y="416" width="540" height="208" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1578183713692">
+    <state width="1073" height="367" key="GridCell.Tab.1.center/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590904337620" />
+    <state width="1073" height="367" key="GridCell.Tab.1.left" timestamp="1590904337620">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="685" y="416" width="540" height="208" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1578183713692" />
+    <state width="1073" height="367" key="GridCell.Tab.1.left/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590904337620" />
+    <state width="1073" height="367" key="GridCell.Tab.1.right" timestamp="1590904337620">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state width="1073" height="367" key="GridCell.Tab.1.right/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590904337620" />
+    <state x="449" y="156" width="1022" height="734" key="SettingsEditor" timestamp="1590905817764">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="449" y="156" width="1022" height="734" key="SettingsEditor/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590905817764" />
+    <state x="616" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1584214419266">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="616" y="348" key="com.intellij.ide.util.TipDialog/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1584214419266" />
+    <state x="623" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1590900404018">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="623" y="241" width="672" height="678" key="search.everywhere.popup/0.27.1920.988/1920.0.1600.900@0.27.1920.988" timestamp="1590900404018" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <condition expression="depth == 6" language="ObjectiveC" />
-          <url>file://$PROJECT_DIR$/src/TranspositionTable.cpp</url>
-          <line>93</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="position.pieceCount" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

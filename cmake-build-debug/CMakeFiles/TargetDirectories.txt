@@ -1,3 +1,0 @@
-/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/BRITON.dir
-/home/brianton/Desktop/Chess-Engine-Cpp/cmake-build-debug/CMakeFiles/edit_cache.dir

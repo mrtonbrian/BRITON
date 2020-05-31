@@ -4,4 +4,5 @@
 
 void perftTest(Position& position, int depth);
 
+void perftTestFile(Position& position, std::string filename);
 #endif
