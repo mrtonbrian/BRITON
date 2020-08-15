@@ -10,6 +10,8 @@ int main() {
     initAll();
     Position p;
     p.init();
+    p.setFromFEN("r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1");
+    perftTest(p, 4);
     /*
     p.printBoard();
     SEARCH_SETTINGS.starttime = getTimeMs();
@@ -19,5 +21,4 @@ int main() {
     SEARCH_SETTINGS.timeSet = true;
     // searchPosition(p);
     */
-    perftTestFile(p, "perftsuite.epd");
 }

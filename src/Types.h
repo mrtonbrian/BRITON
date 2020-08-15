@@ -1,10 +1,11 @@
 #include <cstdint>
+#include "TranspositionTable.h"
 
 #ifndef TYPES
 #define TYPES
 typedef uint64_t Bitboard;
 
-constexpr int SQUARE_NUM = 64;
+const int SQUARE_NUM = 64;
 
 enum File {
     FILE_A, FILE_B, FILE_C, FILE_D, FILE_E, FILE_F, FILE_G, FILE_H, FILE_NONE
@@ -31,7 +32,7 @@ enum Color {
     COLOR_NB = 2
 };
 
-const int MAX_DEPTH = 64;
+const int MAX_DEPTH = 128;
 const int MATE_SCORE = 100000;
 const int MIN_VAL = -1000001;
 const int MAX_VAL = 1000001;
@@ -89,13 +90,6 @@ struct SearchInfo {
     bool timeSet;
 };
 
-enum TableFlags {
-    NONE,
-    ALPHA,
-    BETA,
-    EXACT
-};
-
 const int MIDGAME_LIMIT = 15258;
 const int ENDGAME_LIMIT = 3915;
 
@@ -116,6 +110,8 @@ extern Bitboard OO_ATTACK_MASK[COLOR_NB];
 extern Bitboard OOO_ATTACK_MASK[COLOR_NB];
 
 extern int MaterialValues[NUM_GAME_STATES][PIECE_TYPE_NB];
+
+extern HashTable globalHashTable;
 
 #define gen_move(f, t, p, c, pr, ep, ca) ((f) | (t<<6) | (p<<12) | (c<<16) | (pr<<20) | (ep<<25) | (ca<<26))
 #define mv_from(m) ((m) & (0b111111))

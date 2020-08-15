@@ -4,5 +4,5 @@
 
 void perftTest(Position& position, int depth);
 
-void perftTestFile(Position& position, std::string filename);
+void perftTestFile(Position& position, std::string filename="perftsuite.epd", int verbosity=0);
 #endif

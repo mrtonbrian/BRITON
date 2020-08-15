@@ -54,7 +54,7 @@ void perftTest(Position &position, int depth) {
     printf("That Is %.1f NPS\n", leafNodes / ((endTime - startTime) / 1000.));
 }
 
-void perftTestFile(Position &position, std::string filename="perftsuite.epd") {
+void perftTestFile(Position &position, std::string filename, int verbosity) {
     std::string line;
     std::ifstream inp(filename);
 
@@ -63,7 +63,6 @@ void perftTestFile(Position &position, std::string filename="perftsuite.epd") {
 
     // Read File Line By Line
     while (std::getline(inp, line)) {
-        std::cout << std::endl << "Reading In Line: " << line << std::endl;
         // Split Line Up Into Segments (Based On ';' Character)
         std::vector<std::string> segments;
         std::stringstream inpstream(line);
@@ -75,16 +74,19 @@ void perftTestFile(Position &position, std::string filename="perftsuite.epd") {
         std::cout << "FEN: " << segments[0] << std::endl;
         // First Token is always FEN
         position.setFromFEN(segments[0]);
-        position.printBoard();
+        if (verbosity >= 2) {
+            position.printBoard();
+        }
         uint64_t initPosKey = position.generatePositionKey();
         std::vector<Move> moveList = position.generateAllMoves();
-        for (int depth = 1; depth != segments.size(); depth++) {
+        for (auto depth = 1ull; depth != segments.size(); depth++) {
             // Get Number (Second Value In Each Segment)
             std::string _;
             long expectedNodes;
             std::stringstream(segments[depth]) >> _ >> expectedNodes;
-            std::cout << "Expected Nodes At Depth " << depth << ": " << expectedNodes << std::endl;
-
+            if (verbosity >= 1) {
+                std::cout << "Expected Nodes At Depth " << depth << ": " << expectedNodes << std::endl;
+            }
             leafNodes = 0;
 
             for (Move move : moveList) {
@@ -97,8 +99,9 @@ void perftTestFile(Position &position, std::string filename="perftsuite.epd") {
                 position.unmakeMove();
             }
 
-            std::cout << "Actual: " << leafNodes << std::endl;
-
+            if (verbosity >= 1) {
+                std::cout << "Actual: " << leafNodes << std::endl;
+            }
             assert(expectedNodes == leafNodes);
             // Just Wanna Make Sure That:
             // A: Position Key Is Correctly Updated Over Time

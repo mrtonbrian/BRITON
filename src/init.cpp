@@ -4,6 +4,7 @@
 
 #include "Bitboard.h"
 #include "Types.h"
+#include "TranspositionTable.h"
 
 SMasks masks[SQUARE_NUM][4];
 
@@ -326,4 +327,6 @@ void initAll() {
     initPawnMoveMasks();
     initCastleMasks();
     initEvalValues();
+
+    globalHashTable.initHashTable(32);
 }

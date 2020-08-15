@@ -82,7 +82,6 @@ public:
 
     Color getTurn();
 
-    int principalVariation[512];
     long nodesSearched;
 private:
     Bitboard byType[PIECE_TYPE_NB];
