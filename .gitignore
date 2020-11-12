@@ -5,6 +5,7 @@ env/
 .ebignore
 cmake-build-debug/
 cmake-build-release/
+__pycache__
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
