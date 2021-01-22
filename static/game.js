@@ -85,12 +85,14 @@ var onDrop = function (source, target) {
         'time': parseFloat(document.getElementById('seconds').value),
         'pgn': game.pgn()
     });
+    document.getElementById("bm").disabled = true;
+    document.getElementById("tb").disabled = true;
     cfg.draggable = false;
     $.post("/move", t, function (data, status) {
         game.move(data['move'], {
             sloppy: true
         });
-        console.log('EVAL: ' + data['eval']);
+        // console.log('EVAL: ' + data['eval']);
         evals.push(data['eval']);
         // highlight comp's move
         removeHighlights('white');
@@ -102,6 +104,8 @@ var onDrop = function (source, target) {
         // Set Eval P Tag
         document.getElementById("eval").innerHTML = data['eval'];
         cfg.draggable = true;
+        document.getElementById("bm").disabled = false;
+        document.getElementById("tb").disabled = false;
     });
 };
 
@@ -113,7 +117,7 @@ var resetBoard = function () {
 }
 
 var onMoveEnd = function () {
-    console.log("MOVEEND");
+    // console.log("MOVEEND");
     boardEl.find('.square-' + squareToHighlight).addClass('highlight-black');
     removeGreySquares();
     if (game.in_checkmate()) {
@@ -188,10 +192,12 @@ var undo = function () {
 
 var bestMove = function () {
     document.getElementById("bm").disabled = true;
+    document.getElementById("tb").disabled = true;
     if (!game.game_over()) {
         if (document.getElementById('seconds').value === "") {
             alert("Time To Think Field is Empty");
             document.getElementById("bm").disabled = false;
+            document.getElementById("tb").disabled = false;
 
             return;
         }
@@ -204,7 +210,7 @@ var bestMove = function () {
             game.move(data['move'], {
                 sloppy: true
             });
-            console.log('EVAL: ' + data['eval']);
+            // console.log('EVAL: ' + data['eval']);
             document.getElementById("eval").innerHTML = data['eval'];
             removeHighlights('white');
             removeHighlights('black');
@@ -224,7 +230,7 @@ var bestMove = function () {
                     game.move(data['move'], {
                         sloppy: true
                     });
-                    console.log('EVAL: ' + data['eval']);
+                    // console.log('EVAL: ' + data['eval']);
                     document.getElementById("eval").innerHTML = data['eval'];
                     // highlight comp's move
                     removeHighlights('white');
@@ -233,6 +239,7 @@ var bestMove = function () {
                     boardEl.find('.square-' + data['to']).addClass('highlight-black'); // update the board to the new position
                     board.position(game.fen());
                     cfg.draggable = true;
+                    document.getElementById("tb").disabled = false;
                     document.getElementById("bm").disabled = false;
                 });
             }
@@ -251,6 +258,7 @@ window.onload = setVal();
 board = ChessBoard('board', cfg);
 
 var chooseSide = function () {
+    document.getElementById("eval").innerHTML = "";
     if (count % 2 === 1) {
         board.orientation('white');
         playerSide = "w";
@@ -266,7 +274,8 @@ var chooseSide = function () {
             game.move(data['move'], {
                 sloppy: true
             });
-            console.log('EVAL: ' + data['eval']);
+            // console.log('EVAL: ' + data['eval']);
+            document.getElementById("eval").innerHTML = data['eval'];
             // highlight comp's move
             removeHighlights('white');
             removeHighlights('black');
