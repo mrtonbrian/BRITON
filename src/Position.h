@@ -54,7 +54,7 @@ class Position {
 public:
     void init();
     uint64_t generatePositionKey();
-    bool setFromFEN(std::string fen);
+    bool setFromFEN(const std::string& fen);
     void resetPosition();
     void printBoard();
     std::vector<Move> generateAllMoves();

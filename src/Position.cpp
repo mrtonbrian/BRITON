@@ -77,7 +77,7 @@ void Position::resetPosition() {
     nodesSearched = 0;
 }
 
-bool Position::setFromFEN(std::string fen) {
+bool Position::setFromFEN(const std::string& fen) {
     const char *fenPtr = fen.c_str();
     resetPosition();
     int row = RANK_8;
@@ -167,7 +167,6 @@ bool Position::setFromFEN(std::string fen) {
 
     // Pointer Should Now Be At Side To Move Letter
     // Look Ma! I'm Using a Ternary Operator!
-    // http://www.cplusplus.com/articles/1AUq5Di1/
     turn = (*fenPtr == 'w') ? COLOR_WHITE : COLOR_BLACK;
     fenPtr += 2;
 
@@ -197,7 +196,7 @@ bool Position::setFromFEN(std::string fen) {
     fenPtr++;
 
     if (*fenPtr != '-') {
-        enPassSquare = ((fenPtr[0]) - 'a') * 8 + fenPtr[1] - '1';
+        enPassSquare = ((fenPtr[1]) - '1') * 8 + fenPtr[0] - 'a';
     }
     generatePositionKey();
 
@@ -593,6 +592,12 @@ void Position::generateBlackKingMoves(std::vector<Move> &moves) {
     }
 }
 
+/**
+ * Checks whether a square is attacked by a particular color.
+ * @param square
+ * @param color
+ * @return
+ */
 bool Position::squareAttacked(Square square, Color color) {
     Bitboard occupancy = pieces();
 
@@ -614,7 +619,12 @@ bool Position::squareAttacked(Square square, Color color) {
     return (rookAttacks(occupancy, square) & rooksQueens) != 0;
 }
 
-// Checks if ANY squares in bitmap are attacked
+/**
+ * Checks whether any square in bitmap is attacked
+ * @param bitmap
+ * @param color
+ * @return
+ */
 bool Position::squareAttacked(Bitboard bitmap, Color color) {
     Bitboard bitmapClone = bitmap;
     while (bitmapClone) {
@@ -626,6 +636,10 @@ bool Position::squareAttacked(Bitboard bitmap, Color color) {
     return false;
 }
 
+/**
+ * Removes a piece from all corresponding bitboards for a square.
+ * @param square
+ */
 void Position::clearPiece(Square square) {
     Piece piece = board[square];
     clearBit(byColor[getColorFromPiece(piece)], square);
@@ -635,6 +649,11 @@ void Position::clearPiece(Square square) {
     hashPiece(piece, square);
 }
 
+/**
+ * Adds a piece to corresponding bitboards for a square.
+ * @param piece
+ * @param square
+ */
 void Position::addPiece(Piece piece, Square square) {
     board[square] = piece;
     setBit(byColor[getColorFromPiece(piece)], square);
@@ -643,6 +662,11 @@ void Position::addPiece(Piece piece, Square square) {
     hashPiece(piece, square);
 }
 
+/**
+ * Applies a move to a board position. Automatically undoes the move if it is illegal.
+ * @param move
+ * @return
+ */
 bool Position::makeMove(int move) {
     int fromSq = mv_from(move);
     int toSq = mv_to(move);

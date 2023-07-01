@@ -4,5 +4,5 @@
 
 void perftTest(Position& position, int depth);
 
-void perftTestFile(Position& position, std::string filename="perftsuite.epd", int verbosity=0);
+void perftTestFile(Position& position, const std::string& filename="perftsuite.epd", unsigned int verbosity=0, unsigned int max_depth=10);
 #endif

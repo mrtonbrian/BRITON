@@ -10,15 +10,9 @@ int main() {
     initAll();
     Position p;
     p.init();
-    p.setFromFEN("r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1");
-    perftTest(p, 4);
-    /*
-    p.printBoard();
-    SEARCH_SETTINGS.starttime = getTimeMs();
-    SEARCH_SETTINGS.stoptime = SEARCH_SETTINGS.starttime + 5000;
-    SEARCH_SETTINGS.stopped = false;
-    SEARCH_SETTINGS.depth = 7;
-    SEARCH_SETTINGS.timeSet = true;
-    // searchPosition(p);
-    */
+
+    p.setFromFEN("r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10 ");
+
+    perftTest(p, 5);
+//    perftTestFile(p, "perftsuite.epd", 1, 6);
 }

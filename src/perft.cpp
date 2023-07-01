@@ -7,7 +7,7 @@
 #include <assert.h>
 #include <cassert>
 
-long leafNodes;
+uint64_t leafNodes;
 
 static void perft(Position &position, int depth) {
     if (depth == 0) {
@@ -54,7 +54,7 @@ void perftTest(Position &position, int depth) {
     printf("That Is %.1f NPS\n", leafNodes / ((endTime - startTime) / 1000.));
 }
 
-void perftTestFile(Position &position, std::string filename, int verbosity) {
+void perftTestFile(Position &position, const std::string& filename, unsigned int verbosity, unsigned int max_depth) {
     std::string line;
     std::ifstream inp(filename);
 
@@ -79,7 +79,7 @@ void perftTestFile(Position &position, std::string filename, int verbosity) {
         }
         uint64_t initPosKey = position.generatePositionKey();
         std::vector<Move> moveList = position.generateAllMoves();
-        for (auto depth = 1ull; depth != segments.size(); depth++) {
+        for (auto depth = 1ull; depth != segments.size() && depth < max_depth; depth++) {
             // Get Number (Second Value In Each Segment)
             std::string _;
             long expectedNodes;
