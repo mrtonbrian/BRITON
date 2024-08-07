@@ -1,6 +1,6 @@
 # **BRITON**
 
-A small chess engine I wrote in C++ and a (very) basic frontend.
+A small chess engine I wrote in C++ and a (very) basic frontend. Note: the branch you are on is undergoing a major rewrite / restructuring of the code to use a bitboard board representation and more modern C++ style (instead of C in C++), and it is currently unfinished. Head over to the `master` branch to see high school me's attempt at writing code.
 
 ### **How The Frontend Interfaces With the Backend (Simply)**
 
